@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test-email','UserController@mail');
+
+Route::prefix('auth')->group(function(){
+    Route::get('/login',function(){
+        return view('login-page');
+    });
+    Route::post('/auth-login','UserController@authenticate');
+    Route::get('/register',function(){
+        return view('register-page');
+    });
+    Route::post('/register','UserController@registerUsers');
+});
+

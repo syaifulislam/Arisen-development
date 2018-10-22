@@ -111,6 +111,7 @@ class MigrationCartalystSentinel extends Migration
             $table->string('last_name')->nullable();
             $table->date('birth_date')->nullable();
             $table->string('gender')->nullable();
+            $table->string('role_user');
             $table->integer('is_verif')->nullable();
             $table->timestamps();
             $table->softDeletes();
