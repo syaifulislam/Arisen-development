@@ -38,10 +38,10 @@ class UserController extends Controller
     public function mail(){
         $data = array('name'=>"Sam Jose", "body" => "Test mail");
     
-        Mail::send('home-page', $data, function($message) {
-            $message->to('m.syaiful.islam26@gmail.com', 'Artisans Web')
-                    ->subject('Artisans Web Testing Mail');
-            $message->from('info.arisen@gmail.com','info');
+        Mail::send('mail-verif', $data, function($message) {
+            $message->to('yudhagustavianto@gmail.com', 'Arisen Test Mail Send')
+                    ->subject('Test Active Email');
+            $message->from('info.arisen@gmail.com','Info Arisen');
         });
         dd("kirim");
     }
