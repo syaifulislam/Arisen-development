@@ -4,7 +4,7 @@
 
         <h2>Register Page</h2>
 
-        <form action="/auth/register" method="POST">
+        <form action="register" method="POST">
             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
             First Name:<br>
             <input type="text" name="first_name">

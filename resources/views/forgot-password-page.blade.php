@@ -2,19 +2,15 @@
 <html>
     <body>
 
-        <h2>Login Page</h2>
+        <h2>Forgot Password Page</h2>
 
-        <form action="login" method="POST">
+        <form action="forgot-password" method="POST">
             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
             Email:<br>
             <input type="email" name="email">
             <br>
-            Password:<br>
-            <input type="password" name="password">
-            <br><br>
+            <br>
             <input type="submit" value="Submit">
         </form>
-        <br>
-        <a href="register">Register</a> <a href="forgot-password">Lupa Password</a>
     </body>
 </html>

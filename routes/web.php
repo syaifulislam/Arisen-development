@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\SentinelCheck;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,19 +14,39 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('auth/login');
 });
-
-Route::get('/test-email','UserController@mail');
 
 Route::prefix('auth')->group(function(){
     Route::get('/login',function(){
+        if(Sentinel::check())
+            return redirect('home-page');
         return view('login-page');
     });
-    Route::post('/auth-login','UserController@authenticate');
+    Route::post('/login','UserController@authenticate');
+
     Route::get('/register',function(){
         return view('register-page');
     });
     Route::post('/register','UserController@registerUsers');
+
+    Route::get('/expired',function(){
+        return view('expired');
+    });
+
+    Route::get('/forgot-password',function(){
+        return view('forgot-password-page');
+    });
+    Route::post('/forgot-password','UserController@forgotPassword');
+
+    Route::post('/change-password','UserController@actionChangePassword');
+
+    Route::get('/verifEmail/{callback}','UserController@emailVerification');
+    Route::get('/forgot-password-verification/{callback}','UserController@changePassword');
+    Route::get('/logout','UserController@logout');
+});
+
+Route::group(['middleware'=>SentinelCheck::class],function(){
+    Route::get('/home-page','HomeController@index');
 });
 

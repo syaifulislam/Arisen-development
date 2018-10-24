@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Sentinel;
 use Mail;
+use Sentinel;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+use Activation;
+use App\Users;
 
 class UserController extends Controller
 {
@@ -13,11 +17,12 @@ class UserController extends Controller
     public function authenticate(Request $request){
         try{
             $authenticate = Sentinel::authenticate($request->except('_token'));
+
             if(!$authenticate){
-                //salah email auat password
+                //salah email atau password
                 return redirect()->back(); 
             }
-            return view('home-page');
+            return redirect('home-page');
         }catch(\Exception $e){
             if($e->getMessage() == 'Your account has not been activated yet.'){
                 // bila akun belum aktivasi melalui email
@@ -31,18 +36,86 @@ class UserController extends Controller
         $credentials = $request->except('_token','confirmPassword');
         $credentials['is_verif'] = 0;
         $credentials['role_user'] = 'user';
-        Sentinel::register($credentials);
+        $register = Sentinel::register($credentials);
+        $encrypt = Crypt::encryptString($register->id.'/'.Carbon::now()->setTimezone('+7')->format('Y-m-d H:i:s'));
+        $url = $request->server->getHeaders()['ORIGIN'].'/auth/verifEmail/'.$encrypt;
+        $data = array(
+            'id'=>$register->id,
+            'email'=>$credentials['email'],
+            'timeRegister'=>Carbon::now()->setTimezone('+7')->format('Y-m-d H:i:s'),
+            'url'=>$url,
+            'subject'=>'Active Your Email',
+            'page'=>'mail-verif'
+        );
+        $senMail = $this->mail($data);
         return redirect($this->_routeGroup.'/login');
     }
 
-    public function mail(){
-        $data = array('name'=>"Sam Jose", "body" => "Test mail");
-    
-        Mail::send('mail-verif', $data, function($message) {
-            $message->to('yudhagustavianto@gmail.com', 'Arisen Test Mail Send')
-                    ->subject('Test Active Email');
+    public function emailVerification($callback){
+        $decrypted = Crypt::decryptString($callback);
+        $explodeDecrypt = explode('/',$decrypted);
+        $timeRequest = Carbon::parse($explodeDecrypt[1],'+7');
+        $timeNow = Carbon::now()->setTimezone('+7');
+        $timeDiff = $timeRequest->diffInMinutes($timeNow);
+        if($timeDiff > 120){
+            return redirect($this->_routeGroup.'/expired');
+        }
+        $user = Sentinel::findById($explodeDecrypt[0]);
+        $activeUser = Activation::create($user);
+        Activation::complete($user, $activeUser->code);
+        return redirect($this->_routeGroup.'/login');
+    }
+
+    public function logout(){
+        Sentinel::logout();
+        return redirect($this->_routeGroup.'/login');
+    }
+
+    public function forgotPassword(Request $request){
+        $email = $request->input('email');
+        $findUserByEmail = Users::where('email',$email)->first();
+        // jika tidak ditemukan user dengan email tersebut
+        if(!$findUserByEmail)
+            return redirect()->back();
+        
+        $encrypt = Crypt::encryptString($findUserByEmail->id.'/'.Carbon::now()->setTimezone('+7')->format('Y-m-d H:i:s'));
+        $url = $request->server->getHeaders()['ORIGIN'].'/auth/forgot-password-verification/'.$encrypt;
+        $data = array(
+            'id'=>$findUserByEmail->id,
+            'email'=>$email,
+            'timeRegister'=>Carbon::now()->setTimezone('+7')->format('Y-m-d H:i:s'),
+            'url'=>$url,
+            'subject'=>'Forgot Password',
+            'page'=>'mail-forgot-password'
+        );
+        $senMail = $this->mail($data);
+        return redirect($this->_routeGroup.'/login');
+    }
+
+    public function changePassword($callback){
+        $decrypted = Crypt::decryptString($callback);
+        $explodeDecrypt = explode('/',$decrypted);
+        $timeRequest = Carbon::parse($explodeDecrypt[1],'+7');
+        $timeNow = Carbon::now()->setTimezone('+7');
+        $timeDiff = $timeRequest->diffInMinutes($timeNow);
+        if($timeDiff > 120){
+            return redirect($this->_routeGroup.'/expired');
+        }
+        $user = Sentinel::findById($explodeDecrypt[0]);
+        return view('change-password',compact('user'));
+    }
+
+    public function actionChangePassword(Request $request){
+        $user = Sentinel::findById($request->input('user_id'));
+        Sentinel::update($user,$request->only('password'));
+        return redirect($this->_routeGroup.'/login');
+    }
+
+    public function mail($data){   
+        Mail::send($data['page'], $data, function($message) use($data){
+            $message->to($data['email'], 'Email Verification')
+                    ->subject($data['subject']);
             $message->from('info.arisen@gmail.com','Info Arisen');
         });
-        dd("kirim");
     }
 }
