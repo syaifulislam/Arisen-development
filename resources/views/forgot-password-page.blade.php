@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Lupa Kata Sandi</title>
+        <link rel="stylesheet" href="{{ url('/css/layout2.css') }}" media="screen" type="text/css" />
+    </head>
     <body>
-
-        <h2>Forgot Password Page</h2>
-
-        <form action="forgot-password" method="POST">
-            <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-            Email:<br>
-            <input type="email" name="email">
-            <br>
-            <br>
-            <input type="submit" value="Submit">
-        </form>
+        <div class="login-card">
+        <h2>Lupa Kata Sandi</h2><br>
+            <form action="forgot-password" method="POST">
+                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                <input type="email" name="email" placeholder="Email Pengguna"> 
+                <input type="submit" name="login" class="login login-submit" value="Kirim ">
+            </form>
+            @if($errors->any())
+                @foreach ($errors->all() as $value)
+                    <h4 class="error-message">{{$value}}</h4>                    
+                @endforeach
+            @endif
+        </div>
     </body>
 </html>

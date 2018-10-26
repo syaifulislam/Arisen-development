@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Masuk ARISEN</title>
+        <link rel="stylesheet" href="{{ url('/css/layout2.css') }}" media="screen" type="text/css" />
+    </head>
     <body>
-
-        <h2>Login Page</h2>
-
-        <form action="login" method="POST">
-            <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-            Email:<br>
-            <input type="email" name="email">
-            <br>
-            Password:<br>
-            <input type="password" name="password">
-            <br><br>
-            <input type="submit" value="Submit">
-        </form>
-        <br>
-        <a href="register">Register</a> <a href="forgot-password">Lupa Password</a>
+        <div class="login-card">
+            <h2>MASUK</h2><br>
+            <form action="login" method="POST">
+                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                <input type="email" name="email" placeholder="Email Pengguna">
+                <input type="password" name="password" placeholder="Kata Sandi">
+                <input type="submit" name="login" class="login login-submit" value="Masuk">
+            </form>
+            <div class="login-help">
+                <a href="register">Daftar</a> • <a href="forgot-password">Lupa Kata Sandi</a>
+            </div>
+            @if($errors->any())
+                <h4 class="error-message">{{$errors->first()}}</h4>                    
+            @endif
+        </div>
     </body>
 </html>

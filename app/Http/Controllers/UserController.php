@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Activation;
 use App\Users;
+use App\Http\Requests\registerRequest;
+use App\Http\Requests\forgotPasswordRequest;
 
 class UserController extends Controller
 {
@@ -19,20 +21,19 @@ class UserController extends Controller
             $authenticate = Sentinel::authenticate($request->except('_token'));
 
             if(!$authenticate){
-                //salah email atau password
-                return redirect()->back(); 
+                return redirect()->back()->withErrors(['Email Atau Password Salah']);
             }
             return redirect('home-page');
         }catch(\Exception $e){
             if($e->getMessage() == 'Your account has not been activated yet.'){
-                // bila akun belum aktivasi melalui email
+                return redirect()->back()->withErrors(['Aktivasi Email Anda Terlebih Dahulu']);
             }
             return redirect()->back();
         }
         
     }
 
-    public function registerUsers(Request $request){
+    public function registerUsers(registerRequest $request){
         $credentials = $request->except('_token','confirmPassword');
         $credentials['is_verif'] = 0;
         $credentials['role_user'] = 'user';
@@ -71,7 +72,7 @@ class UserController extends Controller
         return redirect($this->_routeGroup.'/login');
     }
 
-    public function forgotPassword(Request $request){
+    public function forgotPassword(forgotPasswordRequest $request){
         $email = $request->input('email');
         $findUserByEmail = Users::where('email',$email)->first();
         // jika tidak ditemukan user dengan email tersebut
@@ -89,7 +90,7 @@ class UserController extends Controller
             'page'=>'mail-forgot-password'
         );
         $senMail = $this->mail($data);
-        return redirect($this->_routeGroup.'/login');
+        return redirect($this->_routeGroup.'/login')->withErrors(['Silahkan cek email anda']);
     }
 
     public function changePassword($callback){
@@ -108,7 +109,7 @@ class UserController extends Controller
     public function actionChangePassword(Request $request){
         $user = Sentinel::findById($request->input('user_id'));
         Sentinel::update($user,$request->only('password'));
-        return redirect($this->_routeGroup.'/login');
+        return redirect($this->_routeGroup.'/login')->withErrors(['Password berhasil dirubah']);
     }
 
     public function mail($data){   
