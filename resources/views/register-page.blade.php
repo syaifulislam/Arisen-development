@@ -13,6 +13,7 @@
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <input type="text" name="first_name" placeholder="Nama Depan">
                 <input type="text" name="last_name" placeholder="Nama Belakang">
+                <input type="text" name="username" placeholder="Nama Pengguna">
                 <input type="email" name="email" placeholder="Email">
                 <input type="text" name="birtdate" class="datepicker" placeholder="Tanggal Lahir">
                 <input name="birth_date" style="display:none;" class="birthDate" value=""/>

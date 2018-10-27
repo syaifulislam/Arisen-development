@@ -19,9 +19,8 @@ class UserController extends Controller
     public function authenticate(Request $request){
         try{
             $authenticate = Sentinel::authenticate($request->except('_token'));
-
             if(!$authenticate){
-                return redirect()->back()->withErrors(['Email Atau Password Salah']);
+                return redirect()->back()->withErrors(['Nama Pengguna Atau Password Salah']);
             }
             return redirect('home-page');
         }catch(\Exception $e){
@@ -49,7 +48,7 @@ class UserController extends Controller
             'page'=>'mail-verif'
         );
         $senMail = $this->mail($data);
-        return redirect($this->_routeGroup.'/login');
+        return redirect($this->_routeGroup.'/login')->with('message', 'Silahkan cek email anda');
     }
 
     public function emailVerification($callback){
@@ -64,7 +63,7 @@ class UserController extends Controller
         $user = Sentinel::findById($explodeDecrypt[0]);
         $activeUser = Activation::create($user);
         Activation::complete($user, $activeUser->code);
-        return redirect($this->_routeGroup.'/login');
+        return redirect($this->_routeGroup.'/login')->with('message', 'Verifikasi berhasil');
     }
 
     public function logout(){
@@ -90,7 +89,7 @@ class UserController extends Controller
             'page'=>'mail-forgot-password'
         );
         $senMail = $this->mail($data);
-        return redirect($this->_routeGroup.'/login')->withErrors(['Silahkan cek email anda']);
+        return redirect($this->_routeGroup.'/login')->with('message', 'Silahkan cek email anda');
     }
 
     public function changePassword($callback){
@@ -109,7 +108,7 @@ class UserController extends Controller
     public function actionChangePassword(Request $request){
         $user = Sentinel::findById($request->input('user_id'));
         Sentinel::update($user,$request->only('password'));
-        return redirect($this->_routeGroup.'/login')->withErrors(['Password berhasil dirubah']);
+        return redirect($this->_routeGroup.'/login')->with('message', 'Password berhasil di ubah');
     }
 
     public function mail($data){   

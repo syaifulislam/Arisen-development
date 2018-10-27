@@ -115,3 +115,47 @@ body {
   color: red;
   font-size: 13px;
 }
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.alert-flash-red{
+  position: fixed;
+  top: 40%;
+  right: 40%;
+  clear: both;
+  z-index: 100;
+  background: #fe3d3d;
+  box-shadow: 0 2px 9px rgba(0, 0, 0, .5);
+  border: none;
+}
+
+.alert-flash-blue{
+  position: fixed;
+  top: 40%;
+  right: 40%;
+  clear: both;
+  z-index: 100;
+  background: blue;
+  box-shadow: 0 2px 9px rgba(0, 0, 0, .5);
+  border: none;
+}
+
+.alert-flash-col{
+  color: #fff;
+  margin: 0;
+}
+
+.white-flash{
+  color: #fff
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}

@@ -26,9 +26,10 @@ class registerRequest extends FormRequest
         return [
             'first_name'    =>  'required',
             'last_name'     =>  'required',
-            'email'         =>  'required',
+            'email'         =>  'required|unique:users,email',
             'birth_date'    =>  'required',
-            'password'      =>  'required'
+            'password'      =>  'required',
+            'username'      =>  'required|unique:users,username'
         ];
     }
 
@@ -39,7 +40,8 @@ class registerRequest extends FormRequest
             'last_name'             => 'Nama Belakang',
             'birth_date'            => 'Tanggal Lahir',
             'password'              =>  'Kata Sandi',
-            'email'                 =>  'Email'
+            'email'                 =>  'Email',
+            'username'              =>  'Nama Pengguna'
         ];
     }
 
@@ -47,6 +49,7 @@ class registerRequest extends FormRequest
     {
         return [
             '*.required'        => ':attribute harus di isi',
+            '*.unique'          => ':attribute sudah digunakan',
             // '*.same'            => ':attribute tidak cocok',
             // '*.min'             => ':attribute minimal 8 karakter',
         ];
