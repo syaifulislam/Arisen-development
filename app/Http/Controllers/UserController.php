@@ -17,6 +17,7 @@ class UserController extends Controller
     protected $_routeGroup = '/auth';
 
     public function authenticate(Request $request){
+        
         try{
             $authenticate = Sentinel::authenticate($request->except('_token'));
             if(!$authenticate){
