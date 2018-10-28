@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="{{ url('/css/layout2.css') }}" media="screen" type="text/css" />
     </head>
     <body>
+
+        
         <div class="login-card">
             <h2>MASUK</h2><br>
             <form action="login" method="POST">
