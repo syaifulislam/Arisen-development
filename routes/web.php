@@ -13,8 +13,8 @@ use App\Http\Middleware\SentinelCheck;
 |
 */
 
-Route::get('/', function () {
-    return redirect('auth/login');
+Route::get('/', function(){
+    return view('index');
 });
 
 Route::prefix('auth')->group(function(){
