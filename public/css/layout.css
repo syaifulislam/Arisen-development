@@ -14,6 +14,123 @@
 .row4, .row4 a{}
 .row5, .row5 a{}
 
+/* Top Nav
+--------------------------------------------------------------------------------------------------------------- */
+#cssmenu > ul {
+  background: url(/images/highlight-bg.png) repeat;
+  padding-bottom: 3px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+#cssmenu:before,
+#cssmenu:after,
+#cssmenu > ul:before,
+#cssmenu > ul:after {
+  content: "";
+  display: table;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  clear: both;
+}
+#cssmenu {
+  width: auto;
+  zoom: 1;
+}
+#cssmenu > ul {
+  background: url(/images/menu-bg.png) repeat;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+#cssmenu > ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#cssmenu > ul > li {
+  float: left;
+  position: relative;
+}
+#cssmenu > ul > li > a {
+  padding: 0px 0px;
+  display: block;
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 -1px 0 #0d0d0d;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
+  line-height: 18px;
+}
+#cssmenu > ul > li:hover > a {
+  background: url(/images/highlight-bg.png) repeat;
+  text-decoration-color: white;
+  text-shadow: 0 -1px 0 #97321f;
+  text-shadow: 0 -1px 0 rgba(122, 42, 26, 0.64);
+}
+#cssmenu > ul > li > a > span {
+  line-height: 18px;
+}
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li > a:active {
+  background: url(/images/hover.png) repeat;
+}
+/* Childs */
+#cssmenu > ul ul {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 120px;
+  background: url(/images/menu-bg.png) repeat;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+}
+#cssmenu > ul li:hover ul {
+  opacity: 1;
+  visibility: visible;
+  margin: 0;
+  color: #000;
+  z-index: 2;
+  top: 17px;
+  left: 0;
+}
+#cssmenu > ul ul:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+}
+#cssmenu > ul ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+#cssmenu > ul ul li a {
+  padding: 10px 0px;
+  display: block;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 150px;
+  border-left: 4px solid transparent;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -ms-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+#cssmenu > ul ul li a:hover {
+  border-left: 4px solid #d64e34;
+  background: url(/images/hover.png) repeat;
+}
+#cssmenu > ul ul li a:active {
+  background: url(/images/menu-bg.png) repeat;
+}
 
 /* Top Bar
 --------------------------------------------------------------------------------------------------------------- */
@@ -60,7 +177,140 @@
 .container{padding:80px 0;}
 
 /* Content */
-.container .content{}
+.container .content{
+
+}
+
+.container .content-2{
+  background-color: grey;
+  height: 1000px;
+}
+
+.container .content-l{
+  background-color: lightblue;
+  height: 1000px;
+}
+
+.username-user{
+
+  height: 40%;
+  width: 100%;
+  float: left;
+}
+
+.id-user{
+
+  height: 30%;
+  width: 100%;
+  float: left;
+}
+
+.saldo-user{
+
+  height: 30%;
+  width: 100%;
+  float: left;
+}
+
+.profile-mar{
+  margin-left:18%;
+  margin-right:18%;
+}
+
+.detail-akun-id{
+ 
+  height: 150px;
+  width: 20%;
+  margin-top: 3%;
+  margin-left:14.5%;
+}
+
+.aktif-akun{
+  background-color: magenta;
+  height:100%;
+  width: 50%;
+  float: right;
+}
+
+.button-setor{
+  background: url(/images/button/setor.png);
+  height: 50px;
+  width:47%;
+  float: left;
+}
+
+.button-setor:hover {
+  background: url(/images/button/setor-hover.png);
+  height: 50px;
+  width:47%;
+  float: left;
+}
+
+.button-tarik{
+  background: url(/images/button/tarik.png);
+  height: 50px;
+  margin-left: 11.5px;
+  width:47%;
+  float: left; 
+}
+
+.button-tarik:hover{
+  background: url(/images/button/tarik-hover.png);
+  height: 50px;
+  margin-left: 11.5px;
+  width:47%;
+  float: left; 
+}
+
+.button-his-uang{
+  background: url(/images/button/h-uang.png);
+  height: 50px;
+  width:100%;
+  margin-top: 100px;
+  float: left;
+}
+
+.button-his-uang:hover{
+  background: url(/images/button/h-uang-hover.png);
+  height: 50px;
+  width:100%;
+  margin-top: 100px;
+  float: left;
+}
+
+.button-his-main{
+  background: url(/images/button/h-permainan.png);
+  height: 50px;
+  width:100%;
+  margin-top: 10px;
+  float: left;
+}
+
+.button-his-main:hover{
+  background: url(/images/button/h-permainan-hover.png);
+  height: 50px;
+  width:100%;
+  margin-top: 10px;
+  float: left;
+}
+
+
+.status-user{
+  background-color: grey;
+  height: 100px;
+  width: 64%;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+.form-aktif{
+  background-color: lightgrey;
+  height: 500px;
+  width: 64%;
+  margin-top: 35px;
+  margin-left: 18%;
+  margin-right: 18%;
+}
 
 .sectiontitle{margin-bottom:80px;}
 .sectiontitle *{margin:0;}
@@ -214,10 +464,34 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 /* Tables
 --------------------------------------------------------------------------------------------------------------- */
 table, th, td{border:1px solid; border-collapse:collapse; vertical-align:top;}
-table, th{table-layout:auto;}
+table, th{table-layout:auto; text-align:center;}
 table{width:100%; margin-bottom:15px;}
 th, td{padding:5px 8px;}
 td{border-width:0 1px;}
+
+.th-id {
+  width: 5%;
+}
+
+.th-title{
+  width: 40%;
+}
+
+.th-nominal{
+  width: 20%;
+}
+
+.th-undian{
+  width: 20%;
+}
+
+.th-user{
+  width: 10%;
+}
+
+.th-status{
+  width: 10%;
+}
 
 
 /* Gallery
@@ -397,7 +671,7 @@ table a, #comments a{background-color:inherit;}
 --------------------------------------------------------------------------------------------------------------- */
 @media screen and (max-width:650px){
 	.scrollable{display:block; width:100%; margin:0 0 30px 0; padding:0 0 15px 0; overflow:auto; overflow-x:scroll;}
-	.scrollable table{margin:0; padding:0; white-space:nowrap;}
+	.scrollable table{width:50%; margin:0; padding:0; white-space:nowrap;}
 
 	.inline li{display:block; margin-bottom:10px;}
 	.pushright li{margin-right:0;}
@@ -408,3 +682,28 @@ table a, #comments a{background-color:inherit;}
 	#header #quickinfo li{display:block; margin-right:0;}
 }
 
+.text-align{
+  text-align:center;
+  float:center;
+}
+
+.saldo-align{
+  text-align:inherit;
+  position: absolute;
+}
+
+.aktifasi-text{
+  text-align: center;
+}
+
+.contoh-aktifasi{
+  background-color: black;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.chs-file{
+  width: 100%; 
+  background-color: #4d90fe;
+  color: #fff;
+}

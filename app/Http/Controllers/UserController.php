@@ -23,7 +23,7 @@ class UserController extends Controller
             if(!$authenticate){
                 return redirect()->back()->withErrors(['Nama Pengguna Atau Password Salah']);
             }
-            return redirect('home-page');
+            return redirect('/');
         }catch(\Exception $e){
             if($e->getMessage() == 'Your account has not been activated yet.'){
                 return redirect()->back()->withErrors(['Aktivasi Email Anda Terlebih Dahulu']);

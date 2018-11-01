@@ -1,28 +1,13 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-<title>Dodmond</title>
+<title>ARISEN</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-{{-- <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all"> --}}
 <link rel="stylesheet" href="{{ url('/css/layout.css') }}" media="all" type="text/css" />
 </head>
 <body id="top">
-<div class="wrapper row0">
-  <div id="topbar" class="hoc clear"> 
-    <div class="fl_left">
-      <ul>
-      </ul>
-    </div>
-    <div class="fl_right">
-      <ul>
-        
-      <li><a href="auth/login">Masuk</a></li>
-        <li><a href="auth/register">Daftar</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+@include('header-name')
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -35,7 +20,6 @@
     </div>
     <div id="quickinfo" class="fl_right">
       <ul class="nospace inline">
-
       </ul>
     </div>
     <!-- ################################################################################################ -->
@@ -293,9 +277,9 @@
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<script src="layout/scripts/jquery.min.js"></script>
-<script src="layout/scripts/jquery.backtotop.js"></script>
-<script src="layout/scripts/jquery.mobilemenu.js"></script>
-<script src="layout/scripts/jquery.flexslider-min.js"></script>
+<script src="{{ url('/js/jquery.min.js') }}"></script>
+<script src="{{ url('/js/jquery.backtotop.js') }}"></script>
+<script src="{{ url('/js/jquery.mobilemenu.js') }}"></script>
+<script src="{{ url('/js/jquery.flexslider-min.js') }}"></script>
 </body>
 </html>

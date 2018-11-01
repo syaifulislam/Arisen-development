@@ -14,7 +14,20 @@ use App\Http\Middleware\SentinelCheck;
 */
 
 Route::get('/', function(){
+    if(Sentinel::check())
+        return view('index-login');
+
     return view('index');
+});
+
+Route::get('arbar','ArbarController@index');
+
+Route::get('bantuan',function(){
+    return view('bantuan');
+});
+
+Route::get('tentang-kami',function(){
+    return view('tentang-kami');
 });
 
 Route::prefix('auth')->group(function(){
@@ -48,5 +61,9 @@ Route::prefix('auth')->group(function(){
 
 Route::group(['middleware'=>SentinelCheck::class],function(){
     Route::get('/home-page','HomeController@index');
+    Route::get('/my-account','AccountController@index');
+    Route::get('/my-room','RoomController@index');
+    Route::get('/forum','ForumController@index');
+    Route::post('/verification','AccountController@verification');
 });
 

@@ -58,7 +58,7 @@
             }
         });
 
-        $('#pass-null').change(function(){
+        $('#pass-null').keypress(function(){
             if(this.value != '' && $('#user-null').val() != ''){
                 $('.login-submit').removeAttr('disabled');
                 $('.login-submit').removeAttr('style');

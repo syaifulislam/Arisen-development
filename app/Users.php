@@ -15,4 +15,8 @@ class Users extends \Cartalyst\Sentinel\Users\EloquentUser
         'password',
     ];
     protected $loginNames = ['username'];
+
+    public function user_details(){
+        return $this->hasOne('App\UserDetails','user_id');
+    }
 }
