@@ -6,9 +6,9 @@
           </ul>
         </div>
         <div id='cssmenu'class="fl_right">
-          {{-- <div>
-            <a href="#">Rp.{{$data->user_details ? $data->user_details->money : 0}}</a>
-          </div> --}}
+          <div>
+            <a href="#">Rp.{{Sentinel::getUser()->money }}</a>
+          </div>
           <ul>
           <li><a href='#'><span>Welcome, {{Sentinel::getUser()->first_name}}</span></a>
             <ul>

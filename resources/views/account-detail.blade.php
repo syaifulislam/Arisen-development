@@ -84,7 +84,7 @@
           <img class="profile-mar" src="/images/imgl.gif">
           <div class="detail-akun-id">
             <div class="username-user">
-            <h1 class="text-align">{{$data->first_name}} {{$data->last_name}}</h1>
+            <h1 class="text-align">{{Sentinel::getUser()->first_name}} {{Sentinel::getUser()->last_name}}</h1>
             </div>
             <div class="id-user">
               <h1 class="text-align">1701333260</h1>
