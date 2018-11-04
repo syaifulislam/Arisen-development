@@ -56,6 +56,7 @@
     <!-- ################################################################################################ -->
     <div class="content-2"> 
       <!-- ################################################################################################ -->
+      @if(Sentinel::getUser()->is_verif == 0)
         <div class="aktif-akun">
           <div class="status-user">
             <h1>Status:{{Sentinel::getUser()->is_verif == 1 ? 'TERAKTIFASI' : 'BELUM TERAKTIFASI'}}</h1>
@@ -78,11 +79,19 @@
                 <input  type="submit" name="login" class="login login-submit" value="AKTIFKAN">
               </form>
           </div>
+          @else
+          <div class="login-card">
+                <input class="aktifasi-text" type="text" name="bank_account_number" placeholder="{{$data->user_details->bank_account_number}}" disabled>
+                <input class="aktifasi-text" type="text" name="bank_account_name" placeholder="{{$data->user_details->bank_account_name}}" disabled>
+                <input class="aktifasi-text" type="text" name="bank_account_office" placeholder="{{$data->user_details->bank_account_office}}" disabled>
+          </div>
           @endif
         </div>
+        @endif
         <div class="content-l">
+          @if(Sentinel::getUser()->is_verif == 0)
           <img class="profile-mar" src="/images/imgl.gif">
-          <div class="detail-akun-id">
+              <div class="detail-akun-id">
             <div class="username-user">
             <h1 class="text-align">{{Sentinel::getUser()->first_name}} {{Sentinel::getUser()->last_name}}</h1>
             </div>
@@ -96,7 +105,29 @@
             <a href="#"><div class="button-tarik"></div></a>
             <a href="#"><div class="button-his-uang"></div></a>
             <a href="#"><div class="button-his-main"></div></a>
+            <!-- @if(Sentinel::getUser()->is_verif == 1)
+            <h1>Status: TERAKTIFASI</h1>
+            @endif -->
           </div>
+          @else 
+          <img class="profile-mar" style="margin-left: 40%;" src="/images/imgl.gif"> 
+          <div class="detail-akun-id" style="margin-left: 36%;">
+            <div class="username-user">
+            <h1 class="text-align">{{Sentinel::getUser()->first_name}} {{Sentinel::getUser()->last_name}}</h1>
+            </div>
+            <div class="id-user">
+              <h1 class="text-align">1701333260</h1>
+            </div>
+            <div class="saldo-user">
+            <h1 class="text-align">Rp.{{$data->user_details ? $data->user_details->money : 0}}</h1>
+            </div>
+            <a href="#"><div class="button-setor"></div></a>
+            <a href="#"><div class="button-tarik"></div></a>
+            <a href="#"><div class="button-his-uang"></div></a>
+            <a href="#"><div class="button-his-main"></div></a>
+            <h1>Status: TERAKTIFASI</h1>
+          </div>
+          @endif
         </div>
       <!-- ################################################################################################ -->
     </div>
