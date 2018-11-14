@@ -51,6 +51,18 @@
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
+    <div class="content-sea">
+      <div class="content-sea2">
+        <form class="example" action="#" >
+          <input type="text" placeholder="Cari Ruangan" name="search2">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <div class="content-cre">
+
+            <a href="/create-room"><i class="button-cre">Buat Ruangan</i></a>
+      </div>
+    </div>
     <div class="content"> 
       <!-- ################################################################################################ -->
       <div class="scrollable">
@@ -66,46 +78,16 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><a href="#">#21312</a></td>
-              <td>Untuk Nikah</td>
-              <td>Rp.5.000.000,00</td>
-              <td>Bulanan</td>
-              <td>2/10</td>
-              <td>lock</td>
-            </tr>
-            <tr>
-              <td><a href="#">#18612</a></td>
-              <td>Untuk Nikah 2</td>
-              <td>Rp.14.000.000,00</td>
-              <td>Bulanan</td>
-              <td>7/15</td>
-              <td>lock</td>
-            </tr>
-            <tr>
-              <td><a href="#">#13548</a></td>
-              <td>Untuk Nikah 3</td>
-              <td>Rp.23.000.000,00</td>
-              <td>Bulanan</td>
-              <td>6/20</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td><a href="#">#15487</a></td>
-              <td>Untuk Nikah 4</td>
-              <td>Rp.55.000.000,00</td>
-              <td>Bulanan</td>
-              <td>1/10</td>
-              <td>lock</td>
-            </tr>
-            <tr>
-              <td><a href="#">#13518</a></td>
-              <td>Untuk Nikah 5</td>
-              <td>Rp.32.000.000,00</td>
-              <td>Bulanan</td>
-              <td>2/5</td>
-              <td></td>
-            </tr>
+            @foreach ($dataRoom as $item)
+              <tr>
+              <td><a href="#">#{{$item->generate_id}}</a></td>
+                <td>{{$item->room_name}}</td>
+                <td>Rp. {{$item->price_per_player}}</td>
+                <td>{{$item->period}}</td>
+                <td>{{$item->total_player_join}}/{{$item->total_player}}</td>
+                <td>{{$item->password ? 'lock' : ''}}</td>
+              </tr> 
+            @endforeach
           </tbody>
         </table>
       </div>

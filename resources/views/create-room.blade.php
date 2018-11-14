@@ -5,8 +5,8 @@
 <title>ARISEN</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link rel="stylesheet" href="{{ url('/css/layout.css') }}" media="all" type="text/css" />
-<link rel="stylesheet" href="{{ url('/css/login.css') }}" media="all" type="text/css" />
+<link rel="stylesheet" href="{{ url('/css/layout.css') }}" media="screen" type="text/css" />
+<link rel="stylesheet" href="{{ url('/css/login.css') }}" media="screen" type="text/css" />
 
 </head>
 <body id="top">
@@ -31,7 +31,6 @@
   <nav id="mainav" class="hoc clear"> 
     <!-- ################################################################################################ -->
     @include('nav-bar')
-
     <!-- ################################################################################################ -->
   </nav>
 </div>
@@ -43,7 +42,7 @@
     <!-- ################################################################################################ -->
    
     <!-- ################################################################################################ -->
-    <h6 class="heading">Detail Akun</h6>
+    <h6 class="heading">Buat Ruangan</h6>
     <!-- ################################################################################################ -->
   </section>
 </div>
@@ -54,81 +53,46 @@
   <main class="hoc container clear" > 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <div class="content-2"> 
+    <div > 
       <!-- ################################################################################################ -->
-      @if(Sentinel::getUser()->is_verif == 0)
-        <div class="aktif-akun">
-          <div class="status-user">
-            <h1>Status:{{Sentinel::getUser()->is_verif == 1 ? 'TERAKTIFASI' : 'BELUM TERAKTIFASI'}}</h1>
-          </div>
-          @if (!$data->user_details)
-          <div  class="login-card">
-              <form action="verification" method="POST" enctype="multipart/form-data">
-                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                <input class="aktifasi-text" type="text" name="bank_account_number" placeholder="Nomor Rekening Anda">
-                <input class="aktifasi-text" type="text" name="bank_account_name" placeholder="Nama Pemilik Rekening">
-                <input class="aktifasi-text" type="text" name="bank_account_office" placeholder="Kantor Cabang">
-                <label>Contoh Foto Aktifasi</label> 
-                <div class="contoh-aktifasi"></div>
-                  <div class="col-lg-12">
-                    <label>Masukan Berkas Anda</label> 
-                    <input type="file" name="fileToUpload" id="fileToUpload" class="chs-file">
+        <div class="add-ruangan">
 
-                    <p>Berkas Maximal 5 MB.</p>                  
+          <div  class="login-card">
+              <form method="POST" action="create-room" enctype="multipart/form-data">
+                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                <input class="aktifasi-text" type="text" name="room_name" placeholder="Judul Arisan Anda">
+                <div class="add-nominal">
+                  <div class="currency">Rp</div>
+                  <input  type="number" name="price_per_player" min="10000" step="500" data-number-stepfactor="10000" placeholder="Biaya Per Orang">
+                </div>
+                <select name="period" class="arisan-per2">
+                  <option value="">-----Tentukan Berlangsungnya Arisan-----</option>
+                  <option value="Mingguan">Mingguan</option>
+                  <option value="Bulanan">Bulanan</option>
+                  <option value="Tahunan">Tahunan</option>
+                </select>
+                <div class="add-user">
+                  <div class="inf-user2">Pemain</div>
+                  <input  type="number" name="total_player" min="2" max="100" step="1" data-number-stepfactor="10000" placeholder="Total Pemain">
+                </div>
+                <div class="kunci">
+                  <div class="kunci2">
+                      Kunci <input class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="private" id="yesCheck"> 
                   </div>
-                <input  type="submit" name="login" class="login login-submit" value="AKTIFKAN">
+                  <div class="kunci3">
+                      Tidak <input class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="public" id="noCheck">
+                  </div>
+                </div>
+                <div id="ifYes" style="display:none">
+                  <input type='password' id='yes' name='password' placeholder="Masukan Kata Sandi">
+                  <input type='password' id='acc' name='passwordConfirm' placeholder="Masukan Ulang Kata Sandi">
+                </div>
+
+                <input  type="submit" name="login" class="login login-submit" value="BUAT RUANGAN">
               </form>
           </div>
-          @else
-          <div class="login-card">
-                <input class="aktifasi-text" type="text" name="bank_account_number" placeholder="{{$data->user_details->bank_account_number}}" disabled>
-                <input class="aktifasi-text" type="text" name="bank_account_name" placeholder="{{$data->user_details->bank_account_name}}" disabled>
-                <input class="aktifasi-text" type="text" name="bank_account_office" placeholder="{{$data->user_details->bank_account_office}}" disabled>
-          </div>
-          @endif
         </div>
-        @endif
-        <div class="content-l">
-          @if(Sentinel::getUser()->is_verif == 0)
-          <img class="profile-mar" src="/images/imgl.gif">
-              <div class="detail-akun-id">
-            <div class="username-user">
-            <h1 class="text-align">{{Sentinel::getUser()->first_name}} {{Sentinel::getUser()->last_name}}</h1>
-            </div>
-            <div class="id-user">
-            <h1 class="text-align">{{Sentinel::getUser()->user_code}}</h1>
-            </div>
-            <div class="saldo-user">
-            <h1 class="text-align">{{Money::IDR(Sentinel::getUser()->money,true)->format()}}</h1>
-            </div>
-            <a href="#"><div class="button-setor"></div></a>
-            <a href="#"><div class="button-tarik"></div></a>
-            <a href="#"><div class="button-his-uang"></div></a>
-            <a href="#"><div class="button-his-main"></div></a>
-            <!-- @if(Sentinel::getUser()->is_verif == 1)
-            <h1>Status: TERAKTIFASI</h1>
-            @endif -->
-          </div>
-          @else 
-          <img class="profile-mar" style="margin-left: 40%;" src="/images/imgl.gif"> 
-          <div class="detail-akun-id" style="margin-left: 36%;">
-            <div class="username-user">
-            <h1 class="text-align">{{Sentinel::getUser()->first_name}} {{Sentinel::getUser()->last_name}}</h1>
-            </div>
-            <div class="id-user">
-              <h1 class="text-align">{{Sentinel::getUser()->user_code}}</h1>
-            </div>
-            <div class="saldo-user">
-            <h1 class="text-align">{{Money::IDR($data->user_details->money,true)->format()}}</h1>
-            </div>
-            <a href="/setor"><div class="button-setor"></div></a>
-            <a href="/tarik"><div class="button-tarik"></div></a>
-            <a href="/riwayat-keuangan"><div class="button-his-uang"></div></a>
-            <a href="#"><div class="button-his-main"></div></a>
-            <h1>Status: TERAKTIFASI</h1>
-          </div>
-          @endif
-        </div>
+
       <!-- ################################################################################################ -->
     </div>
 
@@ -140,7 +104,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row4 bgded overlay" style="background-image:url('/images/backgrounds/03.png');">
+<div class="wrapper row4 bgded overlay" style="background-image:url('images/backgrounds/03.png');">
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div class="center btmspace-50">
@@ -176,7 +140,7 @@
       </div>
       <div class="one_third">
         <h6 class="heading">Magna mattis nibh ut</h6>
-        <figure><a href="#"><img class="borderedbox inspace-10 btmspace-15" src="/images/320x168.png" alt=""></a>
+        <figure><a href="#"><img class="borderedbox inspace-10 btmspace-15" src="images/320x168.png" alt=""></a>
           <figcaption>
             <h6 class="nospace font-x1"><a href="#">Proin commodo semper</a></h6>
             <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
@@ -215,8 +179,9 @@
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<script src="{{ url('/js/jquery.min.js') }}"></script>
-<script src="{{ url('/js/jquery.backtotop.js') }}"></script>
-<script src="{{ url('/js/jquery.mobilemenu.js') }}"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.backtotop.js"></script>
+<script src="js/jquery.mobilemenu.js"></script>
+<script src="js/jquery.tambah-ruangan.js"></script>
 </body>
 </html>

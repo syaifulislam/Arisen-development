@@ -37,6 +37,7 @@ class UserController extends Controller
         $credentials = $request->except('_token','confirmPassword');
         $credentials['is_verif'] = 0;
         $credentials['role_user'] = 'user';
+        $credentials['user_code'] = 'AR-'.Carbon::now()->setTimezone('+7')->format('Ymd').'-'.rand(10000,99999);
         $register = Sentinel::register($credentials);
         $encrypt = Crypt::encryptString($register->id.'/'.Carbon::now()->setTimezone('+7')->format('Y-m-d H:i:s'));
         $url = $request->server->getHeaders()['ORIGIN'].'/auth/verifEmail/'.$encrypt;

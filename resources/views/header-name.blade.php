@@ -7,7 +7,7 @@
         </div>
         <div id='cssmenu'class="fl_right">
           <div>
-            <a href="#">Rp.{{Sentinel::getUser()->money }}</a>
+            <a href="#">{{ Money::IDR(Sentinel::getUser()->money,true)->format() }}</a>
           </div>
           <ul>
           <li><a href='#'><span>Welcome, {{Sentinel::getUser()->first_name}}</span></a>

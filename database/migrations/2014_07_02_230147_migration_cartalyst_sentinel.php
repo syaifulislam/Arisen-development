@@ -114,6 +114,7 @@ class MigrationCartalystSentinel extends Migration
             $table->string('gender')->nullable();
             $table->string('role_user');
             $table->integer('is_verif')->nullable();
+            $table->string('user_code')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->engine = 'InnoDB';
