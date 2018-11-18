@@ -72,5 +72,10 @@ Route::group(['middleware'=>SentinelCheck::class],function(){
     Route::post('/create-room','RoomController@createRoom');
     Route::post('/request-money','SetorController@requestMoney');
     Route::get('/riwayat-keuangan','SetorController@history');
+    Route::get('/riwayat-permainan','RiwayatPermainanController@index');
+    Route::get('/room/{id}','RoomController@room');
+    Route::post('/roomComment/{id}','RoomCommentController@create');
+    Route::get('/roomComment/{id}','RoomCommentController@index');
+    Route::get('/roomComments/{id}','RoomCommentController@update');
 });
 

@@ -6,8 +6,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="{{ url('/css/layout.css') }}" media="screen" type="text/css" />
-<link rel="stylesheet" href="{{ url('/css/login.css') }}" media="screen" type="text/css" />
-
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -42,60 +40,82 @@
     <!-- ################################################################################################ -->
    
     <!-- ################################################################################################ -->
-    <h6 class="heading">Buat Ruangan</h6>
+    <h6 class="heading">RIWAYAT PERMAINAN</h6>
     <!-- ################################################################################################ -->
   </section>
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3" >
-  <main class="hoc container clear" > 
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <div > 
+    <div class="content-sea">
+      <div class="content-sea2">
+      </div>
+    </div>
+    <div class="content"> 
       <!-- ################################################################################################ -->
-        <div class="add-ruangan">
-
-          <div  class="login-card">
-              <form method="POST" action="create-room" enctype="multipart/form-data">
-                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                <input class="aktifasi-text" type="text" name="room_name" placeholder="Judul Arisan Anda">
-                <div class="add-nominal">
-                  <div class="currency">Rp</div>
-                  <input  type="number" name="price_per_player" min="10000" step="500" data-number-stepfactor="10000" placeholder="Biaya Per Orang">
-                </div>
-                <select name="period" class="arisan-per2">
-                  <option value="">-----Tentukan Berlangsungnya Arisan-----</option>
-                  <option value="Mingguan">Mingguan</option>
-                  <option value="Bulanan">Bulanan</option>
-                  <option value="Tahunan">Tahunan</option>
-                </select>
-                <div class="add-user">
-                  <div class="inf-user2">Pemain</div>
-                  <input  type="number" name="total_player" min="2" max="100" step="1" data-number-stepfactor="10000" placeholder="Total Pemain">
-                </div>
-                <div class="kunci">
-                  <div class="kunci2">
-                      Kunci <input class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="private" id="yesCheck"> 
-                  </div>
-                  <div class="kunci3">
-                      Tidak <input class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="public" id="noCheck">
-                  </div>
-                </div>
-                <div id="ifYes" style="display:none">
-                  <input type='password' id='yes' name='password' placeholder="Masukan Kata Sandi">
-                  <input type='password' id='acc' name='passwordConfirm' placeholder="Masukan Ulang Kata Sandi">
-                </div>
-
-                <input  type="submit" name="login" class="login login-submit" value="BUAT RUANGAN">
-              </form>
-          </div>
-        </div>
-
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th class="th-id">Tanggal</th>
+              <th class="th-title">Judul</th>
+              <th class="th-nominal">Nominal</th>
+              <th class="th-undian">Undian</th>
+              <th class="th-user">Pengguna</th>
+              <th class="th-status">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#">11/11/18</a></td>
+              <td>Untuk Nikah</td>
+              <td>Rp.5.000.000,00</td>
+              <td>Bulanan</td>
+              <td>10/10</td>
+              <td>Sedang Berlangsung</td>
+            </tr>
+            <tr>
+              <td><a href="#">10/11/18</a></td>
+              <td>Untuk Nikah 2</td>
+              <td>Rp.14.000.000,00</td>
+              <td>Bulanan</td>
+              <td>15/15</td>
+              <td>Sedang Berlangsung</td>
+            </tr>
+            <tr>
+              <td><a href="#">05/06/16</a></td>
+              <td>Untuk Nikah 3</td>
+              <td>Rp.23.000.000,00</td>
+              <td>Bulanan</td>
+              <td>20/20</td>
+              <td>Selesai</td>
+            </tr>
+            <tr>
+              <td><a href="#">04/05/16</a></td>
+              <td>Untuk Nikah 4</td>
+              <td>Rp.55.000.000,00</td>
+              <td>Bulanan</td>
+              <td>10/10</td>
+              <td>Selesai</td>
+            </tr>
+            <tr>
+              <td><a href="#">01/02/16</a></td>
+              <td>Untuk Nikah 5</td>
+              <td>Rp.32.000.000,00</td>
+              <td>Bulanan</td>
+              <td>5/5</td>
+              <td>Selesai</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
       <!-- ################################################################################################ -->
     </div>
-
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>
@@ -113,6 +133,5 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.backtotop.js"></script>
 <script src="js/jquery.mobilemenu.js"></script>
-<script src="js/jquery.tambah-ruangan.js"></script>
 </body>
 </html>

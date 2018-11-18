@@ -8,24 +8,24 @@
     @if (Route::getCurrentRoute()->uri == 'forum')
     <li class="active"><a href="forum">FORUM</a></li>        
     @else
-    <li><a href="forum">FORUM</a></li>        
+    <li><a href="/forum">FORUM</a></li>        
     @endif
 
     @if (Route::getCurrentRoute()->uri == 'arbar')
     <li class="active"><a href="arbar">ARBAR</a></li>        
     @else
-    <li><a href="arbar">ARBAR</a></li>        
+    <li><a href="/arbar">ARBAR</a></li>        
     @endif
 
     @if (Route::getCurrentRoute()->uri == 'bantuan')
     <li class="active"><a href="bantuan">BANTUAN</a></li>        
     @else
-    <li><a href="bantuan">BANTUAN</a></li>        
+    <li><a href="/bantuan">BANTUAN</a></li>        
     @endif
 
     @if (Route::getCurrentRoute()->uri == 'tentang-kami')
     <li class="active"><a href="tentang-kami">TENTANG KAMI</a></li>        
     @else
-    <li><a href="tentang-kami">TENTANG KAMI</a></li>        
+    <li><a href="/tentang-kami">TENTANG KAMI</a></li>        
     @endif
   </ul>

@@ -54,7 +54,32 @@
     <div class="content"> 
       <!-- ################################################################################################ -->
       <div class="scrollable">
-        
+        <div class="scrollable">
+          <table>
+            <thead>
+              <tr>
+                <th class="th-id">ID</th>
+                <th class="th-title">Judul</th>
+                <th class="th-nominal">Nominal</th>
+                <th class="th-undian">Undian</th>
+                <th class="th-user">Pengguna</th>
+                <th class="th-status">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach ($dataRoom as $item)
+                <tr>
+                <td><a href="#">#{{$item->generate_id}}</a></td>
+                  <td>{{$item->room_name}}</td>
+                  <td>Rp. {{$item->price_per_player}}</td>
+                  <td>{{$item->period}}</td>
+                  <td>{{$item->total_player_join}}/{{$item->total_player}}</td>
+                  <td>{{$item->password ? 'lock' : 'public'}}</td>
+                </tr> 
+              @endforeach
+            </tbody>
+          </table>
+        </div>
 
 
 
@@ -145,8 +170,8 @@
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<script src="layout/scripts/jquery.min.js"></script>
-<script src="layout/scripts/jquery.backtotop.js"></script>
-<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.backtotop.js"></script>
+<script src="js/jquery.mobilemenu.js"></script>
 </body>
 </html>

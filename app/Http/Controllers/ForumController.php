@@ -9,7 +9,7 @@ use Sentinel;
 class ForumController extends Controller
 {
     public function index(){
-        $dataRoom = Room::where('created_by',Sentinel::getUser()->id)->get();
+        $dataRoom = Room::get();
         return view('forum',compact('dataRoom'));
     }
 }

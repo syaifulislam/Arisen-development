@@ -12,9 +12,9 @@
           <ul>
           <li><a href='#'><span>Welcome, {{Sentinel::getUser()->first_name}}</span></a>
             <ul>
-              <li><a href='my-account'><span>Akun Saya</span></a></li>
-              <li><a href='my-room'><span>Ruangan Saya</span></a></li>
-              <li><a href='auth/logout'><span>Keluar</span></a></li>
+              <li><a href='/my-account'><span>Akun Saya</span></a></li>
+              <li><a href='/my-room'><span>Ruangan Saya</span></a></li>
+              <li><a href='/auth/logout'><span>Keluar</span></a></li>
             </ul>
            </li>
           </ul>

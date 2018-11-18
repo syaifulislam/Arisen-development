@@ -24,7 +24,9 @@ class RoomTable extends Migration
             $table->string('password')->nullable();
             $table->string('created_by');
             $table->string('generate_id');
+            $table->date('period_start_date');
             $table->enum('period',array('Mingguan','Bulanan','Tahunan'));
+            $table->enum('period_status',array('Belum Mulai','Sedang Berlangsung','Sudah Selesai'));
             $table->timestamps();
             $table->softDeletes();
         });
