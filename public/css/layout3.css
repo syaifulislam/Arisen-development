@@ -274,7 +274,7 @@
 #contactForm { 
   display: none;
 
-  border: 6px solid blue; 
+  border: 6px solid gold; 
   padding: 2em;
   width: 400px;
   text-align: center;
@@ -285,6 +285,19 @@
   transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%)
   
+}
+
+.fld-pass-room{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 10px;
+  background-color:whitesmoke;
+  font-weight: 500;
+  font-size: 1.2em;
+  border: none;
+  height: 30px;
+
 }
 
 .input2, .textarea2 { 
@@ -1371,9 +1384,9 @@ input:focus, textarea:focus, *:required:focus{border-color:#56AED4;}
 /* Navigation */
 #mainav{color:#FFFFFF; background-color:#629BAF;}
 #mainav li a{color:inherit;}
-#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#2B4953; background-color:inherit;}
-#mainav li li a, #mainav .active li a{ color:#FFFFFF; background-color:rgba(98,155,175,.5);/* #629BAF */ border-color:rgba(0,0,0,.6);}
-#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#629BAF;}
+#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:gold; background-color:inherit;}
+#mainav li li a, #mainav .active li a{ color:#FFFFFF; background-color:gold;/* #629BAF */ border-color:rgba(0,0,0,.6);}
+#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:gold;}
 #mainav form select{color:#4A4A4A; background-color:#FFFFFF;}
 
 #breadcrumb ul{border-color:rgba(255,255,255,.1);}

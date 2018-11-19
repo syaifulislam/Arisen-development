@@ -1,70 +1,59 @@
 <div class="wrapper row4 bgded overlay" style="background-image:url('/images/backgrounds/03.png');">
-    <footer id="footer" class="hoc clear"> 
-      <!-- ################################################################################################ -->
-      <div class="center btmspace-50">
-        <h2 class="heading">Dodmond</h2>
-        <nav>
-          <ul class="nospace inline pushright uppercase">
-            <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Cookies</a></li>
-            <li><a href="#">Disclaimer</a></li>
-          </ul>
-        </nav>
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="center btmspace-50">
+      <div class="logo-footer">
+        
       </div>
-      <!-- ################################################################################################ -->
-      <hr class="btmspace-50">
-      <!-- ################################################################################################ -->
-      <div class="group">
-        <div class="one_third first">
-          <h6 class="heading">Curabitur varius cursus</h6>
-          <ul class="nospace btmspace-30 linklist contact">
-            <li><i class="fa fa-map-marker"></i>
-              <address>
-              Street Name &amp; Number, Town, Postcode/Zip
-              </address>
-            </li>
-            <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
-            <li><i class="fa fa-fax"></i> +00 (123) 456 7890</li>
-            <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
-          </ul>
-        </div>
-        <div class="one_third">
-          <h6 class="heading">Magna mattis nibh ut</h6>
-          <figure><a href="#"><img class="borderedbox inspace-10 btmspace-15" src="/images/320x168.png" alt=""></a>
-            <figcaption>
-              <h6 class="nospace font-x1"><a href="#">Proin commodo semper</a></h6>
-              <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="one_third">
-          <h6 class="heading">Potenti ullamcorper</h6>
-          <p class="nospace btmspace-30">Vel dolor vestibulum consequat nullam porttitor suspendisse potenti.</p>
-          <form method="post" action="#">
-            <fieldset>
-              <legend>Newsletter:</legend>
-              <input class="btmspace-15" type="text" value="" placeholder="Name">
-              <input class="btmspace-15" type="text" value="" placeholder="Email">
-              <button type="submit" value="submit">Submit</button>
-            </fieldset>
-          </form>
-        </div>
+      <nav>
+        <ul class="nospace inline pushright uppercase">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">FORUM</a></li>
+          <li><a href="#">ARBAR</a></li>
+          <li><a href="#">BANTUAN</a></li>
+          <li><a href="#">TENTANG KAMI</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- ################################################################################################ -->
+    <hr class="btmspace-50">
+    <!-- ################################################################################################ -->
+    <div class="group">
+      <div class="one_third first">
+        <h6 class="heading" style="text-align: center;">Hubungi Kami :</h6>
+        <ul class="nospace btmspace-30 linklist contact">
+          <li><i class="fa fa-map-marker"></i>
+            <address>
+            Jl. Cempaka Baru VII , no.12 , <br>Jakarta-Pusat, 10640
+            </address>
+          </li>
+          <li><i class="fa fa-phone"></i> +62 (081) 315 905 776</li>
+          <li><i class="fa fa-fax"></i>(021) 425 258 7</li>
+          <li><i class="fa fa-envelope-o"></i>ARISEN@gmail.com</li>
+        </ul>
       </div>
-      <!-- ################################################################################################ -->
-    </footer>
-  </div>
+      <div class="one_third">
+        <h6 class="heading" style="text-align: center;">Temui Kami :</h6>
+        <figure><a href="#"><img class="borderedbox inspace-10 btmspace-15" src="../images/320x168.png" alt=""></a>
+
+        </figure>
+      </div>
+      <div class="one_third">
+        <h6 class="heading" style="text-align: center;">Mitra Kami :</h6>
+        <div style="background-color: blue; width: 100%; height: 100px;"></div>
+        <div style="background-color: blue; width: 100%; height: 100px; margin-top: 10px;"></div>
+     </div>
+    </div>
+    <!-- ################################################################################################ -->
+  </footer>
+</div>`
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <div class="wrapper row5">
     <div id="copyright" class="hoc clear"> 
       <!-- ################################################################################################ -->
-      <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">Domain Name</a></p>
-      <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+      <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">ARISEN</a></p>
       <!-- ################################################################################################ -->
     </div>
   </div>

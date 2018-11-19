@@ -106,7 +106,7 @@
 <div id="contactForm">
 
   <h1>Masukan Password</h1>
-    <input class="passwordRoom"  type="password" placeholder="password" />
+    <input class="fld-pass-room"  type="password" placeholder="password" />
     <input class="formBtn btnPasswordRoom" type="submit" value="ALIHKAN" />
 </div>
 <!-- ################################################################################################ -->

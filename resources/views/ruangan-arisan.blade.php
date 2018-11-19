@@ -126,7 +126,7 @@
           <div class="scrollable">
             <div class="text-kolom"><h1>kolom komentar</h1></div>
             <div class="swimlane-comment" style="overflow-y:hidden;">
-             <div class="box2" id="box-comment" style="overflow-y:scroll;height: 450px;">
+             <div class="box2" id="box-comment" style="overflow-y:scroll ; height: 450px;">
                 <ul id="first-list" class="comment-list">
                 </ul>
             </div>          
@@ -158,7 +158,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
 <!-- JAVASCRIPTS -->
 <script src="../js/jquery.min.js"></script>
 <script src="../js/jquery.backtotop.js"></script>
