@@ -13,6 +13,10 @@ use App\Http\Middleware\SentinelCheck;
 |
 */
 
+Route::get('home-admin',function(){
+    return view('home-admin');
+});
+
 Route::get('/', function(){
     if(Sentinel::check())
         return view('index-login');
@@ -77,5 +81,6 @@ Route::group(['middleware'=>SentinelCheck::class],function(){
     Route::post('/roomComment/{id}','RoomCommentController@create');
     Route::get('/roomComment/{id}','RoomCommentController@index');
     Route::get('/roomComments/{id}','RoomCommentController@update');
+    Route::put('/checkRoom/{id}','RoomController@checkPassword');
 });
 

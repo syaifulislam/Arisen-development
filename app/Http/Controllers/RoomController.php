@@ -45,6 +45,23 @@ class RoomController extends Controller
 
     public function room($id){
         $data = Room::where('generate_id',$id)->first();
-        return view('ruangan-arisan',compact('id','data'));
+        $getTime = Carbon::now()->setTimezone('+7');
+        $getDataTimes = $data->period_start_date." 07:00:00";
+        return view('ruangan-arisan',compact('id','data','getDataTimes'));
+    }
+
+    public function checkPassword($id, Request $request){
+        $password = md5($request->input('password'));
+        $checkData = Room::where('generate_id',$id)->first();
+        if($checkData->password == $password){
+            return response()->json([
+                "data"=> true,
+                "message"=>""
+            ]);
+        }
+        return response()->json([
+            "data"=>false,
+            "message"=>"Password Salah"
+        ]);
     }
 }
