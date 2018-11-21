@@ -2,7 +2,7 @@
 
 <html lang="">
 <head>
-<title>ARISEN</title>
+<title>ARISEN-Akun Saya</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="{{ url('/css/layout.css') }}" media="all" type="text/css" />
@@ -67,7 +67,11 @@
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <input class="aktifasi-text" type="text" name="bank_account_number" placeholder="Nomor Rekening Anda">
                 <input class="aktifasi-text" type="text" name="bank_account_name" placeholder="Nama Pemilik Rekening">
-                <input class="aktifasi-text" type="text" name="bank_account_office" placeholder="Kantor Cabang">
+                <select name="period" class="arisan-per2">
+                  <option value="">---------------Pilih Bank Anda---------------</option>
+                  <option value="bca">BCA</option>
+                  <option value="mandiri">Mandiri</option>
+                </select>
                 <label>Contoh Foto Aktifasi</label> 
                 <div class="contoh-aktifasi"></div>
                   <div class="col-lg-12">

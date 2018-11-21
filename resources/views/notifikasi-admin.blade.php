@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <title>ARISEN Admin</title>
+    <title>ARISEN Admin - Notifikasi</title>
     <meta name="description" content="">
     <meta name="author" content="templatemo">
 
@@ -37,8 +37,8 @@
         </div>
         <nav class="templatemo-left-nav">          
           <ul>
-            <li><a href="#" class="active"><i class="fa fa-home fa-fw"></i>Halaman Utama</a></li>
-            <li><a href="data-visualization.html"><i class="fa fa-envelope fa-fw"></i>Notifikasi</a></li>
+            <li><a href="#" ><i class="fa fa-home fa-fw"></i>Halaman Utama</a></li>
+            <li><a href="data-visualization.html" class="active"><i class="fa fa-envelope fa-fw"></i>Notifikasi</a></li>
             <li><a href="data-visualization.html"><i class="fa fa-check-circle fa-fw"></i>Aktivasi Akun</a></li>
             <li><a href="maps.html"><i class="fa fa-bank fa-fw"></i>Tarik Dana</a></li>
             <li><a href="manage-users.html"><i class="fa fa-money fa-fw"></i>Setor Dana</a></li>

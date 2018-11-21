@@ -1,8 +1,8 @@
 <ul class="clear">
     @if (Route::getCurrentRoute()->uri == '/')
-    <li class="active"><a href="/">Home</a></li>
+    <li class="active"><a href="/"><i class="fa fa-home"></i></a></li>
     @else
-    <li><a href="/">Home</a></li>
+    <li><a href="/"><i class="fa fa-home"></i></a></li>
     @endif
 
     @if (Route::getCurrentRoute()->uri == 'forum')

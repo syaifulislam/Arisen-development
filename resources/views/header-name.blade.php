@@ -1,10 +1,15 @@
   @if (Sentinel::check())
   <div class="wrapper row0">
       <div id="topbar" class="hoc clear"> 
-        <div class="fl_left">
-          <ul>
-          </ul>
-        </div>
+          <div class="fl_left">
+              <ul>
+                <a class="pem" href="#">
+                  <li>
+                    <i></i>Pemberitahuan
+                  </li>
+                </a>
+              </ul>
+            </div>
         <div id='cssmenu'class="fl_right">
           <div>
             <a href="#">{{ Money::IDR(Sentinel::getUser()->money,true)->format() }}</a>

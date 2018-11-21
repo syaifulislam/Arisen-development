@@ -7,7 +7,7 @@
       </div>
       <nav>
         <ul class="nospace inline pushright uppercase">
-          <li><a href="#">HOME</a></li>
+          <li><a href="#"><i class="fa fa-home"></i></a></li>
           <li><a href="#">FORUM</a></li>
           <li><a href="#">ARBAR</a></li>
           <li><a href="#">BANTUAN</a></li>
@@ -29,7 +29,7 @@
           </li>
           <li><i class="fa fa-phone"></i> +62 (081) 315 905 776</li>
           <li><i class="fa fa-fax"></i>(021) 425 258 7</li>
-          <li><i class="fa fa-envelope-o"></i>ARISEN@gmail.com</li>
+          <li><i class="fa fa-envelope-o"></i>arisan.arisen@gmail.com</li>
         </ul>
       </div>
       <div class="one_third">
@@ -42,7 +42,7 @@
         <h6 class="heading" style="text-align: center;">Mitra Kami :</h6>
         <div style="background-color: blue; width: 100%; height: 100px;"></div>
         <div style="background-color: blue; width: 100%; height: 100px; margin-top: 10px;"></div>
-     </div>
+    `</div>
     </div>
     <!-- ################################################################################################ -->
   </footer>

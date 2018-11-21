@@ -2,7 +2,7 @@
 
 <html lang="">
 <head>
-<title>ARISEN</title>
+<title>ARISEN-Forum</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="{{ url('/css/layout3.css') }}" media="screen" type="text/css" />
@@ -59,7 +59,6 @@
         </form>
       </div>
       <div class="content-cre">
-
             <a href="/create-room"><i class="button-cre">Buat Ruangan</i></a>
       </div>
     </div>
@@ -107,7 +106,7 @@
 
   <h1>Masukan Password</h1>
     <input class="fld-pass-room"  type="password" placeholder="password" />
-    <input class="formBtn btnPasswordRoom" type="submit" value="ALIHKAN" />
+    <input class="formBtn btnPasswordRoom" type="submit" value="MASUK" />
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->

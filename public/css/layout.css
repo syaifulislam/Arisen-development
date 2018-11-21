@@ -66,15 +66,15 @@
 #cssmenu > ul > li:hover > a {
   background: url(/images/highlight-bg.png) repeat;
   text-decoration-color: white;
-  text-shadow: 0 -1px 0 #97321f;
-  text-shadow: 0 -1px 0 rgba(122, 42, 26, 0.64);
+  text-shadow: 0 -1px 0 gold;
+  text-shadow: 0 -1px 0 gold;
 }
 #cssmenu > ul > li > a > span {
   line-height: 18px;
 }
 #cssmenu > ul > li.active > a,
 #cssmenu > ul > li > a:active {
-  background: url(/images/hover.png) repeat;
+  background: url(/images/fhover.png) repeat;
 }
 /* Childs */
 #cssmenu > ul ul {
@@ -272,6 +272,135 @@
   background-color: black;
 }
 
+.form-aktifkan-akun{
+  background-color: black; 
+  width: 100%; 
+  height: 200px; 
+  margin-bottom: 10px;
+}
+
+#contactForm-view { 
+  display: none;
+
+  border: 6px solid blue; 
+  padding: 2em;
+  width: 600px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+  
+}
+
+#form-view-trk { 
+  display: none;
+
+  border: 6px solid blue; 
+  padding: 2em;
+  width: 600px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+  
+}
+
+#form-view-str { 
+  display: none;
+
+  border: 6px solid blue; 
+  padding: 2em;
+  width: 600px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+  
+}
+
+#contactForm-view-fnc { 
+  display: none;
+
+  border: 6px solid blue; 
+  padding: 2em;
+  width: 600px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+  
+}
+
+#contactForm-view-fnc2 { 
+  display: none;
+
+  border: 6px solid blue; 
+  padding: 2em;
+  width: 600px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+  
+}
+
+#contactForm-view { 
+  display: none;
+
+  border: 6px solid blue; 
+  padding: 2em;
+  width: 600px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+  
+}
+
+.form-acc-trk { 
+
+  width: 100%; 
+  height: 200px; 
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.form-acc-trk-upl { 
+
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%; 
+  height: auto; 
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.contactForm-view-img { 
+  background-color: black; 
+  width: 100%; 
+  height: 500px; 
+
+}
+
+
 #contactForm { 
   display: none;
 
@@ -303,7 +432,7 @@
 .formBtn { 
   width: 100%;
   display: inline-block;
-  
+  margin-bottom: 10px;
   background: #4d90fe;
   color: #fff;
   font-weight: 500;
@@ -1425,7 +1554,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#56AED4;}
 /* Navigation */
 #mainav{color:#FFFFFF; background-color:#629BAF;}
 #mainav li a{color:inherit;}
-#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#2B4953; background-color:inherit;}
+#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:gold; background-color:inherit;}
 #mainav li li a, #mainav .active li a{ color:#FFFFFF; background-color:rgba(98,155,175,.5);/* #629BAF */ border-color:rgba(0,0,0,.6);}
 #mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#629BAF;}
 #mainav form select{color:#4A4A4A; background-color:#FFFFFF;}
@@ -1561,7 +1690,7 @@ table a, #comments a{background-color:inherit;}
 }
 
 .pem{
-
+ display: block;
 }
 
 .pem:hover{
@@ -1731,6 +1860,7 @@ footer { padding: 15px; }
 .templatemo-left-nav a.active,
 .templatemo-left-nav a:hover {
   background: #18191b;
+  color: gold;
   border-left: 8px solid blue;
 }
 .templatemo-left-nav a {
