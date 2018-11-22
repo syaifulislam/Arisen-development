@@ -46,10 +46,14 @@ Route::get('home-admin',function(){
 });
 
 Route::get('/', function(){
+<<<<<<< Updated upstream
     if(Sentinel::check())
         return view('index-login');
 
     return view('index');
+=======
+    return view('home-index');
+>>>>>>> Stashed changes
 });
 
 Route::get('arbar','ArbarController@index');
