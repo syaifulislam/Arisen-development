@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <title>ARISEN Admin - Setor Dana</title>
+    <title>ARISEN Admin - Laporan Keuangan</title>
     <meta name="description" content="">
     <meta name="author" content="templatemo">
 
@@ -40,9 +40,10 @@
             <li><a href="#" ><i class="fa fa-home fa-fw"></i>Halaman Utama</a></li>
             <li><a href="data-visualization.html"><i class="fa fa-check-circle fa-fw"></i>Aktivasi Akun</a></li>
             <li><a href="maps.html" ><i class="fa fa-bank fa-fw"></i>Tarik Dana</a></li>
-            <li><a href="manage-users.html" class="active"><i class="fa fa-money fa-fw"></i>Setor Dana</a></li>
+            <li><a href="manage-users.html"><i class="fa fa-money fa-fw"></i>Setor Dana</a></li>
             <li><a href="preferences.html"><i class="fa fa-users fa-fw"></i>ARBAR</a></li>
             <li><a href="preferences.html"><i class="fa fa-history fa-fw"></i>Riwayat Keuangan</a></li>
+            <li><a href="preferences.html" class="active"><i class="fa fa-book fa-fw"></i>Laporan Keuangan</a></li>
             <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Keluar</a></li>
           </ul>  
         </nav>
@@ -63,6 +64,20 @@
           </div>
 
           <div class="ctn-dsh-adm">
+                
+                    <form action="">
+                            <select name="period" class="arisan-per2">
+                                    <option value="">---------------Pilih Laporan---------------</option>
+                                    <option value="mingguan">Mingguan</option>
+                                    <option value="bulanan">Bulanan</option>
+                                    <option value="tahunan">Tahunan</option>
+                             </select>
+                    </form>
+                    <div class="but-add-adm">
+                            <a href="#" >
+                                <i class="button-cre">Unduh Laporan</i>
+                            </a>
+                        </div>
             <div class="scrollable">
               <table>
                 <thead>
@@ -70,29 +85,35 @@
                     <th class="th-id">ID</th>
                     <th class="th-title">Tanggal</th>
                     <th class="th-nominal">Saldo</th>
-                    <th class="th-undian">Status</th>
+                    <th class="th-undian">Keterangan</th>
 
                   </tr>
                 </thead>
                 <tbody>
                     <tr >
 
-                      <td><a href="#" onclick="acc()">#1231242  </a></td>
+                      <td><a href="#" onclick="typePassword()">#1231242  </a></td>
 
                       <td>14 November 2018</td>
-                      <td style="color:green;">Rp.5.000.000,00</td>
-                      <td style="color: red;">Belum di Proses</td>
+                      <td style="color:green;">+Rp.5.000.000,00</td>
+                      <td>Setor Dana</td>
 
-                    </tr>  
+                    </tr> 
+                    <tr>
+                      <td><a href="#" onclick="typePassword()">#1231242  </a></td>
+
+                      <td>13 November 2018</td>
+                      <td style="color: red;">-Rp.5.000.000,00</td>
+                      <td>Tarik Dana</td>
+
+                    </tr> 
                 </tbody>
               </table>
           </div>
 
-          
-          </div>
-          <div id="form-view-str">
+          <div id="contactForm-view-fnc">
 
-            <h1>Konfirmasi Setor Dana</h1>
+            <h1>Setor Dana</h1>
             
             <form action="#">
                 <div  class="form-aktifkan-akun" >
@@ -100,31 +121,51 @@
                         <i class="fa fa-search-plus fa-fw" ></i>
                     </a>
                 </div>
-
-                Rp.5.000.000,00<br>
-                #1321351<br>
-                SIXIOT<br>
-                52147865<br>
-                Yudha Darmawan Gustavianto<br>
-                BCA
-              
-              <input class="formBtn" type="submit" value="TOLAK"/>
-              <input class="formBtn" type="submit" value="KONFIRMASI"/>
-              <input class="formBtn" type="submit" value="TUTUP"/>
+                <div style=" width: 100%; height: auto; margin-bottom: 10px;">
+                    #1321351<br>
+                    SIXIOT<br>
+                    52147865<br>
+                    Yudha Darmawan Gustavianto<br>
+                    BCA
+                </div>
+                <input class="formBtn" type="submit" value="TUTUP"/>
             </form>
-          </div>
+        </div>
+
+        <div id="contactForm-view-fnc2">
+
+          <h1>Tarik Dana</h1>
+          
+          <form action="#">
+              <div  class="form-aktifkan-akun" >
+                  <a href="#" onclick="viewDetail()">
+                      <i class="fa fa-search-plus fa-fw" ></i>
+                  </a>
+              </div>
+              <div style=" width: 100%; height: auto; margin-bottom: 10px;">
+                  #1321351<br>
+                  SIXIOT<br>
+                  52147865<br>
+                  Yudha Darmawan Gustavianto<br>
+                  @can('update', Model::class)
+                    
+                  @endcan
+              </div>
+              <input class="formBtn" type="submit" value="TUTUP"/>
+          </form>
+      </div>
+        
           <div id="contactForm-view">
 
 
                     
-              <form action="#">
-                  <div class="contactForm-view-img"></div>
-  
-                  <input class="formBtn" type="submit" value="TUTUP"/>
-              </form>
-            </div>
-          </div>
+            <form action="#">
+                <div class="contactForm-view-img"></div>
 
+                <input class="formBtn" type="submit" value="TUTUP"/>
+            </form>
+          </div>
+          </div>
 
           <footer class="text-right">
             <p>Copyright &copy; 2018 ARISEN</a></p>
@@ -138,7 +179,7 @@
     <script src="js/jquery.mobilemenu.js"></script>
     <script>
 $(document).mouseup(function (e) {
-    var container = $("#form-view-str");
+    var container = $("#contactForm-view-fnc");
 
     if (!container.is(e.target) // if the target of the click isn't the container...
         && container.has(e.target).length === 0) // ... nor a descendant of the container
@@ -147,8 +188,23 @@ $(document).mouseup(function (e) {
     }
   });
 
-function acc(){
-  $('#form-view-str').fadeToggle();
+function typePassword(){
+  $('#contactForm-view-fnc').fadeToggle();
+
+}
+
+$(document).mouseup(function (e) {
+    var container = $("#contactForm-view-fnc2");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.fadeOut();
+    }
+  });
+
+function typePassword(){
+  $('#contactForm-view-fnc2').fadeToggle();
 
 }
 

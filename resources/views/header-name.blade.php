@@ -5,7 +5,7 @@
               <ul>
                 <a class="pem" href="#">
                   <li>
-                    <i></i>Pemberitahuan
+                    <i class="fa fa-envelope fa-fw"></i>Notifikasi
                   </li>
                 </a>
               </ul>

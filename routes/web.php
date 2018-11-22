@@ -13,8 +13,20 @@ use App\Http\Middleware\SentinelCheck;
 |
 */
 
+Route::get('laporan-keuangan',function(){
+    return view('laporan-keuangan');
+});
+
+Route::get('admin-super-admin',function(){
+    return view('admin-super-admin');
+});
+
 Route::get('riwayat-keuangan-admin',function(){
     return view('riwayat-keuangan-admin');
+});
+
+Route::get('arbar-admin',function(){
+    return view('arbar-admin');
 });
 
 Route::get('setor-dana-admin',function(){
@@ -25,12 +37,8 @@ Route::get('tarik-dana-admin',function(){
     return view('tarik-dana-admin');
 });
 
-Route::get('aktifasi-akun-admin',function(){
-    return view('aktifasi-akun-admin');
-});
-
-Route::get('notifikasi-admin',function(){
-    return view('notifikasi-admin');
+Route::get('aktivasi-akun-admin',function(){
+    return view('aktivasi-akun-admin');
 });
 
 Route::get('home-admin',function(){

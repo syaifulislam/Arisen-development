@@ -42,6 +42,7 @@
             <li><a href="data-visualization.html"><i class="fa fa-check-circle fa-fw"></i>Aktivasi Akun</a></li>
             <li><a href="maps.html"><i class="fa fa-bank fa-fw"></i>Tarik Dana</a></li>
             <li><a href="manage-users.html"><i class="fa fa-money fa-fw"></i>Setor Dana</a></li>
+            <li><a href="preferences.html"><i class="fa fa-users fa-fw"></i>ARBAR</a></li>
             <li><a href="preferences.html"><i class="fa fa-history fa-fw"></i>Riwayat Keuangan</a></li>
             <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Keluar</a></li>
           </ul>  
@@ -62,7 +63,9 @@
           <div class="templatemo-flex-row flex-content-row">
           </div>
 
-          <div class="ctn-dsh-adm"></div>
+          <div class="ctn-dsh-adm">
+            <h1 style="color: gold;">WELCOME , ADMIN ONE</h1>
+          </div>
 
 
           <footer class="text-right">
