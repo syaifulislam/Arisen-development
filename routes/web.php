@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\SentinelCheck;
+use App\Http\Middleware\SentinelAdmin;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,47 +14,16 @@ use App\Http\Middleware\SentinelCheck;
 |
 */
 
-Route::get('laporan-keuangan',function(){
-    return view('laporan-keuangan');
-});
-
-Route::get('admin-super-admin',function(){
-    return view('admin-super-admin');
-});
-
-Route::get('riwayat-keuangan-admin',function(){
-    return view('riwayat-keuangan-admin');
-});
-
-Route::get('arbar-admin',function(){
-    return view('arbar-admin');
-});
-
-Route::get('setor-dana-admin',function(){
-    return view('setor-dana-admin');
-});
-
-Route::get('tarik-dana-admin',function(){
-    return view('tarik-dana-admin');
-});
-
-Route::get('aktivasi-akun-admin',function(){
-    return view('aktivasi-akun-admin');
-});
-
-Route::get('home-admin',function(){
-    return view('home-admin');
-});
-
 Route::get('/', function(){
-<<<<<<< Updated upstream
-    if(Sentinel::check())
-        return view('index-login');
-
+    if (Sentinel::check()){
+        if (Sentinel::getUser()->role_user == 'user') {
+            return view('index-login');
+        }else if(Sentinel::getUser()->role_user == 'admin'){
+            return redirect('home-admin');
+        }
+    }
     return view('index');
-=======
-    return view('home-index');
->>>>>>> Stashed changes
+    // return view('home-index');
 });
 
 Route::get('arbar','ArbarController@index');
@@ -116,3 +86,32 @@ Route::group(['middleware'=>SentinelCheck::class],function(){
     Route::put('/checkRoom/{id}','RoomController@checkPassword');
 });
 
+Route::group(['middleware'=>SentinelAdmin::class],function(){
+    Route::get('home-admin','AdminController@home');
+    Route::get('laporan-keuangan','AdminController@keuangan');
+    Route::get('riwayat-keuangan-admin','AdminController@keuangan');
+    Route::get('arbar-admin',function(){
+        return view('arbar-admin');
+    });
+    Route::get('setor-dana-admin', 'AdminController@setor');
+    Route::get('tarik-dana-admin','AdminController@tarik');
+    Route::get('aktivasi-akun-admin','AdminController@activate');
+    Route::get('activate/{user_id}/{slug}','AdminController@actionActivate');
+    Route::get('setor/{id}/{slug}','AdminController@actionSetor');
+    Route::post('tarik/{id}','AdminController@actionTarik');
+    Route::post('addAdmin','AdminController@addAdmin');
+    Route::post('changeAdmin/{id}','AdminController@changeAdmin');
+    Route::post('download-xls', 'AdminController@download');
+});
+Route::get('coming-soon',function(){
+    return view('coming-soon');
+});
+Route::get('admin-get-user/{id}','AdminController@getUserActivate');
+Route::get('admin-get-setor/{id}','AdminController@getUserSetor');
+Route::get('admin-get-tarik/{id}','AdminController@getUserTarik');
+Route::get('admin-get-keuangan/{id}','AdminController@getUserKeuangan');
+Route::get('admin-get-data/{id}', 'AdminController@getUserAdmin');
+
+Route::get('admin-super-admin',function(){
+    return view('admin-super-admin');
+});

@@ -52,6 +52,7 @@ class SetorController extends Controller
         $params['user_id'] = Sentinel::getUser()->id;
         $params['payment_type_id'] = 2;
         $params['status'] = 'Pending';
+        $params['request_nominal'] = $request->post('request_nominal');
         $params['created_at'] = Carbon::now()->setTimezone('+7')->format('Y-m-d H:i:s');
         $params['updated_at'] = Carbon::now()->setTimezone('+7')->format('Y-m-d H:i:s');
         PaymentHistory::insert($params);

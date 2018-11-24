@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Sentinel;
 
-class SentinelCheck
+class SentinelAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,10 @@ class SentinelCheck
      */
     public function handle($request, Closure $next)
     {
-        if(Sentinel::getUser()->role_user == 'user'){
+        if(Sentinel::getUser()->role_user == 'admin'){
             return $next($request);
-        }else if(Sentinel::getUser()->role_user == 'admin'){
-            return redirect('home-admin');
+        }else if(Sentinel::getUser()->role_user == 'user'){
+            return redirect('home-page');
         }else{
             return redirect('auth/login');
         }

@@ -24,6 +24,7 @@ class RefundTable extends Migration
             $table->integer('payment_type_id');
             $table->enum('status', array('Pending','Sedang di Proses','Sudah di Proses','Gagal'));
             $table->string('image_path')->nullable();
+            $table->string('image_path_confirm')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -21,33 +21,7 @@
   <body>  
     <!-- Left column -->
     <div class="templatemo-flex-row">
-      <div class="templatemo-sidebar">
-        <header class="templatemo-site-header">
-          <div class="square"></div>
-          <a href="../view/home-admin.html"><h1>ARISEN Admin</h1></a>
-        </header>
-        <div class="profile-photo-container">
-          <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
-          <div class="profile-photo-overlay"></div>
-        </div>      
-        <!-- Search box -->
-
-        <div class="mobile-menu-icon">
-            <i class="fa fa-bars"></i>
-        </div>
-        <nav class="templatemo-left-nav">          
-          <ul>
-            <li><a href="#" ><i class="fa fa-home fa-fw"></i>Halaman Utama</a></li>
-            <li><a href="#"><i class="fa fa-check-circle fa-fw"></i>Aktivasi Akun</a></li>
-            <li><a href="#" ><i class="fa fa-bank fa-fw"></i>Tarik Dana</a></li>
-            <li><a href="#"><i class="fa fa-money fa-fw"></i>Setor Dana</a></li>
-            <li><a href="#"><i class="fa fa-users fa-fw"></i>ARBAR</a></li>
-            <li><a href="#"><i class="fa fa-history fa-fw"></i>Riwayat Keuangan</a></li>
-            <li><a href="#" class="active"><i class="fa fa-user-secret fa-fw"></i>Admin</a></li>
-            <li><a href="#"><i class="fa fa-eject fa-fw"></i>Keluar</a></li>
-          </ul>  
-        </nav>
-      </div>
+      @include('sidebar-admin')
       <!-- Main content --> 
       <div class="templatemo-content col-1 light-gray-bg">
         <div class="templatemo-top-nav-container">
@@ -91,8 +65,6 @@
                   </tbody>
                 </table>
             </div>
-
-          
           </div>
           <div id="form-view-adm">
 
@@ -115,10 +87,7 @@
               <input class="formBtn" type="submit" value="TUTUP"/>
             </form>
           </div>
-          <div class="view-img-adm">
-
-
-                    
+          <div class="view-img-adm"> 
             <form action="#">
                 <div class="contactForm-view-img"></div>
 
@@ -149,10 +118,12 @@
 
                 <h1>Tambah Admin</h1>
                 
-                <form action="#">
+                <form action="/addAdmin" method="POST">
+                      <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                         <div class="form-ubah-adm2">
-                          <input class="fld-ubah-adm" type="text" name="" placeholder="Nama Admin">
-                          <input class="fld-ubah-adm" type="text" name="" placeholder="Email Admin">
+                          <input class="fld-ubah-adm" type="text" name="first_name" placeholder="Nama Depan Admin">
+                          <input class="fld-ubah-adm" type="text" name="last_name" placeholder="Nama Belakang Admin">
+                          <input class="fld-ubah-adm" type="email" name="email" placeholder="Email Admin">
                           
                           <div class="form-ubah-adm3">
                             <label>Foto Admin</label> 

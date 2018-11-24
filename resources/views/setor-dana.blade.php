@@ -68,6 +68,7 @@
                           <input type="file" name="fileToUpload" id="fileToUpload" class="chs-file">
                           <p>Berkas Maximal 5 MB.</p>                  
                         </div>
+                        <input class="aktifasi-text" type="text" name="request_nominal" placeholder="Masukan Jumlah Uang">
                         <input  type="submit" class="login login-submit" value="SETOR">
                         <div class="login-help">
                           •<a class="bantuan-link" href="#">Bantuan</a>•

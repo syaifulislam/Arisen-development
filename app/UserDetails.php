@@ -12,5 +12,9 @@ class UserDetails extends Model
 
     protected $table = 'user_details';
     protected $fillable = ['user_id','money', 'bank_account_number','bank_account_name','images_path','bank_account_office'];
+
+    public function user(){
+        return $this->hasOne(User::class,'id','user_id');
+    }
     
 }

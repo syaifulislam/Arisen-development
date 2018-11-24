@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Sentinel;
 use App\UserDetails;
+use App\AdminImage;
 
 class Users extends \Cartalyst\Sentinel\Users\EloquentUser
 {
@@ -24,5 +25,9 @@ class Users extends \Cartalyst\Sentinel\Users\EloquentUser
 
     public function getMoneyAttribute(){
         return UserDetails::where('user_id',Sentinel::getUser()->id)->first() ? UserDetails::where('user_id',Sentinel::getUser()->id)->first()->money : 0;
+    }
+
+    public function admin_images(){
+        return $this->hasOne(AdminImage::class,'user_id','id');
     }
 }

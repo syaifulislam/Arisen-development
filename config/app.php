@@ -161,6 +161,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         Akaunting\Money\Provider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
     ],
 
     /*
@@ -213,6 +214,7 @@ return [
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'Money'     =>  Akaunting\Money\Money::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];

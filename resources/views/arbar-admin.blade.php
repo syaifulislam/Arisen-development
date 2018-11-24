@@ -21,43 +21,10 @@
   <body>  
     <!-- Left column -->
     <div class="templatemo-flex-row">
-      <div class="templatemo-sidebar">
-        <header class="templatemo-site-header">
-          <div class="square"></div>
-          <a href="../view/home-admin.html"><h1>ARISEN Admin</h1></a>
-        </header>
-        <div class="profile-photo-container">
-          <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
-          <div class="profile-photo-overlay"></div>
-        </div>      
-        <!-- Search box -->
-
-        <div class="mobile-menu-icon">
-            <i class="fa fa-bars"></i>
-        </div>
-        <nav class="templatemo-left-nav">          
-          <ul>
-            <li><a href="#" ><i class="fa fa-home fa-fw"></i>Halaman Utama</a></li>
-            <li><a href="data-visualization.html"><i class="fa fa-check-circle fa-fw"></i>Aktivasi Akun</a></li>
-            <li><a href="maps.html"><i class="fa fa-bank fa-fw"></i>Tarik Dana</a></li>
-            <li><a href="manage-users.html"><i class="fa fa-money fa-fw"></i>Setor Dana</a></li>
-            <li><a href="preferences.html"  class="active"><i class="fa fa-users fa-fw"></i>ARBAR</a></li>
-            <li><a href="preferences.html"><i class="fa fa-history fa-fw"></i>Riwayat Keuangan</a></li>
-            <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Keluar</a></li>
-          </ul>  
-        </nav>
-      </div>
-      <!-- Main content --> 
-      <div class="templatemo-content col-1 light-gray-bg">
-        <div class="templatemo-top-nav-container">
-          <div class="row">
-            <nav class="templatemo-top-nav col-lg-12 col-md-12">
-              <ul class="text-uppercase">
-                <li><i class="fa fa-user-circle fa-fw"></i> Admin One</li>
-              </ul>  
-            </nav> 
-          </div>
-        </div>
+        @include('sidebar-admin')
+        <!-- Main content --> 
+        <div class="templatemo-content col-1 light-gray-bg">
+            @include('header-admin')
         <div class="templatemo-content-container">
           <div class="templatemo-flex-row flex-content-row">
           </div>

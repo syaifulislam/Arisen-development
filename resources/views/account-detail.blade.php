@@ -67,7 +67,7 @@
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <input class="aktifasi-text" type="text" name="bank_account_number" placeholder="Nomor Rekening Anda">
                 <input class="aktifasi-text" type="text" name="bank_account_name" placeholder="Nama Pemilik Rekening">
-                <select name="period" class="arisan-per2">
+                <select name="bank_account_office" class="arisan-per2">
                   <option value="">---------------Pilih Bank Anda---------------</option>
                   <option value="bca">BCA</option>
                   <option value="mandiri">Mandiri</option>
@@ -129,7 +129,7 @@
             <a href="/tarik"><div class="button-tarik"></div></a>
             <a href="/riwayat-keuangan"><div class="button-his-uang"></div></a>
             <a href="/riwayat-permainan"><div class="button-his-main"></div></a>
-            <h1>Status: TERAKTIFASI</h1>
+          <h1>Status: {{Sentinel::getUser()->is_verif == 1 ? 'TERAKTIFASI' : (Sentinel::getUser()->is_verif == 2 ? 'DITOLAK' : 'BELUM TERAKTIFASI') }}</h1>
           </div>
           @endif
         </div>

@@ -115,6 +115,7 @@ class MigrationCartalystSentinel extends Migration
             $table->string('role_user');
             $table->integer('is_verif')->nullable();
             $table->string('user_code')->nullable();
+            $table->tinyIncrements('is_super_admin')->default(0);
             $table->timestamps();
             $table->softDeletes();
             $table->engine = 'InnoDB';

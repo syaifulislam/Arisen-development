@@ -80,7 +80,11 @@ hr{display:block; width:100%; height:1px; border:solid; border-width:1px 0 0 0;}
 The "hoc" class is a generic class used to centre a containing element horizontally
 It should be used in conjunction with a second class or ID
 */
-.hoc{background-color:black;display:block; margin:0 auto;}
+.hoc{
+    /* background-color:black; */
+    display:block; 
+    margin:0 auto;
+}
 
 
 /* HTML 5 Overrides
