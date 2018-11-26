@@ -14,6 +14,18 @@ use App\Http\Middleware\SentinelAdmin;
 |
 */
 
+Route::get('ruangan-arisan-undian',function(){
+    return view('ruangan-arisan-undian');
+});
+
+Route::get('ruangan-arisan-undian-dapat',function(){
+    return view('ruangan-arisan-undian-dapat');
+});
+
+Route::get('add-ruangan',function(){
+    return view('add-ruangan');
+});
+
 Route::get('/', function(){
     if (Sentinel::check()){
         if (Sentinel::getUser()->role_user == 'user') {
@@ -102,6 +114,7 @@ Route::group(['middleware'=>SentinelAdmin::class],function(){
     Route::post('addAdmin','AdminController@addAdmin');
     Route::post('changeAdmin/{id}','AdminController@changeAdmin');
     Route::post('download-xls', 'AdminController@download');
+    Route::get('add-admin','AdminController@superAdmin');
 });
 Route::get('coming-soon',function(){
     return view('coming-soon');

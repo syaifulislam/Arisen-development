@@ -24,7 +24,34 @@
           </div>
 
           <div class="ctn-dsh-adm">
-            <h1 style="color: gold;">WELCOME , {{Sentinel::getUser()->first_name}} {{Sentinel::getUser()->last_name}}</h1>
+                  @if (Sentinel::getUser()->is_super_admin)
+                    <div class="but-add-adm" onclick="addAdm()">
+                        <a href="#" >
+                            <i class="button-cre">Tambah Admin</i>
+                        </a>
+                    </div>
+                    <div class="scrollable">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th class="th-id">ID</th>
+                              <th class="th-title">Nama Admin</th>
+                              <th class="th-nominal">Email</th>
+          
+                            </tr>
+                          </thead>
+                          <tbody>
+                              @foreach ($data as $value)
+                                  <tr>
+                                  <td><a href="#" onclick="acc({{$value->id}})">#{{$value->user_code}}</a></td>
+                                  <td>{{$value->first_name}} {{$value->last_name}}</td>
+                                  <td>{{$value->email}}</td>
+                                </tr> 
+                              @endforeach
+                          </tbody>
+                        </table>
+                    </div>
+                  @endif
           </div>
           @include('footer-admin')        
         </div>

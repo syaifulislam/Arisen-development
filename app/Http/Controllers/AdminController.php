@@ -18,6 +18,11 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
+
+    public function superAdmin(){
+        $data = User::where('role_user','admin')->where('is_super_admin',0)->get();
+        return view('add-admin',compact('data'));
+    }
     public function home(){
         $data = User::where('role_user','admin')->where('is_super_admin',0)->get();
         return view('home-admin',compact('data'));
