@@ -44,10 +44,10 @@
                   <tbody>
                     @foreach ($data as $value)
                       <tr>
-                        <td><a href="#" onclick="typePassword({{$value->user->id}})">#{{$value->user->user_code}}</a></td>
-                        <td>{{$value->user->username}}</td>
-                        <td>{{Carbon\Carbon::parse($value->created_at)->format('d M Y')}}</td>
-                        <td>{{$value->user->is_verif == 1 ? 'Aktif' : ($value->user->is_verif == 2 ? 'Di Tolak' : 'Belum Aktif')}}</td>
+                        <td><a href="#" onclick="typePassword()"></a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                       </tr> 
                     @endforeach
                   </tbody>

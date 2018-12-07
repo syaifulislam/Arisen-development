@@ -14,6 +14,14 @@ use App\Http\Middleware\SentinelAdmin;
 |
 */
 
+Route::get('denied-user',function(){
+    return view('denied-user');
+});
+
+Route::get('notification-user',function(){
+    return view('notification-user');
+});
+
 Route::get('ruangan-arisan-undian',function(){
     return view('ruangan-arisan-undian');
 });

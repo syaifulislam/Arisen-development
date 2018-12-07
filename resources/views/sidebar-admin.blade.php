@@ -27,7 +27,12 @@
           @endif
         @endif
         @if (Sentinel::getUser()->role_user == 'admin' && Sentinel::getUser()->is_super_admin == 0)
-          <li><a href="coming-soon"><i class="fa fa-envelope fa-fw"></i>Notifikasi</a></li>
+          @if (Route::getCurrentRoute()->uri == 'denied-user')
+            <li><a class="active" href="denied-user"><i class="fa fa-exclamation-circle fa-fw"></i>Pengguna Bermasalah</a></li>            
+           @else
+            <li><a href="denied-user"><i class="fa fa-exclamation-circle fa-fw"></i>Pengguna Bermasalah</a></li>            
+          @endif
+          
           @if (Route::getCurrentRoute()->uri == 'aktivasi-akun-admin')
             <li><a class="active" href="aktivasi-akun-admin"><i class="fa fa-check-circle fa-fw"></i>Aktivasi Akun</a></li>            
           @else
