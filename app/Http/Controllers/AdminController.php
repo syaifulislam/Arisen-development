@@ -34,7 +34,7 @@ class AdminController extends Controller
     }
 
     public function getUserActivate($id){
-        $data = UserDetails::with('user')->where('user_id',$id)->orderBy('is_verif','asc')->first();
+        $data = UserDetails::with('user')->where('user_id',$id)->first();
         return response()->json([
             "data" =>   $data
         ]);

@@ -14,10 +14,6 @@ use App\Http\Middleware\SentinelAdmin;
 |
 */
 
-Route::get('denied-user',function(){
-    return view('denied-user');
-});
-
 Route::get('notification-user',function(){
     return view('notification-user');
 });
@@ -30,9 +26,9 @@ Route::get('ruangan-arisan-undian-dapat',function(){
     return view('ruangan-arisan-undian-dapat');
 });
 
-Route::get('add-ruangan',function(){
-    return view('add-ruangan');
-});
+// Route::get('add-ruangan',function(){
+//     return view('add-ruangan');
+// });
 
 Route::get('/', function(){
     if (Sentinel::check()){
@@ -104,6 +100,7 @@ Route::group(['middleware'=>SentinelCheck::class],function(){
     Route::get('/roomComment/{id}','RoomCommentController@index');
     Route::get('/roomComments/{id}','RoomCommentController@update');
     Route::put('/checkRoom/{id}','RoomController@checkPassword');
+    Route::get('/add-room/{id}/{room_id}','RoomController@addRoom');
 });
 
 Route::group(['middleware'=>SentinelAdmin::class],function(){
@@ -123,6 +120,9 @@ Route::group(['middleware'=>SentinelAdmin::class],function(){
     Route::post('changeAdmin/{id}','AdminController@changeAdmin');
     Route::post('download-xls', 'AdminController@download');
     Route::get('add-admin','AdminController@superAdmin');
+    Route::get('denied-user',function(){
+        return view('denied-user');
+    });
 });
 Route::get('coming-soon',function(){
     return view('coming-soon');

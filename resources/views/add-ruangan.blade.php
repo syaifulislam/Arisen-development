@@ -257,7 +257,7 @@ initializeClock('clockdiv', deadline);
     });
   });
   
-  function openForm() {
+function openForm() {
     document.getElementById("myForm").style.display = "block";
 }
 

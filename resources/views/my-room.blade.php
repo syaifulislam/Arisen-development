@@ -69,12 +69,12 @@
             <tbody>
               @foreach ($dataRoom as $item)
                 <tr>
-                <td><a href="#">#{{$item->generate_id}}</a></td>
-                  <td>{{$item->room_name}}</td>
-                  <td>Rp. {{$item->price_per_player}}</td>
-                  <td>{{$item->period}}</td>
-                  <td>{{$item->total_player_join}}/{{$item->total_player}}</td>
-                  <td>{{$item->password ? 'lock' : 'public'}}</td>
+                <td><a href="#">#{{$item->room->generate_id}}</a></td>
+                  <td>{{$item->room->room_name}}</td>
+                  <td>Rp. {{$item->room->price_per_player}}</td>
+                  <td>{{$item->room->period}}</td>
+                  <td>{{$item->room->total_player_join}}/{{$item->room->total_player}}</td>
+                  <td>{{$item->room->password ? 'lock' : 'public'}}</td>
                 </tr> 
               @endforeach
             </tbody>

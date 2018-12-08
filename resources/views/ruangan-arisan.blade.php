@@ -132,6 +132,18 @@
             </div>          
             </div>
           </div>
+          @if (!$joinRoom)
+              {{-- tambah ruangan --}}
+              <button class="open-button" onclick="openForm()">Tambah Ruangan</button>
+              <div class="form-popup" id="myForms" >
+              <form action="/add-room/{{Sentinel::getUser()->id}}/{{$id}}" method="GET" class="form-container">
+                  <h1>Tambah Ruangan Ini ?</h1>
+                  <button type="submit" class="btn">Tambah</button>
+                  <button type="button" class="btn cancel" onclick="closeForm()">Batal</button>
+                </form>
+              </div>
+              {{-- end --}}
+          @endif
           <div>
             <div  class="inp-com">
                 <div>
@@ -271,6 +283,14 @@ initializeClock('clockdiv', deadline);
       }
     });
   });
+
+function openForm() {
+    document.getElementById("myForms").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForms").style.display = "none";
+}
   
 </script>
 </body>

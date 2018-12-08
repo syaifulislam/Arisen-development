@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use Sentinel;
 use App\Room;
 use Carbon\Carbon;
+use App\JoinRoom;
+use App\UserRoomPaymentHistory;
+use DB;
 
 class RoomController extends Controller
 {
     public function index(){
-        $dataRoom = Room::where('created_by',Sentinel::getUser()->id)->get();
+        $dataRoom = JoinRoom::with('room')->where('user_id',Sentinel::getUser()->id)->get();
         return view('my-room',compact('dataRoom'));
     }
 
@@ -47,7 +50,8 @@ class RoomController extends Controller
         $data = Room::where('generate_id',$id)->first();
         $getTime = Carbon::now()->setTimezone('+7');
         $getDataTimes = $data->period_start_date." 07:00:00";
-        return view('ruangan-arisan',compact('id','data','getDataTimes'));
+        $joinRoom = JoinRoom::where('user_id',Sentinel::getUser()->id)->where('room_id',$data->id)->first();
+        return view('ruangan-arisan',compact('id','data','getDataTimes','joinRoom'));
     }
 
     public function checkPassword($id, Request $request){
@@ -63,5 +67,31 @@ class RoomController extends Controller
             "data"=>false,
             "message"=>"Password Salah"
         ]);
+    }
+
+    public function addRoom($userId,$roomId){
+        $getDataRoom = Room::where('generate_id',$roomId)->first();
+        try{
+            DB::beginTransaction();
+            $joinRoom = new JoinRoom;
+            $joinRoom->user_id = $userId;
+            $joinRoom->room_id = $getDataRoom->id;
+            $joinRoom->save();
+
+            for($i=1;$i<=$getDataRoom->total_player;$i++){
+                $paymentHistories               = new UserRoomPaymentHistory;
+                $paymentHistories->user_id      = $userId;
+                $paymentHistories->room_id      = $getDataRoom->id;
+                $paymentHistories->period_roll  = $i;
+                $paymentHistories->status       = 'Belum Bayar';
+                $paymentHistories->save();
+            }
+            Room::where('generate_id',$roomId)->increment('total_player_join');
+            DB::commit();
+            return redirect('/room/'.$roomId);
+        }catch(\Exception $e){
+            DB::rollback();
+            return redirect('/room/'.$roomId);
+        }
     }
 }
