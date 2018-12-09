@@ -1,1 +1,1 @@
-<p>sudah expired oi</p>
+<p>verifikasi e-mail yang dikirim sudah tidak berlaku, silahkan Request Kembali </p>

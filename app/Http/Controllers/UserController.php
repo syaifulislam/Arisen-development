@@ -70,7 +70,7 @@ class UserController extends Controller
 
     public function logout(){
         Sentinel::logout();
-        return redirect($this->_routeGroup.'/login');
+        return redirect('/');   
     }
 
     public function forgotPassword(forgotPasswordRequest $request){

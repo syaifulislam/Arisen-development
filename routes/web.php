@@ -14,8 +14,8 @@ use App\Http\Middleware\SentinelAdmin;
 |
 */
 
-Route::get('notification-user',function(){
-    return view('notification-user');
+Route::get('detail-saldo',function(){
+    return view('detail-saldo');
 });
 
 Route::get('ruangan-arisan-undian',function(){
