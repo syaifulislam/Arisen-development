@@ -17,7 +17,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row1">
-  <header id="header" class="hoc clear"> 
+
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
 
@@ -36,13 +36,13 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('../images/backgrounds/01.png');">
+<div class="wrapper bgded overlay" style="background-image:url('images/2.png');">
   <section id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
    
     <!-- ################################################################################################ -->
-  <h1 style="font-size: 25px;" class="heading">#{{$id}}</h1>
-  <h6 class="heading">{{$data->room_name}}</h6>
+  {{-- <h1 style="font-size: 25px;" class="heading">#{{$id}}</h1> --}}
+  {{-- <h6 class="heading">{{$data->room_name}}</h6> --}}
     <!-- ################################################################################################ -->
   </section>
 </div>
@@ -56,7 +56,7 @@
         <div class="content"> 
           <!-- ################################################################################################ -->
          <div class="scrollable">
-           <h1>riwayat permainan</h1>
+           <p style="font-size: 30px ; margin-bottom: 10px; text-align: center;">RIWAYAT PERMAINAN</p>
             <button class="countdown">
               UNDIAN
               <br>
@@ -83,7 +83,7 @@
             <div class="form-popup" id="myForm" >
     
             </div>
-           <div class="swimlane-arisan">
+           <div class="swimlane-arisan" style="background-image:url('images/backgrounds/1.png');">
              <div class="box">
                 <ul>
                     <li>
@@ -124,26 +124,29 @@
            </div>
          </div>
           <div class="scrollable">
-            <div class="text-kolom"><h1>kolom komentar</h1></div>
-            <div class="swimlane-comment" style="overflow-y:hidden;">
+            <div class="text-kolom">
+              <p style="font-size: 30px ; margin-bottom: 10px; text-align: center;">KOLOM KOMENTAR</p>
+            </div>
+            <div class="swimlane-comment" style="background-image:url('images/backgrounds/2.png'); overflow-y:hidden;">
              <div class="box2" id="box-comment" style="overflow-y:scroll ; height: 450px;">
                 <ul id="first-list" class="comment-list">
                 </ul>
             </div>          
             </div>
           </div>
-          @if (!$joinRoom)
+          {{-- @if (!$joinRoom) --}}
               {{-- tambah ruangan --}}
               <button class="open-button" onclick="openForm()">Tambah Ruangan</button>
               <div class="form-popup" id="myForms" >
-              <form action="/add-room/{{Sentinel::getUser()->id}}/{{$id}}" method="GET" class="form-container">
-                  <h1>Tambah Ruangan Ini ?</h1>
+              <form action="/add-room/" method="GET" class="form-container">
+                  <p style="font-size: 25px ; margin-bottom: 20px; text-align: center;">Tambah Ruangan Ini ?</p>
                   <button type="submit" class="btn">Tambah</button>
                   <button type="button" class="btn cancel" onclick="closeForm()">Batal</button>
                 </form>
               </div>
               {{-- end --}}
-          @endif
+          {{-- @endif --}}
+          <div>
           <div>
             <div  class="inp-com">
                 <div>
@@ -183,7 +186,7 @@
       tid = setTimeout(mycode, 1000); 
       $.ajax({
         type: "GET",
-        url: "/roomComments/{{$data->id}}",
+       
         success: function(msg){
           if(msg.data.length > init){
             var i = init;
@@ -204,7 +207,7 @@
     
     $.ajax({
         type: "GET",
-        url: "/roomComment/{{$data->id}}",
+        
         success: function(msg){
           // console.log(msg.data)
           var i = 0;
@@ -257,7 +260,7 @@ function initializeClock(id, endtime) {
   updateClock();
   var timeinterval = setInterval(updateClock, 1000);
 }
-var deadline = new Date(Date.parse("{{$getDataTimes}}"));
+
 
 initializeClock('clockdiv', deadline);
   });
@@ -269,17 +272,17 @@ initializeClock('clockdiv', deadline);
         "_token": "{{ csrf_token() }}",
         "comment": comment
         },
-      url: "/roomComment/{{$data->id}}",
+     
       success: function(msg){
         $('.comment-text').val('')
         var objDiv = document.getElementById("box-comment");
         objDiv.scrollTop = objDiv.scrollHeight;
-        // init++;
-        // $('.comment-list').append('<li>'+
-        //                 '<div><h1>SIXIOT<h1></div>'+
-        //                 '<div>Harap saldo anda cukup</div>'+
-        //                 '<div class="time-com">JAN 1 <sup>th</sup></div>'+
-        //             '</li>');
+        init++;
+        $('.comment-list').append('<li>'+
+                        '<div><h1>SIXIOT<h1></div>'+
+                        '<div>Harap saldo anda cukup</div>'+
+                        '<div class="time-com">JAN 1 <sup>th</sup></div>'+
+                    '</li>');
       }
     });
   });

@@ -4,7 +4,7 @@
         <th colspan="2">Username</th>
         <th>Nominal</th>
         <th>Status</th>
-        <th>Jenis Pembayaran</th>
+        <th colspan="2">Jenis Pembayaran</th>
         <th>Tanggal</th>
     </tr>
     </thead>
@@ -14,7 +14,7 @@
             <td colspan="2">{{ $user->username }}</td>
             <td>{{ $user->request_nominal }}</td>
             <td>{{ $user->status }}</td>
-            <td>{{ $user->name }}</td>
+            <td colspan="2">{{ $user->name }}</td>
             <td>{{ $user->created_at }}</td>
         </tr>
     @endforeach

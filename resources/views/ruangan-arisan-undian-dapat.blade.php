@@ -17,7 +17,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row1">
-  <header id="header" class="hoc clear"> 
+
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
 
@@ -36,7 +36,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('../images/backgrounds/01.png');">
+<div class="wrapper bgded overlay" style="background-image:url('images/2.png');">
   <section id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
    
@@ -56,13 +56,15 @@
         <div class="content"> 
           <!-- ################################################################################################ -->
          <div class="scrollable">
-           <h1>riwayat permainan</h1>
+            <p style="font-size: 30px ; margin-bottom: 10px; text-align: center;">RIWAYAT PERMAINAN</p>
            <button class="undian-btn" onclick="openForm()">
                 UNDI ARISAN
               </button>
               <div class="form-popup" id="myForm" >
-                <form action="/action_page.php" class="form-container">
-                  <div class="undian-prev"></div>
+                <form action="/action_page.php" class="form-container" style="margin-bottom: -150px;">
+                  <div class="undian-prev" style="background-image:url('images/backgrounds/3.png');">
+                      <p style="font-size: 30px; line-height: 30px; padding-top: 150px; text-align: center;">Selamat,<br> <br> Yudha Darmawan Gustavianto</p>
+                  </div>
                   <div id="btn1">ALIHKAN ARISAN</div>
                   <button type="submit" class="btn">Terima Arisan</button>
                   <button type="button" class="btn cancel" onclick="closeForm()">Tutup</button>
@@ -71,49 +73,51 @@
             <div class="form-popup" id="myForm" >
     
             </div>
-           <div class="swimlane-arisan">
-             <div class="box">
-                <ul>
-                    <li>
-                        <span></span>
-                        <div class="title">Undian ke-1</div>
-                        <div class="info">Harap saldo anda cukup</div>
-                        <div class="name">system</div>
-                        <div class="time">
-                            <span>JAN, 17<sup>th</sup></span>
-                            <span>FEB, 18<sup>th</sup></span>
-                        </div>
-                    </li>
-                    <li>
-                        <span></span>
-                        <div class="title">summery #01</div>
-                        <div class="info">the best animation , the best toturials you would ever see here only . you can learn how to animate and how to use SVG . even else you can add your own animations .</div>
-                        <div class="name">- eng. amr -</div>
-                        <div class="time">
-                            <span>JUN, 29<sup>th</sup></span>
-                            <span>11:36 AM</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span></span>
-                        <div class="title">comment #02</div>
-                        <div class="info">the best animation , the best toturials you would ever see . what about canvas ?? do you like it ..</div>
-                        <div class="name">- dr. ahmed -</div>
-                        <div class="time">
-                            <span>FEB, 2<sup>nd</sup></span>
-                            <span>02:00 PM</span>
-                        </div>
-                    </li>
-                    
-                    
-                </ul>
-    
+            <div class="swimlane-arisan" style="background-image:url('images/backgrounds/1.png');">
+              <div class="box">
+                 <ul>
+                     <li>
+                         <span></span>
+                         <div class="title">Undian ke-1</div>
+                         <div class="info">Harap saldo anda cukup</div>
+                         <div class="name">system</div>
+                         <div class="time">
+                             <span>JAN, 17<sup>th</sup></span>
+                             <span>FEB, 18<sup>th</sup></span>
+                         </div>
+                     </li>
+                     <li>
+                         <span></span>
+                         <div class="title">summery #01</div>
+                         <div class="info">the best animation , the best toturials you would ever see here only . you can learn how to animate and how to use SVG . even else you can add your own animations .</div>
+                         <div class="name">- eng. amr -</div>
+                         <div class="time">
+                             <span>JUN, 29<sup>th</sup></span>
+                             <span>11:36 AM</span>
+                         </div>
+                     </li>
+                     <li>
+                         <span></span>
+                         <div class="title">comment #02</div>
+                         <div class="info">the best animation , the best toturials you would ever see . what about canvas ?? do you like it ..</div>
+                         <div class="name">- dr. ahmed -</div>
+                         <div class="time">
+                             <span>FEB, 2<sup>nd</sup></span>
+                             <span>02:00 PM</span>
+                         </div>
+                     </li>
+                     
+                     
+                 </ul>
+     
+             </div>
             </div>
-           </div>
          </div>
-          <div class="scrollable">
-            <div class="text-kolom"><h1>kolom komentar</h1></div>
-            <div class="swimlane-comment" style="overflow-y:hidden;">
+         <div class="scrollable">
+            <div class="text-kolom">
+              <p style="font-size: 30px ; margin-bottom: 10px; text-align: center;">KOLOM KOMENTAR</p>
+            </div>
+            <div class="swimlane-comment" style="background-image:url('images/backgrounds/2.png'); overflow-y:hidden;">
              <div class="box2" id="box-comment" style="overflow-y:scroll ; height: 450px;">
                 <ul id="first-list" class="comment-list">
                 </ul>
@@ -121,15 +125,15 @@
             </div>
           </div>
           <div>
-            <div  class="inp-com">
-                <div>
-                  <textarea  class="inp-com-txt comment-text" id="subject" name="subject" placeholder="Write something.."></textarea>
-                </div>
-                <div>
-                  <input  type="submit" name="login" class="com-but comment-btn" value="KOMENTAR">
-                </div>
+              <div  class="inp-com">
+                  <div>
+                    <textarea  class="inp-com-txt comment-text" id="subject" name="subject" placeholder="Write something.."></textarea>
+                  </div>
+                  <div>
+                    <input  type="submit" name="login" class="com-but comment-btn" value="KOMENTAR">
+                  </div>
+              </div>
             </div>
-          </div>
           
           <!-- ################################################################################################ -->
         </div>

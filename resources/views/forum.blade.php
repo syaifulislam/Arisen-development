@@ -5,7 +5,7 @@
 <title>ARISEN-Forum</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link rel="stylesheet" href="{{ url('/css/layout3.css') }}" media="screen" type="text/css" />
+<link rel="stylesheet" href="{{ url('/css/layout.css') }}" media="screen" type="text/css" />
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -15,27 +15,17 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row1">
-  <header id="header" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <div id="logo" class="fl_left">
 
-    </div>
-    <div id="quickinfo" class="fl_right">
-
-    </div>
-    <!-- ################################################################################################ -->
-  </header>
   <nav id="mainav" class="hoc clear"> 
     <!-- ################################################################################################ -->
     @include('nav-bar')
     <!-- ################################################################################################ -->
   </nav>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('images/backgrounds/01.png');">
+<div class="wrapper bgded overlay" style="background-image:url('images/2.png');">
   <section id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
    
@@ -54,8 +44,8 @@
     <div class="content-sea">
       <div class="content-sea2">
         <form class="example" action="#" >
-          <input type="text" placeholder="Cari Ruangan" name="search2">
-          <button type="submit"><i class="fa fa-search"></i></button>
+        <input type="text" placeholder="Cari Ruangan" name="search2" value="{{$search}}">
+          <button type="submit"><i class="">Search</i></button>
         </form>
       </div>
       <div class="content-cre">

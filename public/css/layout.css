@@ -115,6 +115,7 @@
   display: block;
   color: white;
   font-size: 15px;
+  padding-left: 10px;
   text-decoration: none;
   text-transform: uppercase;
   width: 150px;
@@ -125,7 +126,7 @@
   transition: all 0.35s ease-in-out;
 }
 #cssmenu > ul ul li a:hover {
-  border-left: 4px solid #d64e34;
+  border-left: 4px solid #fdb913;
   background: url(/images/hover.png) repeat;
 }
 #cssmenu > ul ul li a:active {
@@ -144,15 +145,41 @@
 
 /* Header
 --------------------------------------------------------------------------------------------------------------- */
-#header{background-image:url(/images/logo/logo-header.png) no-repeat ; padding:50px 0;}
+#header{
+  background-image: url('images/logo/logo-header.png');
 
-#header #logo *{ margin:0; padding:0; line-height:1;}
+  padding:50px 0;
+}
 
-#header #quickinfo{font-size:.8rem; text-transform:uppercase;}
-#header #quickinfo li{margin-right:50px;}
-#header #quickinfo li:last-child{margin-right:0;}
-#header #quickinfo strong{display:block; margin:0 0 -5px 0; padding:0; font-size:.9rem;}
-#header #quickinfo br{display:none;}
+#header #logo *{ 
+  margin:0; 
+  padding:0; 
+  line-height:1;
+}
+
+#header #quickinfo{
+  font-size:.8rem; 
+  text-transform:uppercase;
+}
+
+#header #quickinfo li{
+  margin-right:50px;
+}
+
+#header #quickinfo li:last-child{
+  margin-right:0;
+}
+
+#header #quickinfo strong{
+  display:block; 
+  margin:0 0 -5px 0; 
+  padding:0; 
+  font-size:.9rem;
+}
+
+#header #quickinfo br{
+  display:none;
+}
 
 /* Create Button
 --------------------------------------------------------------------------------------------------------------- */
@@ -186,7 +213,7 @@
 /* Ruangan Arisan
 --------------------------------------------------------------------------------------------------------------- */
 .countdown{
-  background: grey;
+  background: rgba(0, 0, 0, 0.4);
   color: gold;
   padding: 16px 20px;
   border: none;
@@ -245,7 +272,7 @@
 
 
 .undian-prev{
-  background-color: black;
+
   width: 100%; 
   height: 500px;
 }
@@ -569,8 +596,38 @@
   margin-top: 10px;
 }
 
-#form-view-arbar { 
+
+
+.arbar-text{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#view-arbar-user { 
   display: none;
+  height: auto;
+  border: 6px solid blue; 
+  padding: 2em;
+  width: 600px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+  
+}
+
+#form-view-arbar { 
+  display: none ;
   height: auto;
   border: 6px solid blue; 
   padding: 2em;
@@ -978,6 +1035,12 @@ form.example::after {
   text-align: center;
 }
 
+.about-us{
+
+  width: 100%;
+  height: 1400px;
+}
+
 /* Detail-s1aldo
 --------------------------------------------------------------------------------------------------------------- */
 .con-detail-saldo{
@@ -1089,6 +1152,8 @@ form.example::after {
     float: left;
     height: 100px;
     width: 100%;
+    border: none;
+    text-align: center;
 }
 
 .com-but {
@@ -1315,7 +1380,7 @@ form.example::after {
 /* Tambah Ruangan
 --------------------------------------------------------------------------------------------------------------- */
 .add-ruangan{
-  background-color: magenta;
+
   height:100%;
   width: 100%;
 }
@@ -1402,36 +1467,6 @@ form.example::after {
   float: right;
 }
 
-.kunci{
-  background-color: #4d90fe;
-  width: 100%;
-  height: 44px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.kunci2{
-
-  width: 50%;
-  height:100%;
-  float: left;
-  padding: 10px;
-  padding-left: 90px;
-  color:white;
-}
-
-.kunci3{
-
-  width: 50%;
-  height:100%; 
-  float: left;
-  padding: 10px;
-  color:white;
-}
-
-.rad-kun{
-  float: left;
-}
 
 
 /* Content Area
@@ -1444,12 +1479,12 @@ form.example::after {
 }
 
 .container .content-2{
-  background-color: grey;
+
   height: 1000px;
 }
 
 .container .content-l{
-  background-color: lightblue;
+
   height: 1000px;
 }
 
@@ -1490,7 +1525,7 @@ form.example::after {
 }
 
 .aktif-akun{
-  background-color: magenta;
+
   height:100%;
   width: 50%;
   float: right;
@@ -1560,7 +1595,7 @@ form.example::after {
 
 
 .status-user{
-  background-color: grey;
+
   height: 100px;
   width: 64%;
   margin-left: 18%;
@@ -1586,12 +1621,47 @@ form.example::after {
 .sectiontitle *{margin:0;}
 
 .figures{}
+
 .figures > li{}
-.figures > li:last-child{margin-bottom:0;}/* Used when elements stack in small viewports */
-.figures > li > figure{display:inline-block; position:relative; width:100%; max-width:320px;}
-.figures > li > figure figcaption{}
-.figures > li > figure figcaption a{display:block; position:absolute; bottom:0; left:0; width:100%; height:39px; line-height:39px; padding:0 15px; border-top:1px solid; text-transform:uppercase;}
-.figures > li > figure figcaption a::after{position:absolute; top:0; right:0; height:100%; padding:0 15px; font-family:"FontAwesome"; content:"\f105"; border-left:1px solid;}
+
+.figures > li:last-child{
+  margin-bottom:0;
+}/* Used when elements stack in small viewports */
+
+.figures > li > figure{
+
+  position:relative; 
+  width:100%; 
+  max-width:320px;
+}
+
+.figures > li > figure figcaption{
+
+}
+
+.figures > li > figure figcaption a{
+  display:block; 
+  position:absolute; 
+  bottom:0; 
+  left:0; 
+  width:100%; 
+  height:39px; 
+  line-height:39px; 
+  padding:0 15px; 
+  border-top:1px solid; 
+  text-transform:uppercase;
+}
+
+.figures > li > figure figcaption a::after{
+  position:absolute; 
+  top:0; 
+  right:0; 
+  height:100%; 
+  padding:0 15px; 
+  font-family:"FontAwesome";
+  border-left:1px solid;
+}
+
 .figures > li > figure figcaption time{display:block; position:absolute; top:-8px; left:-8px; width:60px; height:auto; padding:8px 0; text-align:center;}
 .figures > li > figure figcaption time *{display:block; margin:0; padding:0;}
 .figures > li > figure figcaption time strong{margin-bottom:-5px;}
@@ -1648,8 +1718,12 @@ form.example::after {
 
 /* Copyright
 --------------------------------------------------------------------------------------------------------------- */
-#copyright{padding:20px 0;}
-#copyright *{margin:0; padding:0;}
+#copyright{padding-bottom:10px;}
+#copyright *{
+  margin:0;
+  padding:0;
+  margin-top: -10px;
+}
 
 
 /* Transition Fade
@@ -1706,7 +1780,11 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #breadcrumb li a::after{top:3px; right:0; content:"\f101";}
 #breadcrumb li:last-child a{margin:0; padding:0;}
 #breadcrumb li:last-child a::after{display:none;}
-#breadcrumb .heading{margin:0; font-size:2rem;}
+#breadcrumb .heading{ 
+  color: gold;
+  margin:0; 
+  font-size:2rem;
+}
 
 /* Sidebar Navigation */
 .sidebar nav{display:block; width:100%;}
@@ -1777,11 +1855,79 @@ td{border-width:0 1px;}
 }
 
 
+/* content-home
+--------------------------------------------------------------------------------------------------------------- */
+
+.poster{
+ 
+  height: 650px;
+  width: 100%;
+}
+
+.hot-arbar{
+
+  height: 200px; 
+  width: 100%;
+}
+
+.poster-ctn{
+
+  height: 200px;
+  width: 100%;
+}
+
+.testi{
+
+  height: 100px; 
+  width: 100%;
+  display: block;
+}
+
+.mitra-ctn{
+
+  height: 200px; 
+  width: 100%;
+}
+
+.mlogo{
+
+  height: 100%; 
+  width: 70%; 
+  float: right;
+  display: block;
+}
+
+.slider{
+
+  height: 300px; 
+  width: 100%;
+  display: none;
+}
+
+.slider-ctn{
+
+
+  width: 100%;
+
+}
+
 /* Gallery
 --------------------------------------------------------------------------------------------------------------- */
-#gallery{display:block; width:100%; margin-bottom:50px;}
-#gallery figure figcaption{display:block; width:100%; clear:both;}
-#gallery li{margin-bottom:30px;}
+#gallery{
+  display:block; 
+  width:100%; 
+  margin-bottom:50px;
+}
+
+#gallery figure figcaption{
+  display:block; 
+  width:100%; 
+  clear:both;
+}
+
+#gallery li{
+  margin-bottom:30px;
+}
 
 
 /* ------------------------------------------------------------------------------------------------------------ */
@@ -1790,10 +1936,41 @@ td{border-width:0 1px;}
 /* ------------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------------ */
 
+
+/* Browser Resets
+--------------------------------------------------------------------------------------------------------------- */
+.flex-container a:hover, .flex-slider a:hover{outline:none;}
+.slides, .slides > li, .flex-direction-nav{margin:0; padding:0; list-style:none;}
+
+
+/* Necessary Styles
+--------------------------------------------------------------------------------------------------------------- */
+.flexslider{display:block; position:relative; margin:0; padding:0;}
+.flexslider .slides{display:block; width:100%; overflow:hidden;}
+.flexslider .slides > li{display:none; width:100%; -webkit-backface-visibility:hidden;}/* Hide the slides before the JS is loaded. Avoids image jumping */
+/* Modern Clear fix for the .slides element */
+.slides::before, .slides::after{display:table; content:"";}
+.slides, .slides::after{clear:both;}
+
+
+/* Default Theme
+--------------------------------------------------------------------------------------------------------------- */
+.flex-viewport{max-height:2000px; transition:all 1s ease;}
+.loading .flex-viewport{max-height:300px;}
+
+/* Direction Nav */
+.flex-direction-nav{display:block; position:absolute; top:-70px;}
+.flex-direction-nav li{display:inline-block; margin-right:10px;}
+.flex-direction-nav li:last-child{margin-right:0;}
+.flex-direction-nav a{cursor:pointer; text-decoration:none;}
+.flex-direction-nav a i{display:block; width:30px; height:30px; line-height:30px; margin:0; padding:0; text-align:center; font-size:18px;}
 
 /* Colours
 --------------------------------------------------------------------------------------------------------------- */
 body{color:#4A4A4A; background-color:#FFFFFF;}
+.body-admin{
+  background-color: #000;
+}
 a{color:#629BAF;}
 a:active, a:focus{background:transparent;}/* IE10 + 11 Bugfix - prevents grey background */
 hr, .borderedbox{border-color:#D7D7D7;}
@@ -1845,7 +2022,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#56AED4;}
 .logo-footer{
   width: 50%; 
   height: 100px; 
-  background-color: blue;
+
   margin-left: 25%;
 }
 
@@ -1960,8 +2137,17 @@ table a, #comments a{background-color:inherit;}
 @media screen and (max-width:750px){
 	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
 	.fl_left, .fl_right{display:block; float:none;}
-	.group .group > *:last-child, .clear .clear > *:last-child, .clear .group > *:last-child, .group .clear > *:last-child{margin-bottom:0;}/* Experimental - Needs more testing in different situations, stops double margin when stacking */
-	.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{display:block; float:none; width:auto; margin:0 0 30px 0; padding:0;}
+	.group .group > *:last-child, .clear .clear > *:last-child, .clear .group > *:last-child, .group .clear > *:last-child{
+    
+    margin-bottom:0;
+  }/* Experimental - Needs more testing in different situations, stops double margin when stacking */
+	.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{
+    display: block;
+    float:none; 
+    width:auto; 
+    margin:0 0 30px 0; 
+    padding:0;
+  }
 
 	#topbar{text-align:center;}
 	#topbar > div:first-of-type > ul{margin-bottom:15px;}
@@ -2046,7 +2232,7 @@ color: blue;
 ----------------------------------------------*/
 * { font-family: 'Open Sans', sans-serif; }
 body {  font-size: 13px; }
-body, .templatemo-left-nav { background: #1f2124; }
+body, .templatemo-left-nav { }
 h1, h2, h3 { margin: 0; }
 h2 { font-size: 1.6em; }
 h3 {
@@ -2207,6 +2393,20 @@ footer { padding: 15px; }
   color: gold;
   border-left: 8px solid blue;
 }
+
+.sosmed{
+  height: 100%; 
+  width: 100px; 
+  float: left; 
+  margin-left: 50px;
+}
+
+.sosmed a.active,
+.sosmed a:hover {
+  color: gold;
+  
+}
+
 .templatemo-left-nav a {
   color: #e9e9ea;
   display: block;
@@ -2419,34 +2619,7 @@ footer { padding: 15px; }
 .checkbox label { padding-left: 0; }
 .font-weight-400 { font-weight: 400; }
 
-/* Style checkboxes and radio buttons
-http://webdesign.tutsplus.com/tutorials/quick-tip-easy-css3-checkboxes-and-radio-buttons--webdesign-8953 */
-input[type="checkbox"] {  display:none; }
-input[type="checkbox"] + label span {
-    display:inline-block;
-    width:26px;
-    height:25px;
-    margin:-1px 4px 0 0;
-    vertical-align:middle;
-    background:url(../images/checkbox-radio-sheet.png) left top no-repeat;
-    cursor:pointer;
-}
-input[type="checkbox"]:checked + label span {
-    background:url(../images/checkbox-radio-sheet.png) -26px top no-repeat;
-}
-input[type="radio"] { display:none; }
-input[type="radio"] + label span {
-    display:inline-block;
-    width:26px;
-    height:25px;
-    margin:-1px 4px 0 0;
-    vertical-align:middle;
-    background:url(../images/checkbox-radio-sheet.png) -52px top no-repeat;
-    cursor:pointer;
-}
-input[type="radio"]:checked + label span {
-    background:url(../images/checkbox-radio-sheet.png) -78px top no-repeat;
-}
+
 
 /*  Manage Users
 ------------------------------*/
@@ -2561,23 +2734,7 @@ input[type="radio"]:checked + label span {
 
 /*  Preferences
 -------------------------------*/
-.has-success .checkbox, .has-success .checkbox-inline, .has-success .control-label, .has-success .help-block, 
-.has-success .radio, .has-success .radio-inline, .has-success.checkbox label, .has-success.checkbox-inline label, 
-.has-success.radio label, .has-success.radio-inline label {
-  color: #13895F;
-}
-.has-success .form-control { border-color: #13895F; }
-.has-warning .checkbox, .has-warning .checkbox-inline, .has-warning .control-label, .has-warning .help-block, 
-.has-warning .radio, .has-warning .radio-inline, .has-warning.checkbox label, .has-warning.checkbox-inline label, 
-.has-warning.radio label, .has-warning.radio-inline label {
-  color: #CF922C;
-}
-.has-warning .form-control { border-color: #CF922C; }
-.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, 
-.has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, 
-.has-error.radio label, .has-error.radio-inline label {
-  color: #D7425C;
-}
+
 .has-error .form-control { border-color: #D7425C; }
 .templatemo-multi-select {
   min-width: 200px;
@@ -2679,7 +2836,7 @@ input[type="radio"]:checked + label span {
 ------------------------------*/
 
 .ctn-dsh-adm{
-  background-color: black; 
+  background-image: url('/images/backgrounds/6.png');
   width: 100%; 
   height: 1000px;
 }
@@ -2713,3 +2870,4 @@ input[type="radio"]:checked + label span {
   font-size: 16px;
   color: white
 }
+

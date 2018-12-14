@@ -5,10 +5,10 @@
         <title>Masuk ARISEN</title>
         <link rel="stylesheet" href="{{ url('/css/layout2.css') }}" media="screen" type="text/css" />
     </head>
-    <body>
+    <body   style="background-image: url(/images/bg/1.png);">
 
         
-        <div class="login-card">
+        <div class="login-card bg-login" style="margin-top: 15%;">
             <h2>MASUK</h2><br>
             <form action="login" method="POST">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ url('/css/layout.css') }}" media="all" type="text/css" />
     <link href="css/templatemo-style.css" rel="stylesheet">
   </head>
-  <body>  
+  <body class="body-admin">  
     <!-- Left column -->
     <div class="templatemo-flex-row">
       @include('sidebar-admin')
@@ -24,7 +24,7 @@
           </div>
 
           <div class="ctn-dsh-adm">
-            <h1 style="color: gold;">WELCOME , {{Sentinel::getUser()->first_name}} {{Sentinel::getUser()->last_name}}</h1>
+              <p style="font-size: 100px ;color: gold; line-height: 50px; padding-top:300px; margin-bottom: 10px; text-align: center;">Welcome, {{Sentinel::getUser()->first_name}} {{Sentinel::getUser()->last_name}}</p>
           </div>
           @include('footer-admin')        
         </div>

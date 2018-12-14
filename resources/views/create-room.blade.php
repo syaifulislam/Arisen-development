@@ -5,7 +5,11 @@
 <title>ARISEN-Buat Ruangan</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+{{-- <link rel="stylesheet" href="{{ url('/css/layout3.css') }}" media="screen" type="text/css" />
+<link rel="stylesheet" href="{{ url('/css/login.css') }}" media="screen" type="text/css" /> --}}
 <link rel="stylesheet" href="{{ url('/css/layout3.css') }}" media="screen" type="text/css" />
+<link rel="stylesheet" href="{{ url('/css/layout.css') }}" media="screen" type="text/css" />
+
 <link rel="stylesheet" href="{{ url('/css/login.css') }}" media="screen" type="text/css" />
 
 </head>
@@ -17,27 +21,17 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row1">
-  <header id="header" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <div id="logo" class="fl_left">
 
-    </div>
-    <div id="quickinfo" class="fl_right">
-
-    </div>
-    <!-- ################################################################################################ -->
-  </header>
   <nav id="mainav" class="hoc clear"> 
     <!-- ################################################################################################ -->
     @include('nav-bar')
     <!-- ################################################################################################ -->
   </nav>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('images/backgrounds/01.png');">
+<div class="wrapper bgded overlay" style="background-image:url('images/2.png');">
   <section id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
    
@@ -55,9 +49,9 @@
     <!-- ################################################################################################ -->
     <div > 
       <!-- ################################################################################################ -->
-        <div class="add-ruangan">
+        <div class="add-ruangan" style="background-image:url('images/backgrounds/4.png');">
 
-          <div  class="login-card">
+          <div  class="login-card" >
               <form method="POST" action="create-room" enctype="multipart/form-data">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <input class="aktifasi-text" type="text" name="room_name" placeholder="Judul Arisan Anda">
@@ -77,11 +71,16 @@
                 </div>
                 <div class="kunci">
                   <div class="kunci2">
-                      Kunci <input class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="private" id="yesCheck"> 
+                     <label class="rad-kun"> 
+                        <input  class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="private" id="yesCheck">Kunci
+                     </label>
+                     <label class="rad-kun" style="margin-left: 15px;">
+                        <input  class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="private" id="yesCheck"> Tidak
+                     </label>
                   </div>
-                  <div class="kunci3">
+                  {{-- <div class="kunci3">
                       Tidak <input class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="public" id="noCheck">
-                  </div>
+                  </div> --}}
                 </div>
                 <div id="ifYes" style="display:none">
                   <input type='password' id='yes' name='password' placeholder="Masukan Kata Sandi">
@@ -108,8 +107,18 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
 <!-- JAVASCRIPTS -->
+
+<script>
+  function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.display = 'block';
+    }
+    else document.getElementById('ifYes').style.display = 'none';
+
+}
+</script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.backtotop.js"></script>
 <script src="js/jquery.mobilemenu.js"></script>

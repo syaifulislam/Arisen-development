@@ -2,7 +2,7 @@
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div class="center btmspace-50">
-      <div class="logo-footer">
+      <div class="logo-footer" style="background-image:url('images/logo/logo-header.png'); background-repeat: no-repeat; background-position: center; margin-bottom: 50px; ">
         
       </div>
       <nav>
@@ -34,15 +34,39 @@
       </div>
       <div class="one_third">
         <h6 class="heading" style="text-align: center;">Temui Kami :</h6>
-        <figure><a href="#"><img class="borderedbox inspace-10 btmspace-15" src="../images/320x168.png" alt=""></a>
+        <figure><a href="https://www.google.com/maps/place/Nasi+Uduk+Bandara+(+Si+Kembar+)/@-6.0913744,106.6921913,19z/data=!4m5!3m4!1s0x2e6a033afe7bc10d:0xbd42bc7467ce79fb!8m2!3d-6.091197!4d106.6925749">
+          <img class="borderedbox inspace-10 btmspace-15" src="../images/320x168.png" alt="">
+        </a>
 
         </figure>
       </div>
       <div class="one_third">
-        <h6 class="heading" style="text-align: center;">Mitra Kami :</h6>
-        <div style="background-color: blue; width: 100%; height: 100px;"></div>
-        <div style="background-color: blue; width: 100%; height: 100px; margin-top: 10px;"></div>
-    `</div>
+        <h6 class="heading" style="text-align: center;">Ikuti Kami :</h6>
+        <div style=" width: 100%; height: 100px;">
+          <div class="sosmed">
+            <a href="">
+                <i class="fa fa-facebook active" style="font-size: 100px;"></i>
+            </a>
+          </div>
+          <div class="sosmed">
+            <a href="">
+                <i class="fa fa-twitter active" style="font-size: 100px;"></i>
+            </a>
+          </div>
+        </div>
+        <div style=" width: 100%; height: 100px; margin-top: 10px;">
+            <div class="sosmed">
+                <a href="">
+                    <i class="fa fa-instagram active" style="font-size: 100px;"></i>
+                </a>
+              </div>
+            <div class="sosmed">
+            <a href="">
+                <i class="fa fa-linkedin active" style="font-size: 100px;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- ################################################################################################ -->
   </footer>

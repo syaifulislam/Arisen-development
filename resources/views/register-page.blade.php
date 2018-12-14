@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="{{ url('/css/layout2.css') }}" media="screen" type="text/css"/>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     </head>
-    <body>
-        <div class="login-card">
+    <body   style="background-image: url(/images/bg/1.png);">
+        <div class="login-card bg-login" style="margin-top: 10%;">
             <h2>PENDAFTARAN</h2><br>
             <form action="register" method="POST">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>

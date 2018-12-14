@@ -5,8 +5,8 @@
         <title>Ubah Kata Sandi</title>
         <link rel="stylesheet" href="{{ url('/css/layout2.css') }}" media="screen" type="text/css"/>
     </head>
-    <body>
-        <div class="login-card">
+    <body   style="background-image: url(/images/bg/1.png);">
+        <div class="login-card bg-login" style="margin-top: 15%;">
             <h2>Ubah Kata Sandi</h2><br>
             <form action="/auth/change-password" method="POST">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}"/>

@@ -18,7 +18,7 @@
     
 
   </head>
-  <body>  
+  <body class="body-admin">  
     <!-- Left column -->
     <div class="templatemo-flex-row">
       @include('sidebar-admin')

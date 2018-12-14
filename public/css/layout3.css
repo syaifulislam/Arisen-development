@@ -638,7 +638,7 @@ form.example::after {
 }
 
 .inp-com{
-  background-color: black;
+
   height: 100%;
   width: 100%;
 }
@@ -707,7 +707,7 @@ form.example::after {
 /* swimline-arisan
 --------------------------------------------------------------------------------------------------------------- */
 .swimlane-arisan{
-  background-color: navy;
+
   height: 500px;
   width: 100%;
   overflow-x: scroll;
@@ -820,7 +820,7 @@ form.example::after {
 /* Tambah Ruangan
 --------------------------------------------------------------------------------------------------------------- */
 .add-ruangan{
-  background-color: magenta;
+
   height:100%;
   width: 100%;
 }
@@ -913,30 +913,24 @@ form.example::after {
   height: 44px;
   margin-top: 10px;
   margin-bottom: 10px;
+  display: block;
 }
 
 .kunci2{
 
-  width: 50%;
+  width: 100%;
   height:100%;
   float: left;
   padding: 10px;
   padding-left: 90px;
   color:white;
-}
-
-.kunci3{
-
-  width: 50%;
-  height:100%; 
   float: left;
-  padding: 10px;
-  color:white;
 }
 
 .rad-kun{
   float: left;
 }
+
 
 
 /* Content Area
@@ -995,7 +989,7 @@ form.example::after {
 }
 
 .aktif-akun{
-  background-color: magenta;
+
   height:100%;
   width: 50%;
   float: right;
@@ -1344,7 +1338,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#56AED4;}
 .logo-footer{
   width: 50%; 
   height: 100px; 
-  background-color: blue;
+
   margin-left: 25%;
 }
 

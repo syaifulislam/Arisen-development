@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ url('/css/layout.css') }}" media="all" type="text/css" />
     <link href="css/templatemo-style.css" rel="stylesheet">
   </head>
-  <body>  
+  <body class="body-admin">  
     <!-- Left column -->
     <div class="templatemo-flex-row">
       @include('sidebar-admin')

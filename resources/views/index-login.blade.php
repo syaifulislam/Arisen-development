@@ -11,58 +11,23 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row1">
-  <header id="header" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <div id="logo" class="fl_left">
-      <h1><a href="index.html"></a></h1>
-      <p></p>
-    </div>
-    <div id="quickinfo" class="fl_right">
-      <ul class="nospace inline">
-      </ul>
-    </div>
-    <!-- ################################################################################################ -->
-  </header>
+
   <nav id="mainav" class="hoc clear"> 
     <!-- ################################################################################################ -->
     @include('nav-bar')
     <!-- ################################################################################################ -->
   </nav>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('images/backgrounds/01.png');">
+<div class="wrapper bgded overlay" style="background-image:url('images/backgrounds/01.png'); background-attachment: fixed;">
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <div class="flexslider basicslider">
-      <ul class="slides">
-        <li>
-          <article>
-            <p>Praesent justo at sem</p>
-            <h3 class="heading">Aliquam adipiscing faucibus</h3>
-            <p>Lacus urna consectetuer nisi donec lorem metus lobortis eu lacinia nec dignissim sed pede aliquam eget ligula nulla bibendum  nullam lacinia purus eget posuere tristique sapien neque blandit nisl.</p>
-            <footer><a class="btn" href="#">Nulla tortor sed</a></footer>
-          </article>
-        </li>
-        <li>
-          <article>
-            <p>Felis nunc diam pede</p>
-            <h3 class="heading">Vivamus eleifend sollicitudin</h3>
-            <p>Eget ultrices ipsum enim a diam praesent hendrerit lacus a condimentum scelerisque augue mi ultrices nunc vitae posuere orci dui at sem nulla dignissim venenatis pede nulla at erat adipiscing enim.</p>
-            <footer><a class="btn" href="#">Nibh aliquam erat</a></footer>
-          </article>
-        </li>
-        <li>
-          <article>
-            <p>Vehicula sed pretium</p>
-            <h3 class="heading">Laoreet consequat hendrerit</h3>
-            <p>Condimentum varius habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas donec eget tellus maecenas vel nullavivamus mattis massa vitae sapien duis eget libero non nisi.</p>
-            <footer><a class="btn" href="#">Volutpat curabitur</a></footer>
-          </article>
-        </li>
-      </ul>
+    <div class="slider-ctn"> 
+      <div class="slider" style="background-image: url('images/slider/1.png');"></div>
+      <div class="slider" style="background-image: url('images/slider/2.png');"></div>
+      <div class="slider" style="background-image: url('images/slider/3.png');"></div>
     </div>
     <!-- ################################################################################################ -->
   </div>
@@ -72,21 +37,22 @@
 <!-- ################################################################################################ -->
 <div class="wrapper row2">
   <div class="hoc container clear"> 
+    <div class="testi" style="background-image:url('images/home/h1.png'); "></div>
     <!-- ################################################################################################ -->
     <ul class="nospace group figures">
       <li class="one_third first">
-        <figure><img src="images/320x320.png" alt="">
-          <figcaption><a href="#">Lobortis suscipit</a></figcaption>
+        <figure><img src="images/home/h2.png" alt="">
+          <figcaption><a href="#">Yudha Darmawan Gustavianto</a></figcaption>
         </figure>
       </li>
       <li class="one_third">
-        <figure><img src="images/320x320.png" alt="">
-          <figcaption><a href="#">Lorem hendrerit</a></figcaption>
+        <figure><img src="images/home/h3.png" alt="">
+          <figcaption><a href="#">Tata Suharta</a></figcaption>
         </figure>
       </li>
       <li class="one_third">
-        <figure><img src="images/320x320.png" alt="">
-          <figcaption><a href="#">Convallis pretium</a></figcaption>
+        <figure><img src="images/home/h4.png" alt="">
+          <figcaption><a href="#">Narendra Satya Darma</a></figcaption>
         </figure>
       </li>
     </ul>
@@ -101,32 +67,32 @@
     <!-- main body -->
     <!-- ################################################################################################ -->
     <div class="sectiontitle">
-      <h6 class="heading">Suspendisse venenatis</h6>
-      <p>Lectus aliquam quis urna vel quam sagittis vestibulum.</p>
-    </div>
-    <ul class="nospace group">
-      <li class="one_third first">
-        <article><i class="btmspace-30 fa fa-3x fa-laptop"></i>
-          <h6 class="heading font-x1">Integer sodales odio</h6>
-          <p class="btmspace-30">Mattis erat pede at magna maecenas ut eros vel tortor viverra auctor phasellus ligula lobortis vivamus ultricies [&hellip;]</p>
-          <footer><a class="btn" href="#">Read More &rsaquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><i class="btmspace-30 fa fa-3x fa-lastfm"></i>
-          <h6 class="heading font-x1">Ultrices feugiat ligula</h6>
-          <p class="btmspace-30">Massa eget sapienfusce ornare suscipit massa duis sed magnacras condimentum tempor tortor integer id urna [&hellip;]</p>
-          <footer><a class="btn" href="#">Read More &rsaquo;</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><i class="btmspace-30 fa fa-3x fa-codiepie"></i>
-          <h6 class="heading font-x1">Augue tempor orci</h6>
-          <p class="btmspace-30">Eros mauris cursus quam consectetuer tincidunt est mi bibendum risus nec rutrum mi justo sit amet mi suspendisse [&hellip;]</p>
-          <footer><a class="btn" href="#">Read More &rsaquo;</a></footer>
-        </article>
-      </li>
-    </ul>
+        <div class="poster" style="background-image: url('images/poster/1.png');"></div>
+      </div>
+      <ul class="nospace group">
+        <li class="one_third first">
+          <article>
+            <div class="poster-ctn" style="background-image: url('images/poster/2.png');"></div>
+            <p style="font-size: 20px; text-align: center;">Arisan Online</p>
+            <p class="btmspace-30" style="text-align: center;">Kini kamu tidak lagi bingung mencari teman untuk bermain, karna di Arisen kamu bisa bertemu <br> teman-teman baru</p>
+            
+          </article>
+        </li>
+        <li class="one_third">
+          <article>
+            <div class="poster-ctn" style="background-image: url('images/poster/4.png');"></div>
+            <p style="font-size: 20px; text-align: center;">ARBAR</p>
+            <p class="btmspace-30" style="text-align: center;">Arisan Bareng, dengan promo menarik megajak teman-teman di ruangan kamu untuk berkumpul mejadi lebih asyik</p>
+          </article>
+        </li>
+        <li class="one_third">
+          <article>
+            <div class="poster-ctn" style="background-image: url('images/poster/3.png');"></div>
+            <p style="font-size: 20px; text-align: center;">Keuangan Tanpa Keraguan</p>
+            <p class="btmspace-30" style="text-align: center;">Dengan Arisen kamu tidak perlu lagi ada keraguan untuk mempercayakan uang arisan kamu</p>
+          </article>
+        </li>
+      </ul>
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>
@@ -138,28 +104,10 @@
 <div class="wrapper bgded overlay" style="background-image:url('images/backgrounds/02.png');">
   <section class="hoc container clear"> 
     <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <h6 class="heading">Ligula non elementum</h6>
-      <p>Ultricies justo urna egestas metus ut ornare leo augue pharetra.</p>
+    <div class="mitra-ctn" style="background-image:url('images/mitra/ctn.png');">
+      <div class="mlogo" style="background-image:url('images/mitra/1.png');"></div> 
     </div>
-    <ul id="stats" class="nospace group">
-      <li class="one_quarter first"><a href="#"><i class="fa fa-3x fa-sellsy"></i></a>
-        <p>Risusmorbi</p>
-        <p>12345</p>
-      </li>
-      <li class="one_quarter"><a href="#"><i class="fa fa-3x fa-contao"></i></a>
-        <p>Tincidunt</p>
-        <p>12345</p>
-      </li>
-      <li class="one_quarter"><a href="#"><i class="fa fa-3x fa-signing"></i></a>
-        <p>Vestibulum</p>
-        <p>12345</p>
-      </li>
-      <li class="one_quarter"><a href="#"><i class="fa fa-3x fa-envira"></i></a>
-        <p>Scelerisque</p>
-        <p>12345</p>
-      </li>
-    </ul>
+
     <!-- ################################################################################################ -->
   </section>
 </div>
@@ -170,32 +118,41 @@
   <section class="hoc container clear"> 
     <!-- ################################################################################################ -->
     <div class="sectiontitle">
-      <h6 class="heading">Massa ac rutrum orci augue</h6>
-      <p>Iaculis nibh quis porta nunc nisi suscipit leo vestibulum molestie.</p>
-    </div>
-    <ul class="nospace group figures latest">
-      <li class="one_third first">
-        <figure><img src="images/320x320.png" alt="">
-          <figcaption><a href="#">Felis fringilla</a>
-            <time datetime="2045-04-03"><strong>03</strong> Apr</time>
-          </figcaption>
-        </figure>
-      </li>
-      <li class="one_third">
-        <figure><img src="images/320x320.png" alt="">
-          <figcaption><a href="#">Ligula vel blandit</a>
-            <time datetime="2045-03-12"><strong>12</strong> Mar</time>
-          </figcaption>
-        </figure>
-      </li>
-      <li class="one_third">
-        <figure><img src="images/320x320.png" alt="">
-          <figcaption><a href="#">Lobortis dui leo</a>
-            <time datetime="2045-02-21"><strong>21</strong> Feb</time>
-          </figcaption>
-        </figure>
-      </li>
-    </ul>
+        <div class="hot-arbar" style="background-image:url('images/poster/5.png');"></div>
+      </div>
+      <ul class="nospace group figures latest">
+        <li class="one_third first">
+          <figure>
+            <a href="#">
+              <img src="images/arbar/1.png" alt="">
+            </a>
+            <figcaption>
+              <figcaption><a href="#">AMBIL</a>
+              <time datetime="2045-04-03"><strong>15/30</strong></time>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="one_third">
+          <figure>
+            <a href="#">
+              <img src="images/arbar/2.png" alt="">
+            </a>
+            <figcaption><a href="#">AMBIL</a>
+              <time datetime="2045-03-12"><strong>3/50</strong></time>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="one_third">
+          <figure>
+            <a href="#">
+              <img src="images/arbar/3.png" alt="">
+            </a>
+            <figcaption><a href="#">AMBIL</a>  
+              <time datetime="2045-02-21"><strong>10/80</strong></time>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
     <!-- ################################################################################################ -->
   </section>
 </div>
@@ -208,9 +165,22 @@
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<script src="{{ url('/js/jquery.min.js') }}"></script>
-<script src="{{ url('/js/jquery.backtotop.js') }}"></script>
-<script src="{{ url('/js/jquery.mobilemenu.js') }}"></script>
-<script src="{{ url('/js/jquery.flexslider-min.js') }}"></script>
+<script>
+
+  var myIndex = 0;
+  carousel();
+  
+  function carousel() {
+      var i;
+      var x = document.getElementsByClassName("slider");
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 3000 ); // Change image every 2 seconds
+  }
+  </script>
 </body>
 </html>

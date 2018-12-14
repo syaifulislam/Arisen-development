@@ -3,7 +3,7 @@
       <div id="topbar" class="hoc clear"> 
           <div class="fl_left">
               <ul>
-                <a class="pem" href="#">
+                <a class="pem" href="notification-user">
                   <li>
                     <i class="fa fa-envelope fa-fw"></i>Notifikasi
                   </li>
@@ -12,14 +12,14 @@
             </div>
         <div id='cssmenu'class="fl_right">
           <div>
-            <a href="#">{{ Money::IDR(Sentinel::getUser()->money,true)->format() }}</a>
+            <a class="pem" href="#">{{ Money::IDR(Sentinel::getUser()->money,true)->format() }}</a>
           </div>
           <ul>
           <li><a href='#'><span>Welcome, {{Sentinel::getUser()->first_name}}</span></a>
             <ul>
               <li><a href='/my-account'><span>Akun Saya</span></a></li>
               <li><a href='/my-room'><span>Ruangan Saya</span></a></li>
-              <li><a href='/auth/logout'><span>Keluar</span></a></li>
+              <li><a href='/auth/logout' style="color: red;"><span>Keluar</span></a></li>
             </ul>
            </li>
           </ul>
@@ -43,3 +43,15 @@
       </div>
     </div>
   @endif
+  <a href="/">
+  <header id="header" class="hoc clear" style="background-image:url('images/logo/logo-header.png'); background-repeat: no-repeat; background-position: center; margin-top: 20px; margin-bottom: 20px;"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+
+    </div>
+    <div id="quickinfo" class="fl_right">
+
+    </div>
+    <!-- ################################################################################################ -->
+  </header>
+</a>

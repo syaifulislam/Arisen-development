@@ -21,9 +21,9 @@
         @endif
         @if (Sentinel::getUser()->role_user == 'admin' && Sentinel::getUser()->is_super_admin == 1)
           @if (Route::getCurrentRoute()->uri == 'add-admin')
-            <li><a href="add-admin" class="active"><i class="fa fa-home fa-fw"></i>Admin</a></li>
+            <li><a href="add-admin" class="active"><i class="fa fa-user-secret fa-fw"></i>Admin</a></li>
           @else
-            <li><a href="add-admin"><i class="fa fa-home fa-fw"></i>Admin</a></li>            
+            <li><a href="add-admin"><i class="fa fa-user-secret fa-fw"></i>Admin</a></li>            
           @endif
         @endif
         @if (Sentinel::getUser()->role_user == 'admin' && Sentinel::getUser()->is_super_admin == 0)
