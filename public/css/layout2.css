@@ -142,7 +142,7 @@ body {
 
 .alert-flash-red{
   position: fixed;
-  top: 40%;
+  top: 20%;
   right: 40%;
   clear: both;
   z-index: 100;

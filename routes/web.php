@@ -109,15 +109,14 @@ Route::group(['middleware'=>SentinelCheck::class],function(){
     Route::get('/roomComments/{id}','RoomCommentController@update');
     Route::put('/checkRoom/{id}','RoomController@checkPassword');
     Route::get('/add-room/{id}/{room_id}','RoomController@addRoom');
+    Route::post('/ambil-arbar/{id}', 'ArbarController@ambilArbar');
 });
 
 Route::group(['middleware'=>SentinelAdmin::class],function(){
     Route::get('home-admin','AdminController@home');
     Route::get('laporan-keuangan','AdminController@keuangan');
     Route::get('riwayat-keuangan-admin','AdminController@keuangan');
-    Route::get('arbar-admin',function(){
-        return view('arbar-admin');
-    });
+    Route::get('arbar-admin', 'AdminController@arbarIndex');
     Route::get('setor-dana-admin', 'AdminController@setor');
     Route::get('tarik-dana-admin','AdminController@tarik');
     Route::get('aktivasi-akun-admin','AdminController@activate');
@@ -131,6 +130,8 @@ Route::group(['middleware'=>SentinelAdmin::class],function(){
     Route::get('denied-user',function(){
         return view('denied-user');
     });
+    Route::post('add-arbar', 'AdminController@arbarStore');
+    Route::get('admin-delete-arbar/{id}', 'AdminController@arbarDelete');
 });
 Route::get('coming-soon',function(){
     return view('coming-soon');
@@ -140,6 +141,9 @@ Route::get('admin-get-setor/{id}','AdminController@getUserSetor');
 Route::get('admin-get-tarik/{id}','AdminController@getUserTarik');
 Route::get('admin-get-keuangan/{id}','AdminController@getUserKeuangan');
 Route::get('admin-get-data/{id}', 'AdminController@getUserAdmin');
+Route::get('admin-get-arbar/{id}', 'AdminController@getArbar');
+Route::get('arbar-detail/{id}', 'ArbarController@getArbar');
+Route::post('arbar-admin-update/{id}', 'AdminController@updateArbar');
 
 Route::get('admin-super-admin',function(){
     return view('admin-super-admin');

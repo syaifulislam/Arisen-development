@@ -8,6 +8,8 @@ use App\User;
 use App\Users;
 use App\PaymentHistory;
 use App\AdminImage;
+use App\Arbar;
+use App\ArbarDetail;
 use Sentinel;
 use Activation;
 use Storage;
@@ -173,5 +175,61 @@ class AdminController extends Controller
             $timeEnd = Carbon::now()->endOfYear()->format('Y-m-d');
         }
         return (new PaymentExport($period))->download('Data_Payment_Arisen_'.$period.'_from_'.$timeStart.'_to_'.$timeEnd.'.xlsx');
+    }
+
+    public function arbarStore(Request $request){
+        $params = $request->except('_token','fileToUploadPromo','fileToUploadCoupon');
+        $params['generate_id'] = (int)Sentinel::getUser()->id.rand(10000,99999);
+        $params['created_at'] = Carbon::now()->setTimezone('+7');
+        $params['updated_at'] = Carbon::now()->setTimezone('+7');
+        if ($request->has('fileToUploadPromo')) {
+            $image      = $request->file('fileToUploadPromo');
+            $fileName   = 'ArbarPromo-'.Sentinel::getUser()->id.'.'.time() . '.' . $image->getClientOriginalExtension();
+            Storage::disk('public')->put($fileName, File::get($image));
+            $params['promo_image_path'] = $fileName;
+        }
+        if ($request->has('fileToUploadCoupon')) {
+            $image     = $request->file('fileToUploadCoupon');
+            $fileName  = 'ArbarCoupon-'.Sentinel::getUser()->id.'.'.time() . '.' . $image->getClientOriginalExtension();
+            Storage::disk('public')->put($fileName, File::get($image));
+            $params['coupon_image_path'] = $fileName;
+        }
+        Arbar::insert($params);
+        return redirect()->back();
+    }
+
+    public function arbarIndex(){
+        $data = Arbar::all();
+        return view('arbar-admin',compact('data'));
+    }
+
+    public function getArbar($id){
+        $data = Arbar::find($id);
+        return response()->json([
+            "data" =>   $data
+        ]);
+    }
+
+    public function updateArbar(Request $request,$id){
+        $params = $request->except('_token','fileToUploadPromo','fileToUploadCoupon');
+        if ($request->has('fileToUploadPromo')) {
+            $image      = $request->file('fileToUploadPromo');
+            $fileName   = 'ArbarPromo-'.Sentinel::getUser()->id.'.'.time() . '.' . $image->getClientOriginalExtension();
+            Storage::disk('public')->put($fileName, File::get($image));
+            $params['promo_image_path'] = $fileName;
+        }
+        if ($request->has('fileToUploadCoupon')) {
+            $image     = $request->file('fileToUploadCoupon');
+            $fileName  = 'ArbarCoupon-'.Sentinel::getUser()->id.'.'.time() . '.' . $image->getClientOriginalExtension();
+            Storage::disk('public')->put($fileName, File::get($image));
+            $params['coupon_image_path'] = $fileName;
+        }
+        $data = Arbar::find($id)->update($params);
+        return redirect()->back();
+    }
+
+    public function arbarDelete($id){
+        Arbar::find($id)->delete();
+        return redirect()->back();
     }
 }

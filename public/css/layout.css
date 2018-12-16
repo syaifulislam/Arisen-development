@@ -618,7 +618,7 @@
   width: 600px;
   text-align: center;
   background: #fff;
-  position: fixed;
+  position: absolute;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);

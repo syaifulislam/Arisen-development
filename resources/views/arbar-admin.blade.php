@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <title>ARISEN Admin - Notifikasi</title>
+    <title>ARISEN Admin - Arbar</title>
     <meta name="description" content="">
     <meta name="author" content="templatemo">
 
@@ -50,64 +50,22 @@
                 </tr>
               </thead>
               <tbody>
-                  <tr >
-
-                    <td><a href="#" onclick="varbar()">#1231242  </a></td>
-                    <td>Gratis 3 Kopi</td>
-                    <td>Gold Drip</td>
-                    <td>golddrip@gmail.com</td>
-                    <td>3 Pemain</td>
-                    <td>100/100</td>
+                @foreach ($data as $item)
+                  <tr>
+                    <td><a href="#" onclick="varbar({{$item->id}})">#{{$item->generate_id}}  </a></td>
+                    <td>{{$item->title}}</td>
+                    <td>{{$item->sponsor}}</td>
+                    <td>{{$item->sponsor_email}}</td>
+                    <td>{{$item->total_player}} Pemain</td>
+                    <td>{{$item->joined_player}}/{{$item->coupon}}</td>
                     <td>12 NOV 2018</td>
-
-                  </tr>  
-                  
-                  <tr >
-
-                      <td><a href="#" onclick="varbar()">#1232362  </a></td>
-                      <td>Gratis 5 Roti Bakar</td>
-                      <td>Gold Drip</td>
-                      <td>golddrip@gmail.com</td>
-                      <td>5 Pemain</td>
-                      <td>57/100</td>
-                      <td>10 NOV 2018</td>
-  
-                    </tr>
+                  </tr> 
+                @endforeach
               </tbody>
             </table>
           </div>
         </div>
         <div id="form-view-arbar">
-
-            <h1>Gratis 3 Kopi</h1>
-            
-            <form action="#">
-              <div class="img-promo-arbar">
-                <a href="#" onclick="viewDetail()">
-                    <i class="fa fa-search-plus fa-fw" ></i>
-                </a>
-              </div>
-
-              <div class="img-kupon-arbar">
-                  <a href="#" onclick="viewDetail()">
-                      <i class="fa fa-search-plus fa-fw" ></i>
-                  </a>
-                </div>
-                <div class="inf-form-adm">
-                    #1321351<br>
-                    Gold Drip<br>
-                    golddrip@gmail.com<br>
-                    Jl.Cempaka Baru VII no.12 , Jakarta-Pusat<br>
-                    021-4252587<br>
-                    3 Pemain<br>
-                    100/100<br>
-                    12 NOV 2018<br>
-                </div>
-              
-              <input class="formBtn" type="submit" value="UBAH" onclick=" ubahArbar()"/>
-              <input class="formBtn" type="submit" value="HAPUS"/>
-              <input class="formBtn" type="submit" value="TUTUP"/>
-            </form>
           </div>
           <div class="view-img-adm"> 
             <form action="#">
@@ -117,58 +75,20 @@
             </form>
           </div>
           <div class="form-ubah-arbar2">
-
-            <h1>Ubah ARBAR</h1>
-            
-            <form action="#">
-              <input name="" type="hidden" value=""/>
-              <div class="form-add-arbar2">
-                <input class="fld-tambah-arbar" type="text" name="first_name" placeholder="Gratis 3 Kopi">
-                <input class="fld-tambah-arbar" type="text" name="first_name" placeholder="Gold Drip">
-                <input class="fld-tambah-arbar" type="text" name="last_name" placeholder="Jl.Cempaka Baru VII no.12 , Jakarta-Pusat">
-                <input class="fld-tambah-arbar" type="email" name="email" placeholder="golddrip@gmail.com">
-                <input class="fld-tambah-arbar" type="email" name="email" placeholder="021-4252587">
-
-                <div class="add-arbar">
-                  <div class="inf-user2">Pemain</div>
-                  <input  type="number" name="total_player" min="2" max="100" step="1" data-number-stepfactor="1" placeholder="3">
-                </div>
-                
-                <div class="add-arbar">
-                    <div class="inf-user2">Kupon</div>
-                    <input  type="number" name="total_player" min="2" max="1000" step="1" data-number-stepfactor="1" placeholder="100">
-                  </div>
-
-                <div class="form-tambah-arbar3">
-                  <label>Gambar Promo</label> 
-                  <input type="file" name="fileToUpload" id="fileToUpload" class="chs-file">
-                </div>
-                <p>Berkas Maximal 5 MB.</p>
-                <div class="form-tambah-arbar3">
-                    <label>Gambar Kupon</label> 
-                    <input type="file" name="fileToUpload" id="fileToUpload" class="chs-file">
-                </div>
-                <p>Berkas Maximal 5 MB.</p>
-              </div>
-              <div class="btn-arbar-div">
-                <input class="btn-arbar" type="submit" value="UBAH ARBAR"/>
-                <input class="btn-arbar" type="submit" value="TUTUP"/>
-              </div>
-            </form>
           </div>
 
           <div class="form-add-arbar">
 
                 <h1>Tambah ARBAR</h1>
                 
-                <form action="" method="">
-                      <input name="" type="hidden" value=""/>
+                <form action="add-arbar" method="POST" enctype="multipart/form-data">
+                      <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                         <div class="form-add-arbar2">
-                          <input class="fld-tambah-arbar" type="text" name="first_name" placeholder="Judul ARBAR">
-                          <input class="fld-tambah-arbar" type="text" name="first_name" placeholder="Sponsor ARBAR">
-                          <input class="fld-tambah-arbar" type="text" name="last_name" placeholder="Alamat Sponsor ARBAR">
-                          <input class="fld-tambah-arbar" type="email" name="email" placeholder="Email Sponsor ARBAR">
-                          <input class="fld-tambah-arbar" type="email" name="email" placeholder="Kontak Sponsor ARBAR">
+                          <input class="fld-tambah-arbar" type="text" name="title" placeholder="Judul ARBAR">
+                          <input class="fld-tambah-arbar" type="text" name="sponsor" placeholder="Sponsor ARBAR">
+                          <input class="fld-tambah-arbar" type="text" name="sponsor_address" placeholder="Alamat Sponsor ARBAR">
+                          <input class="fld-tambah-arbar" type="email" name="sponsor_email" placeholder="Email Sponsor ARBAR">
+                          <input class="fld-tambah-arbar" type="text" name="contact_sponsor" placeholder="Kontak Sponsor ARBAR">
 
                           <div class="add-arbar">
                             <div class="inf-user2">Pemain</div>
@@ -177,23 +97,23 @@
                           
                           <div class="add-arbar">
                               <div class="inf-user2">Kupon</div>
-                              <input  type="number" name="total_player" min="2" max="1000" step="1" data-number-stepfactor="1" placeholder="Jumlah Kupon">
+                              <input  type="number" name="coupon" min="2" max="1000" step="1" data-number-stepfactor="1" placeholder="Jumlah Kupon">
                             </div>
 
                           <div class="form-tambah-arbar3">
                             <label>Gambar Promo</label> 
-                            <input type="file" name="fileToUpload" id="fileToUpload" class="chs-file">
+                            <input type="file" name="fileToUploadPromo" id="fileToUpload" class="chs-file">
                           </div>
                           <p>Berkas Maximal 5 MB.</p>
                           <div class="form-tambah-arbar3">
-                              <label>Gambar Kupon</label> 
-                              <input type="file" name="fileToUpload" id="fileToUpload" class="chs-file">
+                            <label>Gambar Kupon</label> 
+                            <input type="file" name="fileToUploadCoupon" id="fileToUpload" class="chs-file">
                           </div>
                           <p>Berkas Maximal 5 MB.</p>
                         </div>
                         <div class="btn-arbar-div">
                           <input class="btn-arbar" type="submit" value="TAMBAH ARBAR"/>
-                          <input class="btn-arbar" type="submit" value="TUTUP"/>
+                          <button class="btn-arbar" type=button onclick="closeArbar()">TUTUP</button>
                         </div>
 
                       </form>
@@ -220,12 +140,49 @@ $(document).mouseup(function (e) {
         && container.has(e.target).length === 0) // ... nor a descendant of the container
     {
         container.fadeOut();
+        container.empty();
     }
   });
 
-function varbar(){
+function varbar(id){
+  $.ajax({
+        type: "GET",
+        url: "/admin-get-arbar/"+id,
+        success: function(msg){
+          var data = msg.data;
+          $('#form-view-arbar').append(
+            '<h1>'+data.title+'</h1>'+
+                    '<form action="#">'+
+                      '<div class="img-promo-arbar">'+
+                        '<a href="#" onclick="viewDetail()">'+
+                            '<img style="height:100%" src="uploads/' + data.promo_image_path + '" />'+
+                            '<i class="fa fa-search-plus fa-fw" ></i>'+
+                        '</a>'+
+                      '</div>'+
+                      '<div class="img-kupon-arbar">'+
+                          '<a href="#" onclick="viewDetail()">'+
+                              '<img style="height:100%" src="uploads/' + data.coupon_image_path + '" />'+
+                              '<i class="fa fa-search-plus fa-fw" ></i>'+
+                          '</a>'+
+                        '</div>'+
+                        '<div class="inf-form-adm">'+
+                            '#'+data.generate_id+'<br>'+
+                            data.sponsor+'<br>'+
+                            data.sponsor_email+'<br>'+
+                            data.sponsor_address+'<br>'+
+                            data.contact_sponsor+'<br>'+
+                            data.total_player+' Pemain<br>'+
+                            data.joined_player+'/'+data.coupon+'<br>'+
+                            '12 NOV 2018<br>'+
+                        '</div>'+
+                      '<input class="formBtn" type="submit" value="UBAH" onclick="ubahArbar('+id+')"/>'+
+                      '<a class="formBtn" href="admin-delete-arbar/'+id+'">HAPUS</a>'+
+                      '<input class="formBtn" type="submit" value="TUTUP"/>'+
+                    '</form>'
+          );
+        }
+      });
   $('#form-view-arbar').fadeToggle();
-
 }
 
 $(document).mouseup(function (e) {
@@ -250,12 +207,54 @@ $(document).mouseup(function (e) {
         && container.has(e.target).length === 0) // ... nor a descendant of the container
     {
         container.fadeOut();
+        container.empty();
     }
   });
 
-function ubahArbar(){
+function ubahArbar(id){
+  $.ajax({
+        type: "GET",
+        url: "/admin-get-arbar/"+id,
+        success: function(msg){
+          var data = msg.data;
+          $('.form-ubah-arbar2').append(
+            '<h1>Ubah ARBAR</h1>'+
+            '<form action="arbar-admin-update/'+id+'" method="POST" enctype="multipart/form-data">'+
+            '<input name="_token" type="hidden" value="{{ csrf_token() }}"/>'+
+              '<div class="form-add-arbar2">'+
+                '<input class="fld-tambah-arbar" type="text" name="title" value="'+data.title+'">'+
+                '<input class="fld-tambah-arbar" type="text" name="sponsor" value="'+data.sponsor+'">'+
+                '<input class="fld-tambah-arbar" type="text" name="sponsor_address" value="'+data.sponsor_address+'">'+
+                '<input class="fld-tambah-arbar" type="email" name="sponsor_email" value="'+data.sponsor_email+'">'+
+                '<input class="fld-tambah-arbar" type="text" name="contact_sponsor" value="'+data.contact_sponsor+'">'+
+                '<div class="add-arbar">'+
+                  '<div class="inf-user2">Pemain</div>'+
+                  '<input  type="number" name="total_player" min="2" max="100" step="1" data-number-stepfactor="1" value="'+data.total_player+'">'+
+                '</div>'+
+                '<div class="add-arbar">'+
+                    '<div class="inf-user2">Kupon</div>'+
+                    '<input  type="number" name="coupon" min="2" max="1000" step="1" data-number-stepfactor="1" value="'+data.coupon+'">'+
+                  '</div>'+
+                '<div class="form-tambah-arbar3">'+
+                  '<label>Gambar Promo</label> '+
+                  '<input type="file" name="fileToUploadPromo" id="fileToUpload" class="chs-file">'+
+                '</div>'+
+                '<p>Berkas Maximal 5 MB.</p>'+
+                '<div class="form-tambah-arbar3">'+
+                    '<label>Gambar Kupon</label> '+
+                    '<input type="file" name="fileToUploadCoupon" id="fileToUpload" class="chs-file">'+
+                '</div>'+
+                '<p>Berkas Maximal 5 MB.</p>'+
+              '</div>'+
+              '<div class="btn-arbar-div">'+
+                '<input class="btn-arbar" type="submit" value="UBAH ARBAR"/>'+
+                '<button class="btn-arbar" type=button>TUTUP</button>'+
+              '</div>'+
+            '</form>'
+          );
+        }
+      });
   $('.form-ubah-arbar2').fadeToggle();
-
 }
 
 $(document).mouseup(function (e) {
@@ -270,7 +269,10 @@ $(document).mouseup(function (e) {
 
 function addArbar(){
   $('.form-add-arbar').fadeToggle();
+}
 
+function closeArbar(){
+  $('.form-add-arbar').fadeToggle();
 }
 
     </script>
