@@ -14,6 +14,10 @@ use App\Http\Middleware\SentinelAdmin;
 |
 */
 
+Route::get('/admin',function(){
+    return redirect('auth/login');
+});
+
 Route::get('notification-user',function(){
     return view('notification-user');
 });
@@ -22,9 +26,9 @@ Route::get('detail-saldo',function(){
     return view('detail-saldo');
 });
 
-Route::get('ruangan-arisan',function(){
-    return view('ruangan-arisan');
-});
+// Route::get('ruangan-arisan',function(){
+//     return view('ruangan-arisan');
+// });
 
 Route::get('ruangan-arisan-undian',function(){
     return view('ruangan-arisan-undian');
@@ -103,7 +107,7 @@ Route::group(['middleware'=>SentinelCheck::class],function(){
     Route::post('/request-money','SetorController@requestMoney');
     Route::get('/riwayat-keuangan','SetorController@history');
     Route::get('/riwayat-permainan','RiwayatPermainanController@index');
-    Route::get('/room/{id}','RoomController@room');
+    Route::get('/ruangan-arisan/{id}','RoomController@room');
     Route::post('/roomComment/{id}','RoomCommentController@create');
     Route::get('/roomComment/{id}','RoomCommentController@index');
     Route::get('/roomComments/{id}','RoomCommentController@update');

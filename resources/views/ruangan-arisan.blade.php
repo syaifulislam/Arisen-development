@@ -36,13 +36,13 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('images/2.png');">
+<div class="wrapper bgded overlay" style="background-image:url('/images/2.png');">
   <section id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
    
     <!-- ################################################################################################ -->
-  {{-- <h1 style="font-size: 25px;" class="heading">#{{$id}}</h1> --}}
-  {{-- <h6 class="heading">{{$data->room_name}}</h6> --}}
+  <h1 style="font-size: 25px;" class="heading">#{{$id}}</h1>
+  <h6 class="heading">{{$data->room_name}}</h6>
     <!-- ################################################################################################ -->
   </section>
 </div>
@@ -57,7 +57,8 @@
           <!-- ################################################################################################ -->
          <div class="scrollable">
            <p style="font-size: 30px ; margin-bottom: 10px; text-align: center;">RIWAYAT PERMAINAN</p>
-            <button class="countdown">
+           @if ($boolStart)
+           <button class="countdown">
               UNDIAN
               <br>
               <!-- <span id="hari"></span><span id="jam"></span><span id="menit"></span><span id="detik"></span> -->
@@ -80,10 +81,23 @@
                 </div>
               </div>
             </button>
+            @else
+            <button class="undian-btn" onclick="openForm2()">
+                UNDI ARISAN
+              </button>
+              <div class="form-popup" id="myForm2" >
+                  <form action="/action_page.php" class="form-container" style="margin-bottom: -150px;">
+                    <div class="undian-prev" style="background-image:url('/images/backgrounds/3.png');">
+                      <p style="font-size: 30px; line-height: 30px; padding-top: 150px; text-align: center;">Selamat,<br> <br> Yudha Darmawan Gustavianto</p>
+                    </div>
+                    <button type="button" class="btn cancel" onclick="closeForm2()">Tutup</button>
+                  </form>
+              </div>
+           @endif
             <div class="form-popup" id="myForm" >
     
             </div>
-           <div class="swimlane-arisan" style="background-image:url('images/backgrounds/1.png');">
+           <div class="swimlane-arisan" style="background-image:url('/images/backgrounds/1.png');">
              <div class="box">
                 <ul>
                     <li>
@@ -127,25 +141,25 @@
             <div class="text-kolom">
               <p style="font-size: 30px ; margin-bottom: 10px; text-align: center;">KOLOM KOMENTAR</p>
             </div>
-            <div class="swimlane-comment" style="background-image:url('images/backgrounds/2.png'); overflow-y:hidden;">
+            <div class="swimlane-comment" style="background-image:url('/images/backgrounds/2.png'); overflow-y:hidden;">
              <div class="box2" id="box-comment" style="overflow-y:scroll ; height: 450px;">
                 <ul id="first-list" class="comment-list">
                 </ul>
             </div>          
             </div>
           </div>
-          {{-- @if (!$joinRoom) --}}
+          @if (!$joinRoom)
               {{-- tambah ruangan --}}
               <button class="open-button" onclick="openForm()">Tambah Ruangan</button>
               <div class="form-popup" id="myForms" >
-              <form action="/add-room/" method="GET" class="form-container">
+              <form action="/add-room/{{Sentinel::getUser()->id}}/{{$data->generate_id}}" method="GET" class="form-container">
                   <p style="font-size: 25px ; margin-bottom: 20px; text-align: center;">Tambah Ruangan Ini ?</p>
                   <button type="submit" class="btn">Tambah</button>
                   <button type="button" class="btn cancel" onclick="closeForm()">Batal</button>
                 </form>
               </div>
               {{-- end --}}
-          {{-- @endif --}}
+          @endif
           <div>
           <div>
             <div  class="inp-com">
@@ -186,7 +200,7 @@
       tid = setTimeout(mycode, 1000); 
       $.ajax({
         type: "GET",
-       
+        url:"/roomComment/{{$data->id}}",
         success: function(msg){
           if(msg.data.length > init){
             var i = init;
@@ -207,7 +221,7 @@
     
     $.ajax({
         type: "GET",
-        
+        url:"/roomComments/{{$data->id}}",
         success: function(msg){
           // console.log(msg.data)
           var i = 0;
@@ -260,29 +274,23 @@ function initializeClock(id, endtime) {
   updateClock();
   var timeinterval = setInterval(updateClock, 1000);
 }
-
-
+var deadline = "{{$getDataTimes}}";
 initializeClock('clockdiv', deadline);
-  });
+});
   $('.comment-btn').click(function(){
     var comment = $('.comment-text').val();
     $.ajax({
       type: "POST",
+      url:"/roomComment/{{$data->id}}",
       data: {
         "_token": "{{ csrf_token() }}",
         "comment": comment
         },
-     
       success: function(msg){
         $('.comment-text').val('')
         var objDiv = document.getElementById("box-comment");
         objDiv.scrollTop = objDiv.scrollHeight;
-        init++;
-        $('.comment-list').append('<li>'+
-                        '<div><h1>SIXIOT<h1></div>'+
-                        '<div>Harap saldo anda cukup</div>'+
-                        '<div class="time-com">JAN 1 <sup>th</sup></div>'+
-                    '</li>');
+        
       }
     });
   });
@@ -291,8 +299,16 @@ function openForm() {
     document.getElementById("myForms").style.display = "block";
 }
 
+function openForm2() {
+    document.getElementById("myForm2").style.display = "block";
+}
+
 function closeForm() {
     document.getElementById("myForms").style.display = "none";
+}
+
+function closeForm2() {
+    document.getElementById("myForm2").style.display = "none";
 }
   
 </script>

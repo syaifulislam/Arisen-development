@@ -2,16 +2,40 @@
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div class="center btmspace-50">
-      <div class="logo-footer" style="background-image:url('images/logo/logo-header.png'); background-repeat: no-repeat; background-position: center; margin-bottom: 50px; ">
+      <div class="logo-footer" style="background-image:url('/images/logo/logo-header.png'); background-repeat: no-repeat; background-position: center; margin-bottom: 50px; ">
         
       </div>
       <nav>
         <ul class="nospace inline pushright uppercase">
-          <li><a href="#"><i class="fa fa-home"></i></a></li>
-          <li><a href="#">FORUM</a></li>
-          <li><a href="#">ARBAR</a></li>
-          <li><a href="#">BANTUAN</a></li>
-          <li><a href="#">TENTANG KAMI</a></li>
+          @if (Route::getCurrentRoute()->uri == '/')
+          <li class="active"><a href="/"><i class="fa fa-home"></i></a></li>
+          @else
+          <li><a href="/"><i class="fa fa-home"></i></a></li>
+          @endif
+      
+          @if (Route::getCurrentRoute()->uri == 'forum')
+          <li class="active"><a href="forum">FORUM</a></li>        
+          @else
+          <li><a href="/forum">FORUM</a></li>        
+          @endif
+      
+          @if (Route::getCurrentRoute()->uri == 'arbar')
+          <li class="active"><a href="arbar">ARBAR</a></li>        
+          @else
+          <li><a href="/arbar">ARBAR</a></li>        
+          @endif
+      
+          @if (Route::getCurrentRoute()->uri == 'bantuan')
+          <li class="active"><a href="bantuan">BANTUAN</a></li>        
+          @else
+          <li><a href="/bantuan">BANTUAN</a></li>        
+          @endif
+      
+          @if (Route::getCurrentRoute()->uri == 'tentang-kami')
+          <li class="active"><a href="tentang-kami">TENTANG KAMI</a></li>        
+          @else
+          <li><a href="/tentang-kami">TENTANG KAMI</a></li>        
+          @endif
         </ul>
       </nav>
     </div>

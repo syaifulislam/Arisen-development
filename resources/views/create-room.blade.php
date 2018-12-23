@@ -75,7 +75,7 @@
                         <input  class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="private" id="yesCheck">Kunci
                      </label>
                      <label class="rad-kun" style="margin-left: 15px;">
-                        <input  class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="private" id="yesCheck"> Tidak
+                        <input  class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="public" id="yesCheck"> Tidak
                      </label>
                   </div>
                   {{-- <div class="kunci3">

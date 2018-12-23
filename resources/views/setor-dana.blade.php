@@ -71,7 +71,7 @@
                         <input class="aktifasi-text" type="text" name="request_nominal" placeholder="Masukan Jumlah Uang">
                         <input  type="submit" class="login login-submit" value="SETOR">
                         <div class="login-help">
-                          •<a class="bantuan-link" href="#">Bantuan</a>•
+                          •<a class="bantuan-link" href="bantuan">Bantuan</a>•
                          </div>
                       </form>
                       </div>

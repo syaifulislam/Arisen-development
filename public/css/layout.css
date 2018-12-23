@@ -1000,7 +1000,10 @@ form.example::after {
 .bantuan-link{
   color:grey;
   font-size: 15px;
+  height: auto;
 }
+
+
 
 /* Tarik-Dana
 --------------------------------------------------------------------------------------------------------------- */
@@ -1484,14 +1487,14 @@ form.example::after {
 }
 
 .container .content-l{
-
+  background-color: rgba(255, 255, 255, 0.9);
   height: 1000px;
 }
 
 
 
 .username-user{
-
+  margin-top: 30%;
   height: 40%;
   width: 100%;
   float: left;
@@ -1517,7 +1520,7 @@ form.example::after {
 }
 
 .detail-akun-id{
- 
+  
   height: 150px;
   width: 20%;
   margin-top: 3%;

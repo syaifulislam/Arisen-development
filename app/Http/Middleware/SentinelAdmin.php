@@ -16,12 +16,13 @@ class SentinelAdmin
      */
     public function handle($request, Closure $next)
     {
+        if(!Sentinel::check()){
+            return redirect('auth/login');
+        }
         if(Sentinel::getUser()->role_user == 'admin'){
             return $next($request);
         }else if(Sentinel::getUser()->role_user == 'user'){
-            return redirect('home-page');
-        }else{
-            return redirect('auth/login');
+            return redirect('/');
         }
     }
 }

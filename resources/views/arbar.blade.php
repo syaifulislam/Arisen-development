@@ -70,7 +70,7 @@
                           </a>
                           <figcaption>
                             <figcaption>
-                            <time datetime="2045-04-03"><strong>{{$data[$i]->joined_player}}/{{$data[$i]->coupon}}</strong></time>
+                            <time datetime="2045-04-03"><strong>{{$data[$i]->coupon - $data[$i]->joined_player}}/{{$data[$i]->coupon}}</strong></time>
                           </figcaption>
                         </figure>
                     </li>

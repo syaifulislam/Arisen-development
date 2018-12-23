@@ -100,7 +100,7 @@ function typePassword(user_id){
                    '</div>'+
                     '<div style=" width: 100%; height: auto; margin-bottom: 10px;">#'+msg.data.user.user_code+'<br>'+msg.data.user.username+
                     '<br>'+msg.data.bank_account_number+
-                    '<br>'+msg.data.bank_account_name+'<br>'+msg.data.bank_account_office.toUpperCase()+
+                    '<br>'+msg.data.bank_account_name+'<br>'+msg.data.bank_account_office+
                     '</div>'+
                     '<a href="/activate/'+user_id+'/1"><p class="formBtn">AKTIFKAN</p></a>'+
                     '<a href="/activate/'+user_id+'/2"><p class="formBtn">TOLAK</p></a>'+

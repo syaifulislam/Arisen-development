@@ -18,6 +18,11 @@ class RoomController extends Controller
     }
 
     public function create(){
+        if(Sentinel::getUser()->is_verif == 2){
+            return redirect()->back()->with('alert', 'Akun Anda Telah Ditolak');
+        }else if(Sentinel::getUser()->is_verif == 0){
+            return redirect('/my-account')->with('alert', 'Silahkan Aktivasi Akun Anda Terlebih Dahulu');
+        }
         return view('create-room');
     }
 
@@ -36,22 +41,40 @@ class RoomController extends Controller
         }else{
             $params['period_start_date'] = Carbon::now()->addYear()->format('Y-m-d');
         }
-        $params['period_status'] = 'Belum Mulai';
-        $params['created_by'] = Sentinel::getUser()->id;
-        $params['total_player_join'] = 0;
-        $params['generate_id'] =  rand(10,99).Carbon::now()->setTimezone('+7')->format('Ymd');
-        $params['created_at'] = Carbon::now()->setTimezone('+7');
-        $params['updated_at'] = Carbon::now()->setTimezone('+7');
-        Room::insert($params);
-        return redirect('forum');
+        try{
+            DB::beginTransaction();
+            $params['period_status'] = 'Belum Mulai';
+            $params['created_by'] = Sentinel::getUser()->id;
+            $params['total_player_join'] = 0;
+            $params['generate_id'] =  rand(10,99).Carbon::now()->setTimezone('+7')->format('Ymd');
+            $params['created_at'] = Carbon::now()->setTimezone('+7');
+            $params['updated_at'] = Carbon::now()->setTimezone('+7');
+            $data = Room::insert($params);
+            $this->addRoom(Sentinel::getUser()->id,$params['generate_id']);
+            DB::commit();
+        }catch(\Exception $e){
+            DB::rollback();
+            return redirect('forum');
+        }
+        return redirect('/ruangan-arisan/'.$params['generate_id']);
     }
 
     public function room($id){
+        if(Sentinel::getUser()->is_verif == 2){
+            return redirect()->back()->with('alert', 'Akun Anda Telah Ditolak');
+        }else if(Sentinel::getUser()->is_verif == 0){
+            return redirect('/my-account')->with('alert', 'Silahkan Aktivasi Akun Anda Terlebih Dahulu');
+        }
         $data = Room::where('generate_id',$id)->first();
         $getTime = Carbon::now()->setTimezone('+7');
         $getDataTimes = $data->period_start_date." 07:00:00";
+        if (Carbon::parse($getDataTimes) <= Carbon::now()) {
+            $boolStart = false;
+        } else {
+            $boolStart = true;
+        }
         $joinRoom = JoinRoom::where('user_id',Sentinel::getUser()->id)->where('room_id',$data->id)->first();
-        return view('ruangan-arisan',compact('id','data','getDataTimes','joinRoom'));
+        return view('ruangan-arisan',compact('id','data','getDataTimes','joinRoom','boolStart'));
     }
 
     public function checkPassword($id, Request $request){
@@ -88,10 +111,10 @@ class RoomController extends Controller
             }
             Room::where('generate_id',$roomId)->increment('total_player_join');
             DB::commit();
-            return redirect('/room/'.$roomId);
+            return redirect('/ruangan-arisan/'.$roomId);
         }catch(\Exception $e){
             DB::rollback();
-            return redirect('/room/'.$roomId);
+            return redirect('/ruangan-arisan/'.$roomId);
         }
     }
 }

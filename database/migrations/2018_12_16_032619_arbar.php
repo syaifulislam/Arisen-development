@@ -13,25 +13,25 @@ class Arbar extends Migration
      */
     public function up()
     {
-        // Schema::dropIfExists('arbars');
+        Schema::dropIfExists('arbars');
         Schema::dropIfExists('arbar_details');
 
-        // Schema::create('arbars',function(Blueprint $table){
-        //     $table->increments('id');
-        //     $table->string('title');
-        //     $table->string('sponsor');
-        //     $table->string('sponsor_address');
-        //     $table->string('sponsor_email');
-        //     $table->string('contact_sponsor');
-        //     $table->integer('total_player');
-        //     $table->integer('joined_player')->default(0);
-        //     $table->integer('coupon');
-        //     $table->text('promo_image_path');
-        //     $table->text('coupon_image_path');
-        //     $table->integer('generate_id');
-        //     $table->timestamps();
-        //     $table->softDeletes();
-        // });
+        Schema::create('arbars',function(Blueprint $table){
+            $table->increments('id');
+            $table->string('title');
+            $table->string('sponsor');
+            $table->string('sponsor_address');
+            $table->string('sponsor_email');
+            $table->string('contact_sponsor');
+            $table->integer('total_player');
+            $table->integer('joined_player')->default(0);
+            $table->integer('coupon');
+            $table->text('promo_image_path');
+            $table->text('coupon_image_path');
+            $table->integer('generate_id');
+            $table->timestamps();
+            $table->softDeletes();
+        });
 
         Schema::create('arbar_details',function(Blueprint $table){
             $table->increments('id');

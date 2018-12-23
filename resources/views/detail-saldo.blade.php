@@ -57,7 +57,7 @@
                       <h1 class="text-inf-sal">Saldo Aktif</h1>
                       <br>
                       <br>
-                      {{-- {{$myMoney}} --}}
+                      {{$myMoney}}
                     </div>
                     <div class="con-but">
                       <div><a href="/setor" class="but-setor2">SETOR</a></div>
@@ -80,7 +80,7 @@
                       </thead>
                       <tbody>
                           <?php $init = 1;?>
-                          {{-- @foreach ($getData as $item) --}}
+                          @foreach ($getData as $item)
                             <tr>
                                 <td><a href="#">{{$init}}</a></td>
                                 <td>{{$item->created_at->format('d M Y H:i:s')}}</td>
@@ -92,7 +92,7 @@
                                 <td>{{$item->payment_type->name}}</td>
                                 <td>{{$item->status}}</td>
                             </tr>
-                       
+                          @endforeach
                       </tbody>
                     </table>
                   </div>

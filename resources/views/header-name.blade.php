@@ -12,7 +12,7 @@
             </div>
         <div id='cssmenu'class="fl_right">
           <div>
-            <a class="pem" href="#">{{ Money::IDR(Sentinel::getUser()->money,true)->format() }}</a>
+            <a class="pem" href="/riwayat-keuangan">{{ Money::IDR(Sentinel::getUser()->money,true)->format() }}</a>
           </div>
           <ul>
           <li><a href='#'><span>Welcome, {{Sentinel::getUser()->first_name}}</span></a>
@@ -44,7 +44,7 @@
     </div>
   @endif
   <a href="/">
-  <header id="header" class="hoc clear" style="background-image:url('images/logo/logo-header.png'); background-repeat: no-repeat; background-position: center; margin-top: 20px; margin-bottom: 20px;"> 
+  <header id="header" class="hoc clear" style="background-image:url('/images/logo/logo-header.png'); background-repeat: no-repeat; background-position: center; margin-top: 20px; margin-bottom: 20px;"> 
     <!-- ################################################################################################ -->
     <div id="logo" class="fl_left">
 

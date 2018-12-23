@@ -70,7 +70,7 @@
             @foreach ($dataRoom as $item)
               <tr>
               @if (!$item->password)
-              <td><a href="/room/{{$item->generate_id}}">#{{$item->generate_id}}</a></td>              
+              <td><a href="/ruangan-arisan/{{$item->generate_id}}">#{{$item->generate_id}}</a></td>              
               @else
               <td><a href="#" onclick="typePassword({{$item->generate_id}})">#{{$item->generate_id}}</a></td>              
               @endif
@@ -111,6 +111,13 @@
 <script src="js/jquery.backtotop.js"></script>
 <script src="js/jquery.mobilemenu.js"></script>
 <script>
+  $(document).ready(function(){
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+  });
 var init = '';
 $(document).mouseup(function (e) {
     var container = $("#contactForm");

@@ -62,7 +62,7 @@
                   <option value="bca">BCA</option>
                   <option value="mandiri">Mandiri</option>
                 </select>
-                <label>Contoh Foto Aktifasi</label> 
+                <label>Contoh Foto Aktivasi</label> 
                 <div class="contoh-aktifasi"></div>
                   <div class="col-lg-12">
                     <label>Masukan Berkas Anda</label> 
@@ -84,7 +84,7 @@
         @endif
         <div class="content-l">
           @if(Sentinel::getUser()->is_verif == 0)
-          <img class="profile-mar" src="/images/imgl.gif">
+        
               <div class="detail-akun-id">
             <div class="username-user">
             <h1 class="text-align">{{Sentinel::getUser()->first_name}} {{Sentinel::getUser()->last_name}}</h1>
@@ -143,5 +143,14 @@
 <script src="{{ url('/js/jquery.min.js') }}"></script>
 <script src="{{ url('/js/jquery.backtotop.js') }}"></script>
 <script src="{{ url('/js/jquery.mobilemenu.js') }}"></script>
+<script>
+$(document).ready(function(){
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+  });
+</script>
 </body>
 </html>

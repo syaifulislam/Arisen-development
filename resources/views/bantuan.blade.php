@@ -74,7 +74,7 @@
           <br>
           <p>10.Bagaimana cara pembayaran untuk bermain di Arisen ?</p>
           <p>kamu dapat menambah saldo kamu dengan cara mengupload bukti transfer di halaman detil saldo lalu klik setor dana lalu isi formulir
-          pada halaman tersebut, dengan cara transfer ke rekening yang tertera di halaman tersebut.</p>
+          pada halaman tersebut, dengan cara transfer ke rekening 571242352 a/n Arisen.</p>
           <br>
           <p>11. Apa yang terjadi jika saldo saya tidak cukup di arisen ?</p>
           <p>undian tidak akan berjalan, dan kamu tidak dapat mengambil promo yang disediakan di arbar</p>
