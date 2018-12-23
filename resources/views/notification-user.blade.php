@@ -59,38 +59,44 @@
               </tr>
             </thead>
             <tbody>
+                    @foreach ($data as $item)
+                        <tr>
+                            <td>{{Carbon\Carbon::parse($item->created_at)->format('d M Y')}}</td>
+                                @if ($item->status == 'berhasil' || $item->status == 'info')
+                                    <td><a href="#" onclick="clickBTN()">{{$item->title}}</a></td>
+                                    <td style="color:green">{{$item->status}}</td> 
+                                @else
+                                    @if ($item->title == 'Setor Dana')
+                                        <td><a href="#" onclick="clickBTN()">{{$item->title}}</a></td>
+                                    @else
+                                        <td><a href="/my-account" onclick="clickBTN()">{{$item->title}}</a></td>
+                                    @endif
+                                    <td style="color:red">{{$item->status}}</td> 
+                                @endif
+                        </tr> 
+                    @endforeach
 
-                    <tr>
+                    {{-- <tr>
                         <td>12 NOV 2018</td>
                         <td><a href="#" onclick="viewNotif()">Penarikan Berhasil</a></td>
-                      
-                            <td style="color:green">berhasil</td>                                
-                        
+                            <td style="color:green">berhasil</td> 
                     </tr> 
-
                     <tr>
                         <td>12 NOV 2018</td>
                         <td><a href="#" onclick="viewKupon()">Kupon ARBAR Gratis</a></td>
-                      
-                            <td style="color:green">Info</td>                                
-                        
+                            <td style="color:green">Info</td>
                     </tr> 
-
                     <tr>
                         <td>10 NOV 2018</td>
                         <td><a href="#" onclick="viewTolak()">Setor Gagal</a></td>
-                      
-                            <td style="color:red">ditolak</td>                                
-                        
+                            <td style="color:red">ditolak</td>  
                     </tr> 
-
                     <tr>
                         <td>10 NOV 2018</td>
                         <td><a href="#" >Aktivasi Gagal</a></td>
-                      
                             <td style="color:red">ditolak</td>                                
-                        {{-- yang ini ngelink ke detail-akun bang pul --}}
-                    </tr> 
+                         yang ini ngelink ke detail-akun bang pul 
+                    </tr>  --}}
 
             </tbody>
           </table>
@@ -214,6 +220,10 @@ $(document).mouseup(function (e) {
         container.fadeOut();
     }
   });
+
+function clickBTN(){
+    viewNotif();
+}
 
 function viewNotif(){
   $('#notif').fadeToggle();

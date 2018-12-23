@@ -8,6 +8,9 @@ use App\Room;
 use Carbon\Carbon;
 use App\JoinRoom;
 use App\UserRoomPaymentHistory;
+use App\UserArisan;
+use App\UserDetails;
+use App\PaymentHistory;
 use DB;
 
 class RoomController extends Controller
@@ -116,5 +119,55 @@ class RoomController extends Controller
             DB::rollback();
             return redirect('/ruangan-arisan/'.$roomId);
         }
+    }
+
+    public function undian($id){
+        $data = Room::where('generate_id',$id);
+        if ( $data->first() ) {
+            if ( $data->first()->period_status == 'Sudah Selesai' ) {
+                return redirect()->back()->with('alert', 'Room Ini Sudah Selesai');
+            } else if ($data->first()->total_player > $data->first()->total_player_join) {
+                $data->update(['period_status'=>'Sudah Selesai']);
+                return redirect()->back()->with('alert', 'Total Pemain Tidak Mencukupi');
+            }
+            $data->update(['period_status'=>'Sedang Berlangsung']);
+            $roomId = $data->first()->id;
+            $pricePerPlayer = $data->first()->price_per_player;
+            $joinRoom = JoinRoom::where('room_id',$roomId)->pluck('user_id');
+            foreach($joinRoom as $value){
+                UserDetails::where('user_id',$value)->decrement('money',$pricePerPlayer);
+                PaymentHistory::insert([
+                    'user_id'=>$value,
+                    'request_nominal'=>$pricePerPlayer,
+                    'payment_type_id'=> 3,
+                    'status'=>'Sudah di Proses'
+                ]);
+            }
+            UserDetails::where('user_id',Sentinel::getUser()->id)->increment('money',$pricePerPlayer*$data->first()->total_player_join);
+            PaymentHistory::insert([
+                'user_id'=>Sentinel::getUser()->id,
+                'request_nominal'=>$pricePerPlayer*$data->first()->total_player_join,
+                'payment_type_id'=> 3,
+                'status'=>'Sedang di Proses'
+            ]);
+            if($data->first()->period == "Mingguan"){
+                $data->update([
+                    'period_start_date'=>Carbon::parse($data->first()->period_start_date)->addWeek()->format('Y-m-d')
+                ]);
+            }else if($data->first()->period == "Bulanan"){
+                $data->update([
+                    'period_start_date'=>Carbon::parse($data->first()->period_start_date)->addMonth()->format('Y-m-d')
+                ]);
+            }else{
+                $data->update([
+                    'period_start_date'=>Carbon::parse($data->first()->period_start_date)->addYear()->format('Y-m-d')
+                ]);
+            }
+            $arisan = new UserArisan;
+            $arisan->user_id = Sentinel::getUser()->id;
+            $arisan->room_id = $roomId;
+            $arisan->save();
+        }
+        return redirect()->back();
     }
 }

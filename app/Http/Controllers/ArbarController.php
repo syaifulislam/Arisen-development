@@ -8,6 +8,7 @@ use App\Room;
 use App\JoinRoom;
 use App\ArbarDetail;
 use App\UserDetails;
+use App\Notification;
 use Sentinel;
 use Carbon\Carbon;
 
@@ -56,6 +57,11 @@ class ArbarController extends Controller
             $arbar->arbar_id = $id;
             $arbar->save();
             $dataArbar->increment('joined_player');
+            $notif = new Notification;
+            $notif->user_id = Sentinel::getUser()->id;
+            $notif->title = 'Kupon Arbar';
+            $notif->status = 'info';
+            $notif->save();
             return redirect()->back()->with('alert', 'Berhasil Diambil');
         }
     }

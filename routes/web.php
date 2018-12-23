@@ -18,9 +18,6 @@ Route::get('/admin',function(){
     return redirect('auth/login');
 });
 
-Route::get('notification-user',function(){
-    return view('notification-user');
-});
 
 Route::get('detail-saldo',function(){
     return view('detail-saldo');
@@ -94,6 +91,8 @@ Route::prefix('auth')->group(function(){
 });
 
 Route::group(['middleware'=>SentinelCheck::class],function(){
+    Route::get('notification-user','NotificationController@index');
+        // return view('notification-user');
     Route::get('/home-page','HomeController@index');
     Route::get('/my-account','AccountController@index');
     Route::get('/my-room','RoomController@index');
@@ -114,6 +113,7 @@ Route::group(['middleware'=>SentinelCheck::class],function(){
     Route::put('/checkRoom/{id}','RoomController@checkPassword');
     Route::get('/add-room/{id}/{room_id}','RoomController@addRoom');
     Route::post('/ambil-arbar/{id}', 'ArbarController@ambilArbar');
+    Route::get('/undi-arisan/{id}','RoomController@undian');
 });
 
 Route::group(['middleware'=>SentinelAdmin::class],function(){

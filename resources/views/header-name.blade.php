@@ -3,7 +3,7 @@
       <div id="topbar" class="hoc clear"> 
           <div class="fl_left">
               <ul>
-                <a class="pem" href="notification-user">
+                <a class="pem" href="/notification-user">
                   <li>
                     <i class="fa fa-envelope fa-fw"></i>Notifikasi
                   </li>

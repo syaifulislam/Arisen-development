@@ -82,9 +82,10 @@
               </div>
             </button>
             @else
-            <button class="undian-btn" onclick="openForm2()">
+            <a href="/undi-arisan/{{$id}}"><button class="undian-btn">
                 UNDI ARISAN
               </button>
+            </a>
               <div class="form-popup" id="myForm2" >
                   <form action="/action_page.php" class="form-container" style="margin-bottom: -150px;">
                     <div class="undian-prev" style="background-image:url('/images/backgrounds/3.png');">
@@ -195,6 +196,11 @@
 <script>
   var init = 0;
   $( document ).ready(function() {
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
     var tid = setTimeout(mycode, 1000);
     function mycode() {
       tid = setTimeout(mycode, 1000); 
@@ -275,6 +281,7 @@ function initializeClock(id, endtime) {
   var timeinterval = setInterval(updateClock, 1000);
 }
 var deadline = "{{$getDataTimes}}";
+
 initializeClock('clockdiv', deadline);
 });
   $('.comment-btn').click(function(){

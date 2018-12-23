@@ -10,6 +10,7 @@ use App\PaymentHistory;
 use App\AdminImage;
 use App\Arbar;
 use App\ArbarDetail;
+use App\Notification;
 use Sentinel;
 use Activation;
 use Storage;
@@ -46,6 +47,15 @@ class AdminController extends Controller
         User::where('id',$user_id)->update([
             'is_verif'=>$slug
         ]);
+        $notif = new Notification;
+        $notif->user_id = $user_id;
+        if($slug == 1){
+            $notif->status = 'berhasil';
+        }else{
+            $notif->status = 'ditolak';
+        }
+        $notif->title = 'Aktifasi';
+        $notif->save();
         return redirect()->back();
     }
 
@@ -62,18 +72,25 @@ class AdminController extends Controller
     }
 
     public function actionSetor($id,$slug){
+        $data = PaymentHistory::where('id',$id);
+        $getNominal = $data->first()->request_nominal;
         if ($slug == 'Sudah di Proses') {
-            $data = PaymentHistory::where('id',$id);
-            $getNominal = $data->first()->request_nominal;
             UserDetails::where('user_id',$data->first()->user_id)->increment('money',$getNominal);
             $data->update([
                 'status'    =>  $slug
             ]);
+            $notif = 'berhasil';
         }else{
             PaymentHistory::where('id',$id)->update([
                 'status'    =>  $slug
             ]);
+            $notif = 'ditolak';
         }
+        $insertNotif = new Notification;
+        $insertNotif->user_id = $data->first()->user_id;
+        $insertNotif->title = 'Setor Dana';
+        $insertNotif->status = $notif;
+        $insertNotif->save();
         return redirect()->back();
     }
 
