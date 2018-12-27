@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 
 <html lang="">
@@ -100,3 +101,5 @@
 <script src="js/jquery.mobilemenu.js"></script>
 </body>
 </html>
+=======
+>>>>>>> Stashed changes

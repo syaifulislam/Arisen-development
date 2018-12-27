@@ -15,7 +15,7 @@
             <a class="pem" href="/riwayat-keuangan">{{ Money::IDR(Sentinel::getUser()->money,true)->format() }}</a>
           </div>
           <ul>
-          <li><a href='#'><span>Welcome, {{Sentinel::getUser()->first_name}}</span></a>
+          <li><a href='#'><span>Halo, {{Sentinel::getUser()->first_name}}</span></a>
             <ul>
               <li><a href='/my-account'><span>Akun Saya</span></a></li>
               <li><a href='/my-room'><span>Ruangan Saya</span></a></li>
