@@ -50,7 +50,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3" @if (sizeof($data) <= 4)style="height:700px"@endif>
+<div class="wrapper row3" @if (sizeof($data) <= 4)style="height:700px; background-image:url('images/bg/arbar-1.png');background-attachment: center;"@endif>
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
@@ -153,14 +153,42 @@ function varbar(id){
               '</a>'+
             '</div>'+
               '<div class="inf-form-adm">'+
-                  '#'+data.generate_id+'<br>'+
-                  data.sponsor+'<br>'+
-                  data.sponsor_email+'<br>'+
-                  data.sponsor_address+'<br>'+
-                  data.contact_sponsor+'<br>'+
-                  data.total_player+' Pemain<br>'+
-                  data.joined_player+'/'+data.coupon+'<br>'+
-                  '12 NOV 2018<br>'+
+
+                '<table style="width:100%">'+
+                  '<tr>'+
+                    '<th>'+'ID'+'</th>'+
+                    '<td>'+'#'+data.generate_id+'</td>'+
+                  '</tr>'+
+                  '<tr>'+
+                    '<th>'+'Sponsor'+'</th>'+
+                    '<td>'+data.sponsor+'</td>'+
+                  '</tr>'+
+                  '<tr>'+
+                    '<th>'+'Email'+'</th>'+
+                    '<td>'+data.sponsor_email+'</td>'+
+                  '</tr>'+
+                  '<tr>'+
+                    '<th>'+'Alamat'+'</th>'+
+                    '<td>'+data.sponsor_address+'</td>'+
+                  '</tr>'+
+                  '<tr>'+
+                    '<th>'+'Kontak'+'</th>'+
+                    '<td>'+data.contact_sponsor+'</td>'+
+                  '</tr>'+
+                  '<tr>'+
+                    '<th>'+'Minimum Pemain'+'</th>'+
+                    '<td>'+data.total_player+'</td>'+
+                  '</tr>'+
+                  '<tr>'+
+                    '<th>'+'Sisa Promo'+'</th>'+
+                    '<td>'+data.joined_player+'/'+data.coupon+'</td>'+
+                  '</tr>'+
+                  '<tr>'+
+                    '<th>'+'Masa Berlaku'+'</th>'+
+                    '<td>'+'12 NOV 2018'+'</td>'+
+                  '</tr>'+
+                '</table>'+
+
               '</div>'+
               '<select name="room_id" class="inf-form-adm option-ruangan">'+
               '<option value="">Pilih Ruangan</option>'+

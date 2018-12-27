@@ -21,7 +21,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('images/backgrounds/01.png'); background-attachment: fixed;">
+<div class="wrapper bgded overlay" style="background-image:url('images/backgrounds/01.png');background-attachment:center;height: 500px;">
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div class="slider-ctn"> 

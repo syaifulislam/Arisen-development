@@ -135,12 +135,32 @@
 
 /* Top Bar
 --------------------------------------------------------------------------------------------------------------- */
-#topbar{padding:15px 0; font-size:.8rem; text-transform:uppercase;}
+#topbar{
+  padding:15px 0; 
+  font-size:.8rem; 
+  text-transform:uppercase;
+}
 
-#topbar *{margin:0; padding:0; list-style:none;}
-#topbar ul li{display:inline-block; margin-right:10px; padding-right:15px; border-right:1px solid;}
-#topbar ul li:last-child{margin-right:0; padding-right:0; border-right:none;}
-#topbar i{margin:0 5px 0 0; line-height:normal;}
+#topbar *{
+  margin:0; 
+  padding:0; 
+  list-style:none;
+}
+#topbar ul li{
+  display:inline-block; 
+  margin-right:10px; 
+  padding-right:15px; 
+  border-right:1px solid;
+}
+#topbar ul li:last-child{
+  margin-right:0; 
+  padding-right:0; 
+  border-right:none;
+}
+#topbar i{
+  margin:0 5px 0 0; 
+  line-height:normal;
+}
 
 
 /* Header
@@ -953,7 +973,9 @@ form.example::after {
 
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
-#pageintro{padding:250px 0;}
+#pageintro{
+  padding:150px 0;
+}
 
 #pageintro li article{
   display:block; 
@@ -1508,7 +1530,8 @@ form.example::after {
 }
 
 .saldo-user{
-
+  margin-top: 30px;
+  margin-bottom: 20px;
   height: 30%;
   width: 100%;
   float: left;
@@ -1585,6 +1608,7 @@ form.example::after {
   height: 50px;
   width:100%;
   margin-top: 10px;
+  margin-bottom: 10px;
   float: left;
 }
 
@@ -1702,7 +1726,10 @@ form.example::after {
 --------------------------------------------------------------------------------------------------------------- */
 #footer{padding:80px 0;}
 
-#footer .group .heading{margin-bottom:50px; font-size:1.2rem;}
+#footer .group .heading{
+  margin-bottom:50px; 
+  font-size:1.2rem;
+}
 
 #footer .linklist li{display:block; margin-bottom:15px; padding:0 0 15px 0; border-bottom:1px solid;}
 #footer .linklist li:last-child{margin:0; padding:0; border:none;}

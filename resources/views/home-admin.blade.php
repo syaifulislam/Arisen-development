@@ -24,7 +24,7 @@
           </div>
 
           <div class="ctn-dsh-adm">
-              <p style="font-size: 100px ;color: gold; line-height: 50px; padding-top:300px; margin-bottom: 10px; text-align: center;">Welcome, {{Sentinel::getUser()->first_name}}</p>
+              <p style="font-size: 100px ;color: gold; line-height: 50px; padding-top:300px; margin-bottom: 10px; text-align: center;">Halo, {{Sentinel::getUser()->first_name}}</p>
           </div>
           @include('footer-admin')        
         </div>

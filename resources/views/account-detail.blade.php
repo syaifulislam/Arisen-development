@@ -44,7 +44,7 @@
   <main class="hoc container clear" > 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <div class="content-2" style="background-image:url('images/backgrounds/5.png');"> 
+    <div class="content-2" style="background-image:url('images/backgrounds/5.png'); background-attachment: center;"> 
       <!-- ################################################################################################ -->
       @if(Sentinel::getUser()->is_verif == 0)
         <div class="aktif-akun">
@@ -104,22 +104,47 @@
             @endif -->
           </div>
           @else 
-          <img class="profile-mar" style="margin-left: 40%;" src="/images/imgl.gif"> 
+ 
           <div class="detail-akun-id" style="margin-left: 36%;">
             <div class="username-user">
             <h1 class="text-align">{{Sentinel::getUser()->first_name}} {{Sentinel::getUser()->last_name}}</h1>
             </div>
             <div class="id-user">
-              <h1 class="text-align">{{Sentinel::getUser()->user_code}}</h1>
+
+                <table style="width:100%;">
+                    <tr>
+                      <th>ID</th>
+                    </tr>
+                    <tr>
+                      <td>{{Sentinel::getUser()->user_code}}</td>
+                    </tr>
+                  </table>
             </div>
             <div class="saldo-user">
-            <h1 class="text-align">{{Money::IDR($data->user_details->money,true)->format()}}</h1>
+
+                <table style="width:100%;">
+                    <tr>
+                      <th>Saldo Aktif</th>
+                    </tr>
+                    <tr>
+                      <td>{{Money::IDR($data->user_details->money,true)->format()}}</td>
+                    </tr>
+                  </table>
+
             </div>
             <a href="/setor"><div class="button-setor"></div></a>
             <a href="/tarik"><div class="button-tarik"></div></a>
             <a href="/riwayat-keuangan"><div class="button-his-uang"></div></a>
             <a href="/riwayat-permainan"><div class="button-his-main"></div></a>
-          <h1>Status: {{Sentinel::getUser()->is_verif == 1 ? 'TERAKTIFASI' : (Sentinel::getUser()->is_verif == 2 ? 'DITOLAK' : 'BELUM TERAKTIFASI') }}</h1>
+
+            <table style="width:100%;">
+              <tr>
+                <th>Status</th>
+              </tr>
+              <tr>
+                <td>{{Sentinel::getUser()->is_verif == 1 ? 'TERAKTIFASI' : (Sentinel::getUser()->is_verif == 2 ? 'DITOLAK' : 'BELUM TERAKTIFASI') }}</td>
+              </tr>
+            </table>
           </div>
           @endif
         </div>

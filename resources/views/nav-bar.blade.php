@@ -6,9 +6,9 @@
     @endif
 
     @if (Route::getCurrentRoute()->uri == 'forum')
-    <li class="active"><a href="forum">FORUM</a></li>        
+    <li class="active"><a href="forum">ARISAN</a></li>        
     @else
-    <li><a href="/forum">FORUM</a></li>        
+    <li><a href="/forum">ARISAN</a></li>        
     @endif
 
     @if (Route::getCurrentRoute()->uri == 'arbar')
