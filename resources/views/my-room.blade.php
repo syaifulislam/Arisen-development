@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <!DOCTYPE html>
 
 <html lang="">
@@ -60,7 +59,7 @@
             <tbody>
               @foreach ($dataRoom as $item)
                 <tr>
-                <td><a href="#">#{{$item->room->generate_id}}</a></td>
+                <td><a href="/ruangan-arisan/{{$item->room->generate_id}}">#{{$item->room->generate_id}}</a></td>
                   <td>{{$item->room->room_name}}</td>
                   <td>Rp. {{$item->room->price_per_player}}</td>
                   <td>{{$item->room->period}}</td>
@@ -101,5 +100,3 @@
 <script src="js/jquery.mobilemenu.js"></script>
 </body>
 </html>
-=======
->>>>>>> Stashed changes
