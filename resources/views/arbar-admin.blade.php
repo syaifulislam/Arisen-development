@@ -57,7 +57,7 @@
                     <td>{{$item->sponsor}}</td>
                     <td>{{$item->sponsor_email}}</td>
                     <td>{{$item->total_player}} Pemain</td>
-                    <td>{{$item->joined_player}}/{{$item->coupon}}</td>
+                    <td>{{$item->coupon-$item->joined_player}}/{{$item->coupon}}</td>
                     <td>12 NOV 2018</td>
                   </tr> 
                 @endforeach
@@ -102,12 +102,12 @@
 
                           <div class="form-tambah-arbar3">
                             <label>Gambar Promo</label> 
-                            <input type="file" name="fileToUploadPromo" id="fileToUpload" class="chs-file">
+                            <input type="file" name="fileToUploadPromo" id="fileToUpload" class="chs-file" accept="image/*">
                           </div>
                           <p>Berkas Maximal 5 MB.</p>
                           <div class="form-tambah-arbar3">
                             <label>Gambar Kupon</label> 
-                            <input type="file" name="fileToUploadCoupon" id="fileToUpload" class="chs-file">
+                            <input type="file" name="fileToUploadCoupon" id="fileToUpload" class="chs-file" accept="image/*">
                           </div>
                           <p>Berkas Maximal 5 MB.</p>
                         </div>
