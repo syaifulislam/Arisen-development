@@ -50,7 +50,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3" @if (sizeof($data) <= 4) style="height:700px; background-image:url('images/bg/arbar-1.png');background-attachment: center;"@endif>
+<div class="wrapper row3"  style="height:700px; background-image:url('images/bg/arbar-1.png');background-attachment: center;">
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
