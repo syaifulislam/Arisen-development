@@ -49,7 +49,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
+<div class="wrapper row3" style="background-image:url('/images/bg/ra.png');">
     <main class="hoc container clear"> 
         <!-- main body -->
         <!-- ################################################################################################ -->
@@ -165,7 +165,7 @@
           <div>
             <div  class="inp-com">
                 <div>
-                  <textarea  class="inp-com-txt comment-text" id="subject" name="subject" placeholder="Write something.."></textarea>
+                  <textarea  class="inp-com-txt comment-text" id="subject" name="subject" placeholder="Ayo Berkomentar..."></textarea>
                 </div>
                 <div>
                   <input  type="submit" name="login" class="com-but comment-btn" value="KOMENTAR">

@@ -1143,7 +1143,7 @@ form.example::after {
 /* swimline-comment
 --------------------------------------------------------------------------------------------------------------- */
 .swimlane-comment{
- background-color: grey;
+
   height: 400px;
   width: 100%;
   overflow-x: scroll;
@@ -1264,7 +1264,7 @@ form.example::after {
 /* swimline-arisan
 --------------------------------------------------------------------------------------------------------------- */
 .swimlane-arisan{
-  background-color: navy;
+
   height: 500px;
   width: 100%;
   overflow-x: scroll;
@@ -2004,7 +2004,7 @@ body{color:#4A4A4A; background-color:#FFFFFF;}
 a{color:#629BAF;}
 a:active, a:focus{background:transparent;}/* IE10 + 11 Bugfix - prevents grey background */
 hr, .borderedbox{border-color:#D7D7D7;}
-label span{color:#FF0000; background-color:inherit;}ac
+label span{color:#FF0000; background-color:inherit;}
 input:focus, textarea:focus, *:required:focus{border-color:#56AED4;}
 .overlay{color:#FFFFFF; background-color:inherit;}
 .overlay::after{color:inherit; background-color:rgba(0,0,0,.55);}

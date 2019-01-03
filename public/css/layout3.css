@@ -913,7 +913,7 @@ form.example::after {
   height: 44px;
   margin-top: 10px;
   margin-bottom: 10px;
-  display: block;
+
 }
 
 .kunci2{
@@ -922,9 +922,9 @@ form.example::after {
   height:100%;
   float: left;
   padding: 10px;
-  padding-left: 90px;
+  padding-left: 125px;
   color:white;
-  float: left;
+
 }
 
 .rad-kun{

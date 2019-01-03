@@ -50,7 +50,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3" @if (sizeof($data) <= 4)style="height:700px; background-image:url('images/bg/arbar-1.png');background-attachment: center;"@endif>
+<div class="wrapper row3" @if (sizeof($data) <= 4) style="height:700px; background-image:url('images/bg/arbar-1.png');background-attachment: center;"@endif>
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
@@ -59,7 +59,7 @@
       
       <div id="gallery">
         <figure >
-          <header class="heading">Promo ARBAR</header>
+          <header class="heading" style="text-align: center;font-size: 30px;">Promo ARBAR</header>
           <ul class="nospace clear figures">
                   @for ($i = 0; $i < sizeof($data); $i++)
                     @if ($i%4 == 0)

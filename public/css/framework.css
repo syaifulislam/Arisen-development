@@ -58,7 +58,10 @@ h1, h2, h3, h4, h5, h6, .heading{font-family:Arial, Helvetica, sans-serif;}
 form, fieldset, legend{margin:0; padding:0; border:none;}
 legend{display:none;}
 label, input, textarea, select, button{display:block; resize:none; outline:none; color:inherit; font-size:inherit; font-family:inherit; vertical-align:middle;}
-label{margin-bottom:5px;}
+label{
+    margin-bottom:5px;
+    display: block;
+}
 :required, :invalid{outline:none; box-shadow:none;}
 
 

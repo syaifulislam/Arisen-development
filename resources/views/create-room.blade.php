@@ -72,10 +72,7 @@
                 <div class="kunci">
                   <div class="kunci2">
                      <label class="rad-kun"> 
-                        <input  class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="private" id="yesCheck">Kunci
-                     </label>
-                     <label class="rad-kun" style="margin-left: 15px;">
-                        <input  class="rad-kun" type="radio" onclick="javascript:yesnoCheck();" name="public" id="yesCheck"> Tidak
+                        <input  class="rad-kun" type="checkbox" onclick="yesnoCheck();" name="private" id="yesCheck">KUNCI
                      </label>
                   </div>
                   {{-- <div class="kunci3">
@@ -122,6 +119,6 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.backtotop.js"></script>
 <script src="js/jquery.mobilemenu.js"></script>
-<script src="js/jquery.tambah-ruangan.js"></script>
+
 </body>
 </html>
